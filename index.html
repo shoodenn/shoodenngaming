@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>しょーでんゲーミング</title>
+    <style>
+        /* ========== 背景と全体の設定 ========== */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #222;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* 背景画像（bakku.png）を画面いっぱいに薄く表示 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('gazou/bakku.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15; /* ここで背景の薄さを調整できます（0に近いほど薄い） */
+            z-index: -1;   /* 文字の背面に配置して隠れないようにする */
+        }
+
+        /* ========== ヘッダー（タイトル・説明文） ========== */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        /* ========== 検索窓と記事エリア ========== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        .search-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .search-box input {
+            width: 90%;
+            max-width: 500px;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: #007bff;
+        }
+
+        /* ========== 記事リスト ========== */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-card {
+            display: flex;
+            background: rgba(255, 255, 255, 0.7); /* 文字を読みやすくするために少しだけ白背景を敷く */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: #222;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .article-card img {
+            width: 240px;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .article-info {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .article-info h2 {
+            margin: 0;
+            font-size: 1.4em;
+            line-height: 1.4;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 600px) {
+            .article-card {
+                flex-direction: column;
+            }
+            .article-card img {
+                width: 100%;
+                height: 200px;
+            }
+            h1 { font-size: 2.2em; }
+        }
+
+        /* ========== もっと見るボタン ========== */
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #loadMoreBtn {
+            padding: 12px 40px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            display: none; /* 初期は非表示 */
+            transition: background-color 0.3s;
+        }
+        
+        #loadMoreBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>しょーでんゲーミング</h1>
+    <div class="description">
+        このブログでは、しょーでんの知識とAIの情報収集を組み合わせて、ゲーミングPCやゲーミングガジェットの情報を発信しています。<br>
+        もともとワードプレスで運営していたものをこちらに移植することになりました。
+    </div>
+</header>
+
+<div class="container">
+    <!-- 検索ボックス -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="記事をキーワードで検索...">
+    </div>
+
+    <!-- 記事一覧が表示されるエリア -->
+    <div class="article-list" id="articleList"></div>
+
+    <!-- もっと見るボタン -->
+    <div class="btn-container">
+        <button id="loadMoreBtn">もっと見る</button>
+    </div>
+</div>
+
+<script>
+    /* =========================================================
+       【記事の登録場所】
+       新しい記事を書いたら、この配列の一番上に追加してください。
+       自動的に新しい順で表示されます。
+       ========================================================= */
+    const allArticles = [
+        { title: "ダミー記事6：最新のAIツール活用法", link: "kizi/article6.html", image: "gazou/thumb6.jpg" },
+        { title: "ダミー記事5：おすすめゲーミングマウス5選", link: "kizi/article5.html", image: "gazou/thumb5.jpg" },
+        { title: "ダミー記事4：メカニカルキーボード軸の違いと選び方", link: "kizi/article4.html", image: "gazou/thumb4.jpg" },
+        { title: "ダミー記事3：144Hzと240Hzモニターの違い", link: "kizi/article3.html", image: "gazou/thumb3.jpg" },
+        { title: "ダミー記事2：AIを使ったゲーム配信の自動化設定", link: "kizi/article2.html", image: "gazou/thumb2.jpg" },
+        { title: "ダミー記事1：デスク周りの配線整理グッズ", link: "kizi/article1.html", image: "gazou/thumb1.jpg" }
+    ];
+
+    let displayCount = 5; // 初期表示件数
+    let currentArticles = [...allArticles]; // 現在表示対象の記事データ
+
+    const articleListElement = document.getElementById("articleList");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+    const searchInput = document.getElementById("searchInput");
+
+    // 記事を画面に表示する関数
+    function renderArticles() {
+        articleListElement.innerHTML = ""; // 一旦中身を空にする
+
+        // 表示する件数を決定（絞り込まれた記事数か、5件のどちらか小さい方）
+        const showCount = Math.min(displayCount, currentArticles.length);
+
+        for (let i = 0; i < showCount; i++) {
+            const article = currentArticles[i];
+            const aTag = document.createElement("a");
+            aTag.href = article.link;
+            aTag.className = "article-card";
+            
+            aTag.innerHTML = `
+                <img src="${article.image}" alt="${article.title}">
+                <div class="article-info">
+                    <h2>${article.title}</h2>
+                </div>
+            `;
+            articleListElement.appendChild(aTag);
+        }
+
+        // 記事が5つ以上（表示しきれていない記事がある）なら「もっと見る」を表示
+        if (currentArticles.length > displayCount) {
+            loadMoreBtn.style.display = "inline-block";
+        } else {
+            loadMoreBtn.style.display = "none";
+        }
+    }
+
+    // 「もっと見る」ボタンをクリックした時の処理
+    loadMoreBtn.addEventListener("click", () => {
+        displayCount = currentArticles.length; // 件数を全件に変更
+        renderArticles(); // 再描画
+    });
+
+    // 検索窓に文字を入力した時の処理
+    searchInput.addEventListener("input", (e) => {
+        // 大文字小文字を区別せずに検索できるように変換
+        const keyword = e.target.value.toLowerCase();
+        
+        // タイトルにキーワードが含まれる記事だけを抽出
+        currentArticles = allArticles.filter(article => 
+            article.title.toLowerCase().includes(keyword)
+        );
+        
+        displayCount = 5; // 検索した時は表示件数を5件に戻す
+        renderArticles(); // 再描画
+    });
+
+    // ページを読み込んだら最初の5件を描画
+    renderArticles();
+</script>
+
+</body>
+</html>
