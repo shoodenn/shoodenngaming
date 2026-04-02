@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-            color: #333333;
+            color: #111; /* 背景なしでも読みやすいように文字色を濃く */
             line-height: 1.8;
             position: relative;
         }
 
-        /* 背景画像を薄く設定するための疑似要素 */
+        /* 背景画像を画面全体に薄く設定 */
         body::before {
             content: "";
             position: fixed;
@@ -24,50 +24,49 @@
             width: 100vw;
             height: 100vh;
             /* 指定されたパスの画像を背景に設定 */
-            background-image: url('../gazou/bakku.png');
+            background-image: url('gazou/bakku.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.15; /* 画像を薄くして文字を読みやすくする */
+            opacity: 0.25; /* ここで画像の濃さを調整（0.1〜1.0） */
             z-index: -1; /* 文字の後ろに配置 */
         }
 
-        /* 記事のメインコンテンツを囲むコンテナ */
+        /* 記事のメインコンテンツを囲むコンテナ（白背景を削除） */
         .container {
             max-width: 900px;
             margin: 40px auto;
-            padding: 40px 60px;
-            background-color: rgba(255, 255, 255, 0.85); /* 半透明の白背景で可読性を確保 */
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
         /* 見出しのデザイン */
         h1 {
             font-size: 2.2em;
-            color: #1a1a1a;
+            color: #000;
             border-bottom: 4px solid #3498db;
             padding-bottom: 10px;
             margin-bottom: 30px;
             text-align: center;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8); /* 読みやすくするための白フチ */
         }
 
         h2 {
             font-size: 1.6em;
-            color: #2c3e50;
+            color: #1a252f;
             border-left: 5px solid #3498db;
             padding-left: 15px;
             margin-top: 50px;
             margin-bottom: 20px;
-            background-color: rgba(52, 152, 219, 0.1);
+            background-color: rgba(52, 152, 219, 0.15); /* ここだけうっすら色付け */
             padding: 10px 15px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
         h3 {
             font-size: 1.3em;
-            color: #2980b9;
+            color: #1a5276;
             margin-top: 30px;
-            border-bottom: 1px dashed #bdc3c7;
+            border-bottom: 1px dashed #7f8c8d;
             padding-bottom: 5px;
         }
 
@@ -75,18 +74,19 @@
             font-size: 1.05em;
             margin-bottom: 20px;
             letter-spacing: 0.05em;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* 文字が背景に埋もれないように調整 */
         }
 
         /* 強調文字 */
         strong {
-            color: #e74c3c;
-            background: linear-gradient(transparent 70%, rgba(231, 76, 60, 0.2) 70%);
+            color: #c0392b;
+            background: linear-gradient(transparent 70%, rgba(231, 76, 60, 0.3) 70%);
         }
 
         /* リストのデザイン */
         ul {
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
+            background-color: rgba(255, 255, 255, 0.4); /* 背景に馴染む半透明 */
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             padding: 20px 20px 20px 40px;
             margin-bottom: 20px;
@@ -95,6 +95,7 @@
         li {
             margin-bottom: 10px;
             font-size: 1.05em;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
         }
 
         /* テーブル（表）のデザイン */
@@ -103,10 +104,11 @@
             border-collapse: collapse;
             margin-top: 20px;
             margin-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.6); /* 表が見やすいように半透明白 */
         }
 
         th, td {
-            border: 1px solid #dee2e6;
+            border: 1px solid #bdc3c7;
             padding: 12px;
             text-align: left;
         }
@@ -115,17 +117,18 @@
             background-color: #3498db;
             color: white;
             font-weight: bold;
+            text-shadow: none;
         }
 
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: rgba(0, 0, 0, 0.03);
         }
 
         /* スマートフォン向けレスポンシブ対応 */
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
-                margin: 20px;
+                padding: 15px;
+                margin: 15px auto;
             }
             h1 { font-size: 1.5em; }
             h2 { font-size: 1.3em; }
