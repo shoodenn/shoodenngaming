@@ -192,6 +192,54 @@
             background-color: #fff;
             margin-top: 40px;
         }
+
+        /* 目次のスタイル */
+.toc {
+    background-color: #f0f4f8; /* 情報ボックスと同じ統一感のある色 */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.toc-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.toc li {
+    margin-bottom: 12px;
+}
+
+.toc li:last-child {
+    margin-bottom: 0;
+}
+
+.toc a {
+    color: #0056b3; /* リンク色 */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.toc a:hover {
+    color: #003d82;
+    text-decoration: underline;
+}
+
+section {
+    scroll-margin-top: 20px; 
+}
+        
     </style>
 </head>
 <body>
@@ -201,6 +249,17 @@
 
     <main>
         <h1 class="page-title">ゲーミングPC用CPU徹底解説ガイド</h1>
+
+        <div class="toc">
+    <div class="toc-title">目次</div>
+    <ul>
+        <li><a href="#what_is_cpu">1. CPUとは？ (PCの『脳』の役割)</a></li>
+        <li><a href="#brands">2. IntelとRyzenの違いと表記のルール</a></li>
+        <li><a href="#model_matrix">3. 世代別・ブランド別主要モデル一覧表</a></li>
+        <li><a href="#detailed_overview">4. 各世代・全モデル詳細解説</a></li>
+        <li><a href="#choosing">5. 結論：用途・予算別おすすめCPUの選び方</a></li>
+    </ul>
+</div>
 
         <section id="what_is_cpu">
             <h2>1. CPUとは？ (PCの『脳』の役割)</h2>
