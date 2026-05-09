@@ -3,177 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ゲーミングPCの選び方！CPU（インテル・ライゼン）の違いとおすすめを徹底解説 | しょーでんゲーミング</title>
+    <title>ゲーミングPC用CPUの徹底解説ガイド | しょーでんゲーミング</title>
     <style>
-        :root {
-            --primary-color: #1a1a2e;
-            --accent-color: #e94560;
-            --bg-color: #16213e;
-            --text-color: #eaeaea;
-            --box-bg: #0f3460;
-        }
+        /* シンプルで清潔感のあるデザイン */
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
         }
         header {
-            background: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
-            padding: 2rem 1rem;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 40px 20px;
             text-align: center;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
+            font-size: 28px;
+            color: #222;
         }
-        nav {
-            background: #111;
-            padding: 0.8rem;
-            text-align: center;
+        header p {
+            color: #666;
+            margin-top: 10px;
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover { color: var(--accent-color); }
         main {
-            max-width: 1000px;
-            margin: 2rem auto;
-            background: var(--primary-color);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #eee;
+            border-radius: 4px;
         }
-        h1.article-title { border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; }
-        h2 { background: var(--accent-color); color: white; padding: 10px 15px; border-radius: 4px; margin-top: 2.5rem; }
-        h3 { border-left: 5px solid var(--accent-color); padding-left: 10px; margin-top: 2rem; color: #fff; }
-        p { margin-bottom: 1.5rem; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: var(--box-bg); }
-        th, td { border: 1px solid #2a2a4a; padding: 12px; text-align: left; }
-        th { background-color: #e94560; color: white; }
-        .point-box { background: rgba(233, 69, 96, 0.1); border: 1px solid var(--accent-color); padding: 1.5rem; border-radius: 5px; margin: 1.5rem 0; }
-        ul { margin-bottom: 1.5rem; }
-        li { margin-bottom: 0.5rem; }
-        footer { text-align: center; padding: 2rem; background: #111; color: #777; font-size: 0.9rem; margin-top: 3rem; }
+        h2 {
+            font-size: 24px;
+            border-left: 6px solid #333;
+            padding-left: 15px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        h3 {
+            font-size: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            color: #444;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .info-box {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            font-size: 15px;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .model-detail {
+            margin-bottom: 40px;
+        }
+        .model-detail h4 {
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 14px;
+        }
+        strong {
+            color: #d9534f;
+        }
     </style>
 </head>
 <body>
 
 <header>
     <h1>しょーでんゲーミング</h1>
-    <p>ゲーミングPCの選び方からゲーム配信まで、ゲーマーのための情報発信基地</p>
+    <p>PCスペックにこだわりたいゲーマーのためのCPU完全解説</p>
 </header>
 
-<nav>
-    <a href="#">トップページ</a>
-    <a href="#">PCの選び方</a>
-    <a href="#">おすすめBTO</a>
-    <a href="#">ゲーム実況・配信</a>
-</nav>
-
 <main>
-    <article>
-        <h1 class="article-title">ゲーミングPCの「心臓部」！CPU（インテル・ライゼン）の違いと選び方を徹底解説</h1>
+    <section>
+        <h2>1. CPUとは？</h2>
+        <p>CPU（Central Processing Unit）は、PCにおける<strong>「脳」</strong>です。ゲームにおいては、マウスやキーボードの入力処理、キャラクターのAI、物理演算、そしてグラフィックボードへの描画指示を担っています。</p>
+        <div class="info-box">
+            <strong>ゲーマーがCPUにこだわるべき理由：</strong><br>
+            高性能なグラフィックボード（GPU）を持っていても、CPUが弱いと「指示出し」が追いつかず、ゲームがカクついたり、フレームレートが上がらなくなったりします。これを「ボトルネック」と呼びます。
+        </div>
+    </section>
+
+    <section>
+        <h2>2. IntelとRyzen、モデルの種類</h2>
+        <p>現在、主流のCPUはIntel（インテル）とAMD（エーエムディー）の2社が展開しています。</p>
         
-        <section id="what-is-cpu">
-            <h2>1. まず初めに：CPUとは？</h2>
-            <p>
-                ゲーミングPCを選ぶとき、グラボ（GPU）と同じくらい重要なのが<strong>CPU（Central Processing Unit）</strong>です。
-                CPUは人間でいう「脳」にあたるパーツで、ゲーム内のキャラクターの動き、ダメージ計算、AIの挙動など、すべての命令を処理しています。
-            </p>
-            <div class="point-box">
-                <strong>ゲームにおけるCPUの重要性</strong><br>
-                どれだけ高性能なグラボを積んでいても、CPUの性能が低いとグラボに指示を出すのが遅れ、本来の性能を引き出せません（ボトルネック現象）。特に、大量のModを入れたマイクラや、最新のモンハンなど、処理が複雑なゲームほどCPUのパワーがフレームレート（滑らかさ）に直結します。
-            </div>
-        </section>
+        <h3>Intel（インテル）</h3>
+        <p>「Core i」または最新の「Core Ultra」シリーズを展開。シングルスレッド性能（1つの処理能力）が高く、昔からゲームへの最適化が進んでいます。最近は「Pコア（性能重視）」と「Eコア（効率重視）」を分けるハイブリッド構造が特徴です。</p>
 
-        <section id="brand-comparison">
-            <h2>2. インテル (Intel) と ライゼン (Ryzen) の違い</h2>
-            <p>ゲーミングPCのCPUには、大きく分けて2つのブランドがあります。</p>
-            
-            <h3>Intel（インテル）「Core」シリーズ</h3>
-            <p>
-                PC業界の絶対的王者。ノートPCからデスクトップまで幅広いゲーミングPC（GALLERIAなど）に搭載されています。最近のモデルは「ゲーム用」のコアと「裏方の処理用」のコアを分けており、<strong>ゲームをしながら配信ソフトを動かすようなマルチタスクに非常に強い</strong>のが特徴です。
-            </p>
-            
-            <h3>AMD「Ryzen（ライゼン）」シリーズ</h3>
-            <p>
-                インテルの最大のライバル。コスパの良さで人気を集めましたが、現在は「X3D」というゲームに特化した特殊なモデルを展開しており、<strong>特定のゲームにおいてはインテルを上回る圧倒的なフレームレート</strong>を叩き出すことでゲーマーから熱狂的な支持を得ています。
-            </p>
-        </section>
+        <h3>AMD Ryzen（ライゼン）</h3>
+        <p>「Ryzen 3/5/7/9」という分かりやすいグレード分けが特徴。特に<strong>「X3D」</strong>と付くモデルは、ゲーム専用の特大キャッシュメモリを搭載しており、ゲーミング性能でIntelを圧倒することもあります。</p>
+    </section>
 
-        <section id="model-list">
-            <h2>3. 歴代モデル一覧（最新～3世代前）</h2>
-            <p>BTOパソコンを選ぶ際によく見るモデルをまとめました。（※主にデスクトップ向け）</p>
-            
-            <h3>Intel Core シリーズ</h3>
-            <table>
-                <tr><th>世代</th><th>最上位（プロ・配信者向け）</th><th>上位（重いゲーム向け）</th><th>中位（標準的）</th><th>入門（軽め）</th></tr>
-                <tr><td>第16世代 (最新)</td><td>Core Ultra 9 385K</td><td>Core Ultra 7 365K</td><td>Core Ultra 5 345K</td><td>Core Ultra 3 325</td></tr>
-                <tr><td>第15世代</td><td>Core Ultra 9 285K</td><td>Core Ultra 7 265K</td><td>Core Ultra 5 245K</td><td>Core Ultra 3 225</td></tr>
-                <tr><td>第14世代</td><td>Core i9-14900K</td><td>Core i7-14700K</td><td>Core i5-14600K</td><td>Core i3-14100</td></tr>
-            </table>
-            <p>※ノートPCの場合は「Core i7-13620H」のように末尾に「H」や「HX」がつくモデルがゲーミング用途となります。</p>
+    <section>
+        <h2>3. 世代別モデル一覧（最新〜3世代前）</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>メーカー</th>
+                    <th>最新世代</th>
+                    <th>1世代前</th>
+                    <th>2世代前</th>
+                    <th>3世代前</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Intel</strong></td>
+                    <td>Core Ultra 200S</td>
+                    <td>第14世代 (14900K等)</td>
+                    <td>第13世代 (13900K等)</td>
+                    <td>第12世代 (12900K等)</td>
+                </tr>
+                <tr>
+                    <td><strong>AMD</strong></td>
+                    <td>Ryzen 9000シリーズ</td>
+                    <td>Ryzen 8000シリーズ</td>
+                    <td>Ryzen 7000シリーズ</td>
+                    <td>Ryzen 5000シリーズ</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-            <h3>AMD Ryzen シリーズ</h3>
-            <table>
-                <tr><th>世代</th><th>最上位（プロ・配信者向け）</th><th>上位（重いゲーム向け）</th><th>中位（標準的）</th><th>入門（軽め）</th></tr>
-                <tr><td>9000系 (最新)</td><td>Ryzen 9 9950X</td><td>Ryzen 7 9700X</td><td>Ryzen 5 9600X</td><td>Ryzen 3 9300X</td></tr>
-                <tr><td>8000系</td><td>Ryzen 9 8900G</td><td>Ryzen 7 8700G</td><td>Ryzen 5 8600G</td><td>Ryzen 3 8300G</td></tr>
-                <tr><td>7000系</td><td>Ryzen 9 7950X</td><td>Ryzen 7 7700X</td><td>Ryzen 5 7600X</td><td>Ryzen 3 7300X</td></tr>
-            </table>
-        </section>
+    <section>
+        <h2>4. 各モデルの詳細解説</h2>
+        
+        <div class="model-detail">
+            <h3>Intelモデル</h3>
+            <h4>Core Ultra 200Sシリーズ（最新）</h4>
+            <p>新しい「Core Ultra」ブランドに刷新。電力効率が劇的に改善し、低消費電力で高いパフォーマンスを出せます。最新規格のパーツで一からPCを組みたい人向けです。</p>
 
-        <section id="detailed-explanation">
-            <h2>4. 各世代のモデルを詳しく解説</h2>
-            
-            <h3>【インテル】の世代解説</h3>
-            <ul>
-                <li><strong>第16世代 (Arrow Lake Refresh世代):</strong> 最新モデル。省電力性が上がり、熱を持ちにくくなったため、長時間のゲームプレイでもパフォーマンスが落ちにくくなっています。</li>
-                <li><strong>第15世代 (Arrow Lake世代):</strong> 「Core Ultra」という名前に変わりました。AI処理に強くなり、ゲームプレイを裏でサポートする機能が強化されています。</li>
-                <li><strong>第14世代 (Raptor Lake Refresh世代):</strong> 現在でもBTOパソコンでよく見かける大定番。「Core i7」や「Core i5」を選んでおけば、まずゲームで困ることはない安心の世代です。</li>
-            </ul>
+            <h4>第14世代 (Raptor Lake Refresh)</h4>
+            <p>第13世代のブラッシュアップ版。Core i7-14700Kはコア数が増えており、実況や動画編集もこなすゲーマーに非常に人気があります。</p>
 
-            <h3>【ライゼン】の世代解説</h3>
-            <ul>
-                <li><strong>9000系 (Zen 5):</strong> 最新モデル。処理の無駄が極限まで削られ、さらに末尾に「X3D」とつくモデルは、ゲーム特化の最強CPUとして君臨しています。</li>
-                <li><strong>8000系 (Zen 4 / Phoenix):</strong> CPUの中に強力な映像処理機能を内蔵しているモデル。グラボを積まない安いPCでも、軽いゲームなら動かせるのが特徴です。</li>
-                <li><strong>7000系 (Zen 4):</strong> 一つ前の世代ですが、性能は今でも一線級。型落ちのBTOパソコンなどで安く売られていれば、非常に狙い目です。</li>
-            </ul>
-        </section>
+            <h4>第13世代 (Raptor Lake)</h4>
+            <p>第12世代から性能が大きく飛躍した世代。現在でも中古やセール品として非常にコスパが良く、アップグレード先としても優秀です。</p>
 
-        <section id="how-to-choose">
-            <h2>5. 結論：どんな人が、どれを選ぶべきか？</h2>
-            
-            <h3>① 大規模なModを入れて遊びたい、最新ゲームを高画質で遊びたい人</h3>
-            <p><strong>おすすめ：Intel Core i7 (Core Ultra 7) または Ryzen 7</strong></p>
-            <p>マイクラで重い影Modや大型Mod（自分で作るような独自Modなど）を大量に入れたり、モンハンのような最新アクションを最高画質で遊びたい方は、このクラスが必須です。グラボ（RTX 4060や4070など）の性能を100%引き出し、カクつきのない快適なプレイを約束してくれます。</p>
+            <h4>第12世代 (Alder Lake)</h4>
+            <p>初めてハイブリッド構造を採用した世代。ここからDDR5メモリに対応し始めました。予算を抑えて現役級のPCを自作する際の選択肢になります。</p>
+        </div>
 
-            <h3>② ゲームをしながら配信や動画編集もやりたい人</h3>
-            <p><strong>おすすめ：Intel Core i7 以上 または Ryzen 9</strong></p>
-            <p>OBSなどで画面を録画・配信しながら重いゲームを動かすには、コア数の多い上位モデルが必要です。特にインテルのCore i7やi9は、裏側の処理を上手く分担してくれるので、配信時のフレームレート低下を防げます。</p>
+        <div class="model-detail">
+            <h3>Ryzenモデル</h3>
+            <h4>Ryzen 9000シリーズ（最新）</h4>
+            <p>Zen 5アーキテクチャを採用。1コアあたりの性能が向上しており、クリエイティブな作業とゲームの両立に隙がありません。</p>
 
-            <h3>③ コスパ重視！フルHD画質で普通に遊べれば十分な人</h3>
-            <p><strong>おすすめ：Intel Core i5 (Core Ultra 5) または Ryzen 5</strong></p>
-            <p>「4K画質にはこだわらない」「ApexやValorantなどが普通に動けばいい」という方は中位モデルで十分です。価格と性能のバランスが一番良く、初めてのゲーミングPCに最も選ばれるグレードです。</p>
+            <h4>Ryzen 8000シリーズ</h4>
+            <p>主に強力な内蔵グラフィックスを持つ「APU」が中心の世代。グラフィックボードなしでPCを組む場合や、小型PCを作りたい場合に選ばれます。</p>
 
-            <h3>④ とにかく予算を抑えたい人</h3>
-            <p><strong>おすすめ：Intel Core i3 または Ryzen 3</strong></p>
-            <p>ブラウザゲームや軽い2Dゲームがメインであればエントリーモデルでも動きますが、将来的に重い3Dゲームをやりたくなった時に後悔しやすいので、予算が許すなら一つ上のCore i5/Ryzen 5をおすすめします。</p>
-        </section>
-    </article>
+            <h4>Ryzen 7000シリーズ</h4>
+            <p>ソケットが「AM5」へと変更された世代。Ryzen 7 7800X3Dは「世界最高のゲーミングCPU」の一つとして、今なお多くのゲーマーに愛用されています。</p>
+
+            <h4>Ryzen 5000シリーズ</h4>
+            <p>旧世代（AM4ソケット）の完成形。すでに古いRyzenマシンを持っている人が、マザーボードを変えずに最後のアップグレードとして「5700X3D」などに載せ替えるケースが多いです。</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. どんな人がどれを選ぶべきか？</h2>
+        
+        <h3>これからPCを新規購入・自作する人</h3>
+        <ul>
+            <li><strong>最高性能を求める：</strong> Ryzen 7 9800X3D（予定）や Core Ultra 9 285K。</li>
+            <li><strong>標準的な構成：</strong> Core i5-14600K や Ryzen 5 7600X。多くのゲームで不満が出ない性能です。</li>
+            <li><strong>長く使いたい：</strong> AMDのAM5プラットフォーム（7000/9000系）を選ぶと、将来的にCPUだけを交換してアップグレードしやすくなります。</li>
+        </ul>
+
+        <h3>スペック不足でアップグレードを検討中の人</h3>
+        <ul>
+            <li><strong>Intel 第12世代以前を使っている：</strong> マザーボードごと交換して、第14世代かCore Ultra 200Sへの移行がおすすめ。</li>
+            <li><strong>Ryzen 1000〜3000系を使っている：</strong> マザーボードが対応していれば、Ryzen 5000シリーズ（特に5700Xや5800X3D）に載せ替えるだけで、劇的に快適になります。</li>
+            <li><strong>フレームレートを上げたい：</strong> CPUを「X3D」モデルに変えるだけで、平均fpsが数十上がることがあります（特にApexやタルコフなどの競技ゲー）。</li>
+        </ul>
+
+        <h3>予算を抑えたい人</h3>
+        <p>1世代、2世代前の「i5」や「Ryzen 5」を狙うのが賢い選択です。CPUを安く抑えて、その分をグラフィックボードの予算に回すことで、ゲーム全体のパフォーマンスは向上します。</p>
+    </section>
 </main>
 
 <footer>
-    <p>&copy; 2026 しょーでんゲーミング. All Rights Reserved.</p>
-    <p>ゲーミングPC選びで迷ったら、お気軽にコメントしてくださいね！</p>
+    <p>&copy; 2024 しょーでんゲーミング. 記事内容の無断転載を禁じます。</p>
 </footer>
 
 </body>
