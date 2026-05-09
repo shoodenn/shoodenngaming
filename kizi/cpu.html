@@ -49,8 +49,16 @@
             font-size: 20px;
             border-bottom: 1px solid #ddd;
             padding-bottom: 8px;
-            margin-top: 30px;
+            margin-top: 40px;
             color: #444;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+        h4 {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #0056b3;
         }
         p {
             margin-bottom: 20px;
@@ -76,21 +84,38 @@
             background-color: #f2f2f2;
             color: #333;
         }
-        .model-detail {
-            margin-bottom: 40px;
+        .model-list {
+            list-style-type: none;
+            padding: 0;
         }
-        .model-detail h4 {
+        .model-list li {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .model-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #d9534f;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #666;
+            background: #f4f4f4;
+            padding: 5px;
+            display: inline-block;
             margin-bottom: 10px;
-            color: #0056b3;
+            border-radius: 3px;
         }
         footer {
             text-align: center;
             padding: 40px;
             color: #888;
             font-size: 14px;
-        }
-        strong {
-            color: #d9534f;
         }
     </style>
 </head>
@@ -112,18 +137,19 @@
     </section>
 
     <section>
-        <h2>2. IntelとRyzen、モデルの種類</h2>
+        <h2>2. IntelとRyzenの違いと表記のルール</h2>
         <p>現在、主流のCPUはIntel（インテル）とAMD（エーエムディー）の2社が展開しています。</p>
         
-        <h3>Intel（インテル）</h3>
-        <p>「Core i」または最新の「Core Ultra」シリーズを展開。シングルスレッド性能（1つの処理能力）が高く、昔からゲームへの最適化が進んでいます。最近は「Pコア（性能重視）」と「Eコア（効率重視）」を分けるハイブリッド構造が特徴です。</p>
-
-        <h3>AMD Ryzen（ライゼン）</h3>
-        <p>「Ryzen 3/5/7/9」という分かりやすいグレード分けが特徴。特に<strong>「X3D」</strong>と付くモデルは、ゲーム専用の特大キャッシュメモリを搭載しており、ゲーミング性能でIntelを圧倒することもあります。</p>
+        <h3>基本の用語解説（型番の末尾）</h3>
+        <ul>
+            <li><strong>「K」や「X」：</strong> オーバークロック対応の高クロックモデル。性能が高い分、よく冷えるクーラーが必要です。</li>
+            <li><strong>「F」：</strong> 内蔵グラフィックスがないモデル。グラボを必ず挿すゲーミングPCでは、安く買える「F」を選ぶのが基本テクニックです。</li>
+            <li><strong>「X3D」：</strong> AMD特有のゲーム特化モデル。大容量キャッシュを搭載し、ゲームのフレームレートが劇的に伸びます。</li>
+        </ul>
     </section>
 
     <section>
-        <h2>3. 世代別モデル一覧（最新〜3世代前）</h2>
+        <h2>3. 世代別モデル一覧表</h2>
         <table>
             <thead>
                 <tr>
@@ -138,53 +164,176 @@
                 <tr>
                     <td><strong>Intel</strong></td>
                     <td>Core Ultra 200S</td>
-                    <td>第14世代 (14900K等)</td>
-                    <td>第13世代 (13900K等)</td>
-                    <td>第12世代 (12900K等)</td>
+                    <td>第14世代</td>
+                    <td>第13世代</td>
+                    <td>第12世代</td>
                 </tr>
                 <tr>
                     <td><strong>AMD</strong></td>
-                    <td>Ryzen 9000シリーズ</td>
-                    <td>Ryzen 8000シリーズ</td>
-                    <td>Ryzen 7000シリーズ</td>
-                    <td>Ryzen 5000シリーズ</td>
+                    <td>Ryzen 9000</td>
+                    <td>Ryzen 8000(APU)</td>
+                    <td>Ryzen 7000</td>
+                    <td>Ryzen 5000</td>
                 </tr>
             </tbody>
         </table>
     </section>
 
     <section>
-        <h2>4. 各モデルの詳細解説</h2>
-        
-        <div class="model-detail">
-            <h3>Intelモデル</h3>
-            <h4>Core Ultra 200Sシリーズ（最新）</h4>
-            <p>新しい「Core Ultra」ブランドに刷新。電力効率が劇的に改善し、低消費電力で高いパフォーマンスを出せます。最新規格のパーツで一からPCを組みたい人向けです。</p>
+        <h2>4. 各モデルの詳細解説（全モデル一覧）</h2>
+        <p>※主にゲーミングPCや自作PCで採用されるデスクトップ向け主要モデルを一つ一つ解説します。</p>
 
-            <h4>第14世代 (Raptor Lake Refresh)</h4>
-            <p>第13世代のブラッシュアップ版。Core i7-14700Kはコア数が増えており、実況や動画編集もこなすゲーマーに非常に人気があります。</p>
+        <h3>【Intel】Core Ultra 200Sシリーズ（最新）</h3>
+        <p>ブランド名が刷新された最新世代。ワットパフォーマンス（電力効率）が劇的に向上し、発熱が抑えられています。</p>
+        <ul class="model-list">
+            <li>
+                <span class="model-name">Core Ultra 9 285K</span>
+                最上位フラグシップ。従来のハイパースレッディングを廃止しつつも、圧倒的なマルチタスク性能を誇ります。4Kゲームとクリエイティブ作業を極めたい人向け。
+            </li>
+            <li>
+                <span class="model-name">Core Ultra 7 265K / 265KF</span>
+                ハイエンドモデル。ゲーミングにおいて上位の285Kに肉薄する性能を持ち、ハイエンド自作PCの主流となるモデルです。
+            </li>
+            <li>
+                <span class="model-name">Core Ultra 5 245K / 245KF</span>
+                ミドルクラスの定番。RTX 4070クラスのグラボと相性が良く、電力効率の良さから扱いやすいのが特徴です。
+            </li>
+        </ul>
 
-            <h4>第13世代 (Raptor Lake)</h4>
-            <p>第12世代から性能が大きく飛躍した世代。現在でも中古やセール品として非常にコスパが良く、アップグレード先としても優秀です。</p>
+        <h3>【Intel】第14世代（Raptor Lake Refresh）</h3>
+        <p>第13世代の成熟版。高クロックでゲーム性能が高く、現在でもBTOパソコンで最も採用されています。</p>
+        <ul class="model-list">
+            <li>
+                <span class="model-name">Core i9-14900K / 14900KF</span>
+                最大6GHzで駆動するモンスターCPU。冷却には強力な水冷クーラーが必須ですが、フレームレートを1fpsでも高くしたい競技ゲーマー向け。
+            </li>
+            <li>
+                <span class="model-name">Core i7-14700K / 14700KF</span>
+                前世代からEコアが増量され、実質i9クラスの性能を持つ大人気モデル。ゲーム配信や動画編集をガッツリこなすならこれ。
+            </li>
+            <li>
+                <span class="model-name">Core i5-14600K / 14600KF</span>
+                ミドルハイクラス。価格とゲーム性能のバランスが非常に良く、14世代で自作する際の最もスタンダードな選択肢です。
+            </li>
+            <li>
+                <span class="model-name">Core i5-14400 / 14400F</span>
+                発熱が控えめで、安価な空冷クーラーでも運用できるコスパモデル。フルHDゲーミングなら十分すぎる性能を持ちます。
+            </li>
+            <li>
+                <span class="model-name">Core i3-14100 / 14100F</span>
+                エントリーモデル。4コアですが1コアの性能が高いため、軽いゲームやブラウザゲームメインなら活躍します。
+            </li>
+        </ul>
 
-            <h4>第12世代 (Alder Lake)</h4>
-            <p>初めてハイブリッド構造を採用した世代。ここからDDR5メモリに対応し始めました。予算を抑えて現役級のPCを自作する際の選択肢になります。</p>
-        </div>
+        <h3>【Intel】第13世代（Raptor Lake）</h3>
+        <p>第12世代から一気に性能が跳ね上がった名作世代。型落ちとなった今、セール品などで非常に狙い目です。</p>
+        <ul class="model-list">
+            <li>
+                <span class="model-name">Core i9-13900K / 13900KF</span>
+                元フラグシップ。14900Kと性能差はわずかなので、安く買えるならこちらを選ぶ自作erも多いです。
+            </li>
+            <li>
+                <span class="model-name">Core i7-13700K / 13700KF</span>
+                8つのPコアと8つのEコアを持つ優秀なCPU。重いゲームでも全くボトルネックになりません。
+            </li>
+            <li>
+                <span class="model-name">Core i5-13600K / 13600KF</span>
+                「13世代の最高傑作」と評されたモデル。上位モデルを食うほどのゲーム性能を持ち、コスパ最強と謳われました。
+            </li>
+            <li>
+                <span class="model-name">Core i5-13400 / 13400F</span>
+                BTOパソコンで爆発的に売れたミドルモデル。初めてのゲーミングPCに最適な性能です。
+            </li>
+        </ul>
 
-        <div class="model-detail">
-            <h3>Ryzenモデル</h3>
-            <h4>Ryzen 9000シリーズ（最新）</h4>
-            <p>Zen 5アーキテクチャを採用。1コアあたりの性能が向上しており、クリエイティブな作業とゲームの両立に隙がありません。</p>
+        <h3>【Intel】第12世代（Alder Lake）</h3>
+        <p>Pコア・Eコアのハイブリッド構造を初めて導入した革新的な世代。現在は格安で自作PCを組みたい人向けです。</p>
+        <ul class="model-list">
+            <li>
+                <span class="model-name">Core i9-12900K / i7-12700K</span>
+                発売当時は最強クラスでしたが、現在は第13/14世代のi5にゲーム性能で並ばれつつあります。中古で安ければアリ。
+            </li>
+            <li>
+                <span class="model-name">Core i5-12400 / 12400F</span>
+                Eコアを持たずPコア6つのみというシンプルな構造ですが、それが逆にゲームの安定性を生み、超ロングセラーとなっている名機です。
+            </li>
+        </ul>
 
-            <h4>Ryzen 8000シリーズ</h4>
-            <p>主に強力な内蔵グラフィックスを持つ「APU」が中心の世代。グラフィックボードなしでPCを組む場合や、小型PCを作りたい場合に選ばれます。</p>
+        <h3>【AMD】Ryzen 9000シリーズ（最新）</h3>
+        <p>「Zen 5」アーキテクチャを採用した最新世代。1コアあたりの処理能力が高く、発熱もマイルドになりました。</p>
+        <ul class="model-list">
+            <li>
+                <span class="model-name">Ryzen 9 9950X</span>
+                16コア32スレッドのクリエイター＆ゲーマー向け最強CPU。エンコードや3Dレンダリングなど、重い作業をしながらのゲームも余裕です。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 9 9900X</span>
+                12コアモデル。9950Xより価格を抑えつつ、マルチタスク性能を確保したいハイエンド志向のユーザー向け。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 7 9700X</span>
+                8コアモデル。ゲームにおいては上位のRyzen 9と同等のフレームレートを叩き出し、TDP65Wという低発熱で扱いやすさが抜群です。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 5 9600X</span>
+                6コアのミドルレンジ。RTX 4060 Tiなどと組み合わせて、フルHD～WQHD環境のPCを組むのに最適です。
+            </li>
+        </ul>
 
-            <h4>Ryzen 7000シリーズ</h4>
-            <p>ソケットが「AM5」へと変更された世代。Ryzen 7 7800X3Dは「世界最高のゲーミングCPU」の一つとして、今なお多くのゲーマーに愛用されています。</p>
+        <h3>【AMD】Ryzen 8000シリーズ（APU）</h3>
+        <p>強力なグラフィック機能（Radeonグラフィックス）をCPU内に持っている特殊な世代です。</p>
+        <ul class="model-list">
+            <li>
+                <span class="model-name">Ryzen 7 8700G / Ryzen 5 8600G</span>
+                「グラボを買わずにゲームがしたい」という人向けの救世主。これ単体でValorantや原神などの軽〜中量級ゲームが遊べます。
+            </li>
+        </ul>
 
-            <h4>Ryzen 5000シリーズ</h4>
-            <p>旧世代（AM4ソケット）の完成形。すでに古いRyzenマシンを持っている人が、マザーボードを変えずに最後のアップグレードとして「5700X3D」などに載せ替えるケースが多いです。</p>
-        </div>
+        <h3>【AMD】Ryzen 7000シリーズ</h3>
+        <p>プラットフォームが「AM5」になり、DDR5メモリに完全対応した世代。現在でも主力のラインナップです。</p>
+        <ul class="model-list">
+            <li>
+                <span class="model-name">Ryzen 9 7950X3D / 7900X3D</span>
+                3D V-Cacheを搭載した最強クラスのCPU。マルチコア性能と異次元のゲーム性能を両立したロマンあふれるモデルです。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 7 7800X3D</span>
+                <strong>「世界最高のゲーミングCPU」</strong>と名高い大傑作。ゲームのフレームレートを伸ばすことにおいて、全CPUの中でトップクラスの性能を誇り、プロゲーマーの使用率も極めて高いです。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 9 7950X / Ryzen 9 7900X</span>
+                X3Dではない通常モデル。クリエイティブな作業割合が多い人向けです。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 7 7700X / 7700</span>
+                8コアのスタンダードモデル。X3Dモデルにはゲーム性能で劣りますが、バランスの取れた優等生です。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 5 7600X / 7600</span>
+                6コアモデル。BTOパソコンのエントリー〜ミドルクラスで広く採用されており、コスパに優れます。
+            </li>
+        </ul>
+
+        <h3>【AMD】Ryzen 5000シリーズ</h3>
+        <p>旧規格（AM4）の完成形。すでにマザーボードを持っている人の「最後のアップグレード先」として現在も爆売れしています。</p>
+        <ul class="model-list">
+            <li>
+                <span class="model-name">Ryzen 7 5800X3D</span>
+                AM4環境におけるゲーミング最強CPU。古いRyzenからこれに載せ替えるだけで、最新PCに匹敵するゲーム性能に化けます。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 7 5700X3D</span>
+                5800X3Dの廉価版。少しクロックが下がっただけで価格が大幅に安いため、現在AM4のアップグレード先として一番人気です。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 9 5950X / 5900X</span>
+                AM4環境で動画編集などのマルチタスク性能を限界まで引き上げたい人向け。
+            </li>
+            <li>
+                <span class="model-name">Ryzen 7 5700X / Ryzen 5 5600X</span>
+                自作PC市場でかつて覇権を握った名機。現在でもフルHDゲーミングなら余裕でこなせます。
+            </li>
+        </ul>
     </section>
 
     <section>
@@ -192,25 +341,24 @@
         
         <h3>これからPCを新規購入・自作する人</h3>
         <ul>
-            <li><strong>最高性能を求める：</strong> Ryzen 7 9800X3D（予定）や Core Ultra 9 285K。</li>
-            <li><strong>標準的な構成：</strong> Core i5-14600K や Ryzen 5 7600X。多くのゲームで不満が出ない性能です。</li>
-            <li><strong>長く使いたい：</strong> AMDのAM5プラットフォーム（7000/9000系）を選ぶと、将来的にCPUだけを交換してアップグレードしやすくなります。</li>
+            <li><strong>最高性能を求める：</strong> Ryzen 7 7800X3D や Core Ultra 9 285K。4Kゲーミングや高リフレッシュレート環境に必須です。</li>
+            <li><strong>標準的な構成：</strong> Core i5-14600K や Ryzen 5 9600X。ほとんどのゲームが快適に動く黄金比です。</li>
+            <li><strong>長く使いたい：</strong> AMDのAM5プラットフォーム（7000/9000系）を選ぶと、将来的にマザーボードを変えずにCPUだけ交換できる可能性が高くおすすめです。</li>
         </ul>
 
         <h3>スペック不足でアップグレードを検討中の人</h3>
         <ul>
-            <li><strong>Intel 第12世代以前を使っている：</strong> マザーボードごと交換して、第14世代かCore Ultra 200Sへの移行がおすすめ。</li>
-            <li><strong>Ryzen 1000〜3000系を使っている：</strong> マザーボードが対応していれば、Ryzen 5000シリーズ（特に5700Xや5800X3D）に載せ替えるだけで、劇的に快適になります。</li>
-            <li><strong>フレームレートを上げたい：</strong> CPUを「X3D」モデルに変えるだけで、平均fpsが数十上がることがあります（特にApexやタルコフなどの競技ゲー）。</li>
+            <li><strong>Intel 第12世代以前を使っている：</strong> マザーボードごと交換して、第14世代かCore Ultraへの移行がおすすめ。</li>
+            <li><strong>Ryzen 1000〜3000系を使っている：</strong> マザーボードのBIOSをアップデートして「Ryzen 7 5700X3D」に載せ替えるのが、一番安上がりで劇的に性能が上がる最強の裏技です。</li>
         </ul>
 
-        <h3>予算を抑えたい人</h3>
-        <p>1世代、2世代前の「i5」や「Ryzen 5」を狙うのが賢い選択です。CPUを安く抑えて、その分をグラフィックボードの予算に回すことで、ゲーム全体のパフォーマンスは向上します。</p>
+        <h3>予算をとにかく抑えたい人</h3>
+        <p>Core i5-12400F や Ryzen 5 7600 などを狙うのが賢い選択です。CPU本体の価格を安く抑えて、浮いたお金をワンランク上のグラフィックボード（GPU）に回した方が、ゲーム全体の快適さは向上します。</p>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2024 しょーでんゲーミング. 記事内容の無断転載を禁じます。</p>
+    <p>&copy; 2026 しょーでんゲーミング. 記事内容の無断転載を禁じます。</p>
 </footer>
 
 </body>
