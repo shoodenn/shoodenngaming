@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ゲーミングPC用CPU徹底解説ガイド | しょーでんゲーミング</title>
+    <title>ゲーミングPC用CPU徹底解説ガイド | しょーでん自作PCブログ</title>
     <style>
+        :root {
+            --intel-blue: #0071c5;
+            --amd-red: #ed1c24;
+            --border-color: #ddd;
+        }
+
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             line-height: 1.8;
@@ -110,12 +116,14 @@
         .comparison-table-wrapper {
             overflow-x: auto;
             margin: 25px 0;
+            -webkit-overflow-scrolling: touch;
         }
 
         table.comparison-table {
             width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
+            min-width: 700px; /* スマホで表が潰れないための設定 */
         }
 
         table.comparison-table th, table.comparison-table td {
@@ -161,23 +169,18 @@
         .detailed-item-wrapper {
             margin-top: 25px;
         }
+        
         .detailed-item {
             padding: 20px;
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            margin-bottom: 20px;
-        }
-        .model-name {
-            font-weight: bold;
-            font-size: 1.15em;
-            color: #d9534f;
-            display: block;
-            margin-bottom: 8px;
+            margin-bottom: 40px;
         }
 
         .detailed-choosing {
             margin-top: 25px;
         }
+
         .detailed-choosing h4 { margin-top: 0; }
         .detailed-choosing p:last-child { margin-bottom: 0; }
         ul.point-list { margin-bottom: 20px; }
@@ -194,72 +197,199 @@
         }
 
         /* 目次のスタイル */
-.toc {
-    background-color: #f0f4f8; /* 情報ボックスと同じ統一感のある色 */
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 20px;
-    margin-bottom: 40px;
-}
+        .toc {
+            background-color: #f0f4f8; 
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
 
-.toc-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
-    color: #333;
-}
+        .toc-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #333;
+        }
 
-.toc ul {
-    list-style-type: none;
-    padding-left: 10px;
-    margin: 0;
-}
+        .toc ul {
+            list-style-type: none;
+            padding-left: 10px;
+            margin: 0;
+        }
 
-.toc li {
-    margin-bottom: 12px;
-}
+        .toc li {
+            margin-bottom: 12px;
+        }
 
-.toc li:last-child {
-    margin-bottom: 0;
-}
+        .toc li:last-child {
+            margin-bottom: 0;
+        }
 
-.toc a {
-    color: #0056b3; /* リンク色 */
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.2s;
-}
+        .toc a {
+            color: #0056b3;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
 
-.toc a:hover {
-    color: #003d82;
-    text-decoration: underline;
-}
+        .toc a:hover {
+            color: #003d82;
+            text-decoration: underline;
+        }
 
-section {
-    scroll-margin-top: 20px; 
-}
+        section {
+            scroll-margin-top: 20px; 
+        }
+
+        .comparison-table a {
+            color: #0056b3;
+            text-decoration: none;
+        }
         
+        .comparison-table a:hover {
+            text-decoration: underline;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            scroll-margin-top: 20px; 
+        }
+
+        .model-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .product-content {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            padding: 5px;
+            background-color: #fff;
+            flex-shrink: 0;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info p {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .btn-rakuten {
+            display: inline-block;
+            background-color: #bf0000;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        .btn-rakuten:hover {
+            background-color: #990000;
+            color: #fff;
+        }
+
+        /* --- スマホ対応 (レスポンシブデザイン) --- */
+        @media (max-width: 768px) {
+            main {
+                margin: 15px;
+                padding: 20px;
+            }
+
+            h1.page-title {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 22px;
+                margin-top: 35px;
+            }
+
+            /* 画像とテキストのコンテナを縦並びに */
+            .intro-container, .choosing-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            /* row-reverseを解除 */
+            .choosing-container {
+                flex-direction: column;
+            }
+
+            .character-image {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            /* 製品カードを縦並びに */
+            .product-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .product-info p {
+                text-align: left;
+            }
+
+            .product-image {
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+            }
+
+            /* スマホでボタンを押しやすく */
+            .btn-rakuten {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="site-title">しょーでんゲーミング</div>
+        <div class="site-title">しょーでん自作PCブログ</div>
     </header>
 
     <main>
         <h1 class="page-title">ゲーミングPC用CPU徹底解説ガイド</h1>
 
         <div class="toc">
-    <div class="toc-title">目次</div>
-    <ul>
-        <li><a href="#what_is_cpu">1. CPUとは？ (PCの『脳』の役割)</a></li>
-        <li><a href="#brands">2. IntelとRyzenの違いと表記のルール</a></li>
-        <li><a href="#model_matrix">3. 世代別・ブランド別主要モデル一覧表</a></li>
-        <li><a href="#detailed_overview">4. 各世代・全モデル詳細解説</a></li>
-        <li><a href="#choosing">5. 結論：用途・予算別おすすめCPUの選び方</a></li>
-    </ul>
-</div>
+            <div class="toc-title">目次</div>
+            <ul>
+                <li><a href="#what_is_cpu">1. CPUとは？ (PCの『脳』の役割)</a></li>
+                <li><a href="#brands">2. IntelとRyzenの違いと表記のルール</a></li>
+                <li><a href="#model_matrix">3. 世代別・ブランド別主要モデル一覧表</a></li>
+                <li><a href="#detailed_overview">4. 各世代・全モデル詳細解説</a></li>
+                <li><a href="#choosing">5. 結論：用途・予算別おすすめCPUの選び方</a></li>
+            </ul>
+        </div>
 
         <section id="what_is_cpu">
             <h2>1. CPUとは？ (PCの『脳』の役割)</h2>
@@ -268,7 +398,7 @@ section {
                 <div class="intro-text">
                     <p>CPU（Central Processing Unit）は、PCにおける<strong>「脳」</strong>に例えられる最も重要なパーツです。ゲームにおいては、マウスやキーボードの入力処理、キャラクターのAI、物理演算、そしてグラフィックボードへの描画指示を担っています。</p>
                     <div class="info-box">
-                        <strong>ゲーマーがCPUにこだわるべき理由：</strong>
+                        <strong>ゲーマーがCPUにこだわるべき理由：</strong><br>
                         高性能なグラフィックボード（GPU）を持っていても、CPUが弱いと「GPUへの指示出し」が追いつかず、ゲームがカクついたり、フレームレートが上がらなくなったりします。これを「CPUボトルネック」と呼びます。快適なプレイにはバランスが不可欠です.
                     </div>
                 </div>
@@ -294,745 +424,668 @@ section {
             <h2>3. 世代別・ブランド別主要モデル一覧表</h2>
             <p>最新の世代から3世代前までの、ゲーミング用途で主流となる主要モデルを整理しました.</p>
             <div class="comparison-table-wrapper">
-    <table class="comparison-table">
-        <thead>
-            <tr>
-                <th class="brand-column-header">カテゴリー</th>
-                <th>最新</th>
-                <th>1世代前</th>
-                <th>2世代前</th>
-                <th>3世代前</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="brand-header-row"><th colspan="5">Intel</th></tr>
-            <tr>
-                <th>最上位フラグシップ</th>
-                <td>Core Ultra 200S<br><a href="#ultra9-285k">Ultra 9 285K</a></td>
-                <td>第14世代<br><a href="#i9-14900k">i9-14900K</a> / <a href="#i9-14900kf">KF</a><br><a href="#i9-14900">i9-14900</a></td>
-                <td>第13世代<br><a href="#i9-13900k">i9-13900K</a> / <a href="#i9-13900kf">KF</a></td>
-                <td>第12世代<br><a href="#i9-12900k">i9-12900K</a> / <a href="#i9-12900kf">KF</a></td>
-            </tr>
-            <tr>
-                <th>ハイエンド</th>
-                <td><a href="#ultra7-265k">Ultra 7 265K</a> / <a href="#ultra7-265kf">KF</a></td>
-                <td><a href="#i7-14700k">i7-14700K</a> / <a href="#i7-14700kf">KF</a><br><a href="#i7-14700">i7-14700</a> / <a href="#i7-14700f">F</a></td>
-                <td><a href="#i7-13700k">i7-13700K</a> / <a href="#i7-13700kf">KF</a></td>
-                <td><a href="#i7-12700k">i7-12700K</a> / <a href="#i7-12700kf">KF</a></td>
-            </tr>
-            <tr>
-                <th>ミドルレンジ</th>
-                <td><a href="#ultra5-245k">Ultra 5 245K</a> / <a href="#ultra5-245kf">KF</a></td>
-                <td><a href="#i5-14400">i5-14400</a> / <a href="#i5-14400f">F</a></td>
-                <td><a href="#i5-13600k">i5-13600K</a> / <a href="#i5-13600kf">KF</a><br><a href="#i5-13400">i5-13400</a> / <a href="#i5-13400f">F</a></td>
-                <td><a href="#i5-12600k">i5-12600K</a> / <a href="#i5-12600kf">KF</a><br><a href="#i5-12400">i5-12400</a> / <a href="#i5-12400f">F</a></td>
-            </tr>
-            <tr class="brand-header-row"><th colspan="5">AMD</th></tr>
-            <tr>
-                <th>最上位フラグシップ</th>
-                <td>Ryzen 9000<br><a href="#ryzen9-9950x">Ryzen 9 9950X</a></td>
-                <td>Ryzen 8000G / 7000<br><a href="#ryzen9-7950x">Ryzen 9 7950X</a> / <a href="#ryzen9-7950x3d">7950X3D</a></td>
-                <td>Ryzen 5000<br><a href="#ryzen9-5950x">Ryzen 9 5950X</a> / <a href="#ryzen9-5900x">5900X</a></td>
-                <td>Ryzen 3000<br><a href="#ryzen9-3950x">Ryzen 9 3950X</a> / <a href="#ryzen9-3900x">3900X</a></td>
-            </tr>
-            <tr>
-                <th>ハイエンド</th>
-                <td><a href="#ryzen7-9700x">Ryzen 7 9700X</a></td>
-                <td><a href="#ryzen7-7800x3d">Ryzen 7 7800X3D</a> / <a href="#ryzen7-7700x">7700X</a></td>
-                <td><a href="#ryzen7-5800x">Ryzen 7 5800X</a><br><a href="#ryzen7-5700x">Ryzen 7 5700X</a></td>
-                <td><a href="#ryzen7-3800x">Ryzen 7 3800X</a> / <a href="#ryzen7-3700x">3700X</a></td>
-            </tr>
-            <tr>
-                <th>ミドルレンジ</th>
-                <td><a href="#ryzen5-9600x">Ryzen 5 9600X</a></td>
-                <td><a href="#ryzen5-8600g">Ryzen 5 8600G</a> / <a href="#ryzen5-7600x">7600X</a></td>
-                <td><a href="#ryzen5-5600">Ryzen 5 5600</a><br><a href="#ryzen5-5500">Ryzen 5 5500</a></td>
-                <td><a href="#ryzen5-3600x">Ryzen 5 3600X</a> / <a href="#ryzen5-3600">3600</a></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="brand-column-header">カテゴリー</th>
+                            <th>最新</th>
+                            <th>1世代前</th>
+                            <th>2世代前</th>
+                            <th>3世代前</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="brand-header-row"><th colspan="5">Intel</th></tr>
+                        <tr>
+                            <th>最上位フラグシップ</th>
+                            <td>Core Ultra 200S<br><a href="#ultra9-285k">Ultra 9 285K</a></td>
+                            <td>第14世代<br><a href="#i9-14900k">i9-14900K</a> / <a href="#i9-14900kf">KF</a><br><a href="#i9-14900">i9-14900</a></td>
+                            <td>第13世代<br><a href="#i9-13900k">i9-13900K</a> / <a href="#i9-13900kf">KF</a></td>
+                            <td>第12世代<br><a href="#i9-12900k">i9-12900K</a> / <a href="#i9-12900kf">KF</a></td>
+                        </tr>
+                        <tr>
+                            <th>ハイエンド</th>
+                            <td><a href="#ultra7-265k">Ultra 7 265K</a> / <a href="#ultra7-265kf">KF</a></td>
+                            <td><a href="#i7-14700k">i7-14700K</a> / <a href="#i7-14700kf">KF</a><br><a href="#i7-14700">i7-14700</a> / <a href="#i7-14700f">F</a></td>
+                            <td><a href="#i7-13700k">i7-13700K</a> / <a href="#i7-13700kf">KF</a></td>
+                            <td><a href="#i7-12700k">i7-12700K</a> / <a href="#i7-12700kf">KF</a></td>
+                        </tr>
+                        <tr>
+                            <th>ミドルレンジ</th>
+                            <td><a href="#ultra5-245k">Ultra 5 245K</a> / <a href="#ultra5-245kf">KF</a></td>
+                            <td><a href="#i5-14400">i5-14400</a> / <a href="#i5-14400f">F</a></td>
+                            <td><a href="#i5-13600k">i5-13600K</a> / <a href="#i5-13600kf">KF</a><br><a href="#i5-13400">i5-13400</a> / <a href="#i5-13400f">F</a></td>
+                            <td><a href="#i5-12600k">i5-12600K</a> / <a href="#i5-12600kf">KF</a><br><a href="#i5-12400">i5-12400</a> / <a href="#i5-12400f">F</a></td>
+                        </tr>
+                        <tr class="brand-header-row"><th colspan="5">AMD</th></tr>
+                        <tr>
+                            <th>最上位フラグシップ</th>
+                            <td>Ryzen 9000<br><a href="#ryzen9-9950x">Ryzen 9 9950X</a></td>
+                            <td>Ryzen 8000G / 7000<br><a href="#ryzen9-7950x">Ryzen 9 7950X</a> / <a href="#ryzen9-7950x3d">7950X3D</a></td>
+                            <td>Ryzen 5000<br><a href="#ryzen9-5950x">Ryzen 9 5950X</a> / <a href="#ryzen9-5900x">5900X</a></td>
+                            <td>Ryzen 3000<br><a href="#ryzen9-3950x">Ryzen 9 3950X</a> / <a href="#ryzen9-3900x">3900X</a></td>
+                        </tr>
+                        <tr>
+                            <th>ハイエンド</th>
+                            <td><a href="#ryzen7-9700x">Ryzen 7 9700X</a></td>
+                            <td><a href="#ryzen7-7800x3d">Ryzen 7 7800X3D</a> / <a href="#ryzen7-7700x">7700X</a></td>
+                            <td><a href="#ryzen7-5800x">Ryzen 7 5800X</a><br><a href="#ryzen7-5700x">Ryzen 7 5700X</a></td>
+                            <td><a href="#ryzen7-3800x">Ryzen 7 3800X</a> / <a href="#ryzen7-3700x">3700X</a></td>
+                        </tr>
+                        <tr>
+                            <th>ミドルレンジ</th>
+                            <td><a href="#ryzen5-9600x">Ryzen 5 9600X</a></td>
+                            <td><a href="#ryzen5-8600g">Ryzen 5 8600G</a> / <a href="#ryzen5-7600x">7600X</a></td>
+                            <td><a href="#ryzen5-5600">Ryzen 5 5600</a><br><a href="#ryzen5-5500">Ryzen 5 5500</a></td>
+                            <td><a href="#ryzen5-3600x">Ryzen 5 3600X</a> / <a href="#ryzen5-3600">3600</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-<style>
-    .comparison-table a {
-        color: #0056b3;
-        text-decoration: none;
-    }
-    .comparison-table a:hover {
-        text-decoration: underline;
-    }
-    .detailed-item {
-        margin-bottom: 40px;
-    }
-    .product-card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 20px;
-        background-color: #fff;
-        /* スムーズスクロールのための調整 */
-        scroll-margin-top: 20px; 
-    }
-    .model-name {
-        font-size: 1.2em;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 15px;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 5px;
-    }
-    .product-content {
-        display: flex;
-        gap: 25px;
-        align-items: center;
-    }
-    .product-image {
-        width: 150px;
-        height: 150px;
-        object-fit: contain;
-        border: 1px solid #eee;
-        border-radius: 4px;
-        padding: 5px;
-        background-color: #fff;
-    }
-    .product-info {
-        flex: 1;
-    }
-    .product-info p {
-        margin-top: 0;
-        margin-bottom: 15px;
-    }
-    .btn-rakuten {
-        display: inline-block;
-        background-color: #bf0000;
-        color: #fff;
-        padding: 12px 24px;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 4px;
-        text-align: center;
-        transition: background-color 0.2s;
-    }
-    .btn-rakuten:hover {
-        background-color: #990000;
-        color: #fff;
-    }
-    @media (max-width: 600px) {
-        .product-content {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .product-image {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-        }
-    }
-</style>
+        <section id="detailed_overview">
+            <h2>4. 各世代・全モデル詳細解説</h2>
+            <p>表に記載した全モデルの特徴を解説します。</p>
 
-<section id="detailed_overview">
-    <h2>4. 各世代・全モデル詳細解説</h2>
-    <p>表に記載した全モデルの特徴を解説します。</p>
+            <div class="detailed-item detailed-intel">
+                <h3>Core Ultra 200Sシリーズ ( Arrow Lake )</h3>
+                
+                <div class="product-card" id="ultra9-285k">
+                    <div class="model-name">Ultra 9 285K</div>
+                    <div class="product-content">
+                        <img src="Ultra 9 285K.jpg" alt="Ultra 9 285K" class="product-image">
+                        <div class="product-info">
+                            <p>最上位フラグシップ。圧倒的なマルチタスク処理能力を持ちながら、電力効率が大幅に向上し発熱が抑えられています。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="detailed-item detailed-intel">
-        <h3>Core Ultra 200Sシリーズ ( Arrow Lake )</h3>
-        
-        <div class="product-card" id="ultra9-285k">
-            <div class="model-name">Ultra 9 285K</div>
-            <div class="product-content">
-                <img src="Ultra 9 285K.jpg" alt="Ultra 9 285K" class="product-image">
-                <div class="product-info">
-                    <p>最上位フラグシップ。圧倒的なマルチタスク処理能力を持ちながら、電力効率が大幅に向上し発熱が抑えられています。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/5399c6df.535f6fd2.5399c6e0.437c6a83/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ficockaden%2F735858550383%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                <div class="product-card" id="ultra7-265k">
+                    <div class="model-name">Ultra 7 265K</div>
+                    <div class="product-content">
+                        <img src="Ultra 7 265K.jpg" alt="Ultra 7 265K" class="product-image">
+                        <div class="product-info">
+                            <p>ハイエンドモデル。重いゲームのプレイと高画質配信を同時に余裕でこなすパワーがあります。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ultra7-265kf">
+                    <div class="model-name">Ultra 7 265KF</div>
+                    <div class="product-content">
+                        <img src="Ultra 7 265KF.jpg" alt="Ultra 7 265KF" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックを省いたハイエンドモデル。グラフィックボードを搭載する前提の方におすすめです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ultra5-245k">
+                    <div class="model-name">Ultra 5 245K</div>
+                    <div class="product-content">
+                        <img src="Ultra 5 245K.jpg" alt="Ultra 5 245K" class="product-image">
+                        <div class="product-info">
+                            <p>ミドルレンジ。価格と性能のバランスに優れ、最新のプラットフォームで一からPCを組む際のベースとして最適です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ultra5-245kf">
+                    <div class="model-name">Ultra 5 245KF</div>
+                    <div class="product-content">
+                        <img src="Ultra 5 245KF.jpg" alt="Ultra 5 245KF" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィック非搭載のミドルレンジ。ゲーム用途でコストパフォーマンスを追求する方に適しています。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="product-card" id="ultra7-265k">
-            <div class="model-name">Ultra 7 265K</div>
-            <div class="product-content">
-                <img src="Ultra 7 265K.jpg" alt="Ultra 7 265K" class="product-image">
-                <div class="product-info">
-                    <p>ハイエンドモデル。重いゲームのプレイと高画質配信を同時に余裕でこなすパワーがあります。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/3c4e03db.45057b00.3c4e03dc.17e94fcf/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18036442%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            <div class="detailed-item detailed-intel">
+                <h3>第14世代 ( Raptor Lake Refresh )</h3>
+
+                <div class="product-card" id="i9-14900k">
+                    <div class="model-name">i9-14900K</div>
+                    <div class="product-content">
+                        <img src="i9-14900K.jpg" alt="i9-14900K" class="product-image">
+                        <div class="product-info">
+                            <p>最大6GHz駆動のモンスター。強力な水冷クーラーが必要ですが、一切の妥協を許さない競技ゲーマー向けです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i9-14900kf">
+                    <div class="model-name">i9-14900KF</div>
+                    <div class="product-content">
+                        <img src="i9-14900KF.jpg" alt="i9-14900KF" class="product-image">
+                        <div class="product-info">
+                            <p>i9-14900Kの内蔵グラフィック非搭載モデル。グラボ必須の環境で最高性能を求める方に。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i9-14900">
+                    <div class="model-name">i9-14900</div>
+                    <div class="product-content">
+                        <img src="i9-14900.jpg" alt="i9-14900" class="product-image">
+                        <div class="product-info">
+                            <p>Kモデルより消費電力を抑えた最上位クラス。扱いやすさとハイパワーを両立しています。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i7-14700k">
+                    <div class="model-name">i7-14700K</div>
+                    <div class="product-content">
+                        <img src="i7-14700K.jpg" alt="i7-14700K" class="product-image">
+                        <div class="product-info">
+                            <p>Eコアが増量され、実質前世代のi9クラスの性能。ゲームだけでなく動画編集などのクリエイティブ用途でも大人気です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i7-14700kf">
+                    <div class="model-name">i7-14700KF</div>
+                    <div class="product-content">
+                        <img src="i7-14700KF.jpg" alt="i7-14700KF" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックなしのi7-14700K。グラフィックボードを組み合わせるゲーマーに最適です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i7-14700">
+                    <div class="model-name">i7-14700</div>
+                    <div class="product-content">
+                        <img src="i7-14700.jpg" alt="i7-14700" class="product-image">
+                        <div class="product-info">
+                            <p>無印モデル。Kモデルほどの極端な冷却環境を必要とせず、高いマルチタスク性能を発揮します。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i7-14700f">
+                    <div class="model-name">i7-14700F</div>
+                    <div class="product-content">
+                        <img src="i7-14700F.jpg" alt="i7-14700F" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックなしの無印i7。コストを抑えつつハイエンドゲーミング環境を組みたい方に。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-14400">
+                    <div class="model-name">i5-14400</div>
+                    <div class="product-content">
+                        <img src="i5-14400.jpg" alt="i5-14400" class="product-image">
+                        <div class="product-info">
+                            <p>発熱が控えめで安価な空冷クーラーで運用可能。フルHDゲーミングに十分な性能を持つ定番モデルです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-14400f">
+                    <div class="model-name">i5-14400F</div>
+                    <div class="product-content">
+                        <img src="i5-14400F.jpg" alt="i5-14400F" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックを省いたミドルクラスのド定番。ゲーミングPCの入門として最も選ばれやすいモデルの一つです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="product-card" id="ultra7-265kf">
-            <div class="model-name">Ultra 7 265KF</div>
-            <div class="product-content">
-                <img src="Ultra 7 265KF.jpg" alt="Ultra 7 265KF" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックを省いたハイエンドモデル。グラフィックボードを搭載する前提の方におすすめです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/3c4e03db.45057b00.3c4e03dc.17e94fcf/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbook%2F18036443%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            <div class="detailed-item detailed-intel">
+                <h3>第13世代 ( Raptor Lake )</h3>
+
+                <div class="product-card" id="i9-13900k">
+                    <div class="model-name">i9-13900K</div>
+                    <div class="product-content">
+                        <img src="i9-13900K.jpg" alt="i9-13900K" class="product-image">
+                        <div class="product-info">
+                            <p>前世代のフラグシップ。現在でもトップクラスの性能を維持しており、重い作業も難なくこなします。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i9-13900kf">
+                    <div class="model-name">i9-13900KF</div>
+                    <div class="product-content">
+                        <img src="i9-13900KF.jpg" alt="i9-13900KF" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックなしの前世代フラグシップ。ハイエンドグラボとの組み合わせに。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i7-13700k">
+                    <div class="model-name">i7-13700K</div>
+                    <div class="product-content">
+                        <img src="i7-13700K.jpg" alt="i7-13700K" class="product-image">
+                        <div class="product-info">
+                            <p>ハイエンドの定番として活躍したモデル。高いシングルスレッド性能でゲーム適性が高いです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i7-13700kf">
+                    <div class="model-name">i7-13700KF</div>
+                    <div class="product-content">
+                        <img src="i7-13700KF.jpg" alt="i7-13700KF" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックなしのi7。高性能を維持しつつコストを少し抑えられます。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-13600k">
+                    <div class="model-name">i5-13600K</div>
+                    <div class="product-content">
+                        <img src="i5-13600K.jpg" alt="i5-13600K" class="product-image">
+                        <div class="product-info">
+                            <p>発売当時、圧倒的なコストパフォーマンスで自作PC市場を席巻した名機です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-13600kf">
+                    <div class="model-name">i5-13600KF</div>
+                    <div class="product-content">
+                        <img src="i5-13600KF.jpg" alt="i5-13600KF" class="product-image">
+                        <div class="product-info">
+                            <p>i5-13600Kの内蔵グラフィック非搭載モデル。ゲーム専用機としてのコスパは抜群です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-13400">
+                    <div class="model-name">i5-13400</div>
+                    <div class="product-content">
+                        <img src="i5-13400.jpg" alt="i5-13400" class="product-image">
+                        <div class="product-info">
+                            <p>爆発的に売れたミドルクラス。初めてのゲーミングPCに選ばれることが多く、現在でも十分現役です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-13400f">
+                    <div class="model-name">i5-13400F</div>
+                    <div class="product-content">
+                        <img src="i5-13400F.jpg" alt="i5-13400F" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックなしの13世代ミドルクラス。安価に安定した環境を構築できます。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="product-card" id="ultra5-245k">
-            <div class="model-name">Ultra 5 245K</div>
-            <div class="product-content">
-                <img src="Ultra 5 245K.jpg" alt="Ultra 5 245K" class="product-image">
-                <div class="product-info">
-                    <p>ミドルレンジ。価格と性能のバランスに優れ、最新のプラットフォームで一からPCを組む際のベースとして最適です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4374fac5.caf52694.4374fac6.6da26bd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcellar%2F1000029776%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            <div class="detailed-item detailed-intel">
+                <h3>第12世代 ( Alder Lake )</h3>
+
+                <div class="product-card" id="i9-12900k">
+                    <div class="model-name">i9-12900K</div>
+                    <div class="product-content">
+                        <img src="i9-12900K.jpg" alt="i9-12900K" class="product-image">
+                        <div class="product-info">
+                            <p>PコアとEコアのハイブリッド構造を初めて採用した記念碑的フラグシップモデル。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i9-12900kf">
+                    <div class="model-name">i9-12900KF</div>
+                    <div class="product-content">
+                        <img src="i9-12900KF.jpg" alt="i9-12900KF" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックを省いた第12世代の最高峰モデルです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i7-12700k">
+                    <div class="model-name">i7-12700K</div>
+                    <div class="product-content">
+                        <img src="i7-12700K.jpg" alt="i7-12700K" class="product-image">
+                        <div class="product-info">
+                            <p>安定した性能を持ち、中古市場などでもコストを抑えつつ高い性能を求める層に需要があります。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i7-12700kf">
+                    <div class="model-name">i7-12700KF</div>
+                    <div class="product-content">
+                        <img src="i7-12700KF.jpg" alt="i7-12700KF" class="product-image">
+                        <div class="product-info">
+                            <p>i7-12700Kから内蔵グラフィックを省き、よりグラフィックボードとの併用に特化しています。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-12600k">
+                    <div class="model-name">i5-12600K</div>
+                    <div class="product-content">
+                        <img src="i5-12600K.jpg" alt="i5-12600K" class="product-image">
+                        <div class="product-info">
+                            <p>i5シリーズで初めてEコアを搭載し、マルチタスク性能が飛躍的に向上したモデルです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-12600kf">
+                    <div class="model-name">i5-12600KF</div>
+                    <div class="product-content">
+                        <img src="i5-12600KF.jpg" alt="i5-12600KF" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィックなしの12世代ハイミドル。現在でも十分に戦える性能を持っています。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-12400">
+                    <div class="model-name">i5-12400</div>
+                    <div class="product-content">
+                        <img src="i5-12400.jpg" alt="i5-12400" class="product-image">
+                        <div class="product-info">
+                            <p>内蔵グラフィック搭載で扱いやすい12世代の定番。サブPCや事務用にも人気です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="i5-12400f">
+                    <div class="model-name">i5-12400F</div>
+                    <div class="product-content">
+                        <img src="i5-12400F.jpg" alt="i5-12400F" class="product-image">
+                        <div class="product-info">
+                            <p>型落ちセールや中古で絶大な人気。予算を極限まで抑えたゲーミングPCを組む際のド定番です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="product-card" id="ultra5-245kf">
-            <div class="model-name">Ultra 5 245KF</div>
-            <div class="product-content">
-                <img src="Ultra 5 245KF.jpg" alt="Ultra 5 245KF" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィック非搭載のミドルレンジ。ゲーム用途でコストパフォーマンスを追求する方に適しています。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/43956911.6cd5b5f6.43956912.78fe9f9f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshoptsukumo%2F1549917019%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            <div class="detailed-item detailed-amd">
+                <h3>Ryzen 9000シリーズ ( Zen 5 )</h3>
+
+                <div class="product-card" id="ryzen9-9950x">
+                    <div class="model-name">Ryzen 9 9950X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 9 9950X.jpg" alt="Ryzen 9 9950X" class="product-image">
+                        <div class="product-info">
+                            <p>最上位モデル。16コア32スレッドの圧倒的なパワーで、クリエイティブ作業に一切の隙がありません。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen7-9700x">
+                    <div class="model-name">Ryzen 7 9700X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 7 9700X.jpg" alt="Ryzen 7 9700X" class="product-image">
+                        <div class="product-info">
+                            <p>電力効率が非常に高く、少ない発熱で前世代の最上位に迫る性能を発揮する扱いやすいハイエンドです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen5-9600x">
+                    <div class="model-name">Ryzen 5 9600X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 5 9600X.jpg" alt="Ryzen 5 9600X" class="product-image">
+                        <div class="product-info">
+                            <p>ミドルレンジながら1コアあたりの性能が極めて高く、最新ゲームを快適に動かすベースとして優秀です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="detailed-item detailed-intel">
-        <h3>第14世代 ( Raptor Lake Refresh )</h3>
+            <div class="detailed-item detailed-amd">
+                <h3>Ryzen 8000G / 7000シリーズ ( Zen 4 )</h3>
 
-        <div class="product-card" id="i9-14900k">
-            <div class="model-name">i9-14900K</div>
-            <div class="product-content">
-                <img src="i9-14900K.jpg" alt="i9-14900K" class="product-image">
-                <div class="product-info">
-                    <p>最大6GHz駆動のモンスター。強力な水冷クーラーが必要ですが、一切の妥協を許さない競技ゲーマー向けです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/5399d969.037bdfc6.5399d96a.4f75c59a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fr-style-ra%2F20240606200553_67%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                <div class="product-card" id="ryzen9-7950x">
+                    <div class="model-name">Ryzen 9 7950X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 9 7950X.jpg" alt="Ryzen 9 7950X" class="product-image">
+                        <div class="product-info">
+                            <p>クリエイター向け最高峰。多コアの強みを活かした並列処理に長けています。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen9-7950x3d">
+                    <div class="model-name">Ryzen 9 7950X3D</div>
+                    <div class="product-content">
+                        <img src="Ryzen 9 7950X3D.jpg" alt="Ryzen 9 7950X3D" class="product-image">
+                        <div class="product-info">
+                            <p>超大容量キャッシュによりゲーム性能を極限まで高めつつ、クリエイティブ作業もこなす無敵のモデルです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen7-7800x3d">
+                    <div class="model-name">Ryzen 7 7800X3D</div>
+                    <div class="product-content">
+                        <img src="Ryzen 7 7800X3D.jpg" alt="Ryzen 7 7800X3D" class="product-image">
+                        <div class="product-info">
+                            <p>「世界最高のゲーミングCPU」。FPSやMMOで劇的なフレームレートを叩き出し、プロゲーマーの使用率も極めて高い大傑作です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen7-7700x">
+                    <div class="model-name">Ryzen 7 7700X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 7 7700X.jpg" alt="Ryzen 7 7700X" class="product-image">
+                        <div class="product-info">
+                            <p>バランスの取れたハイエンドモデル。ゲームから作業まで幅広くこなします。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen5-8600g">
+                    <div class="model-name">Ryzen 5 8600G</div>
+                    <div class="product-content">
+                        <img src="Ryzen 5 8600G.jpg" alt="Ryzen 5 8600G" class="product-image">
+                        <div class="product-info">
+                            <p>強力な内蔵グラフィックを搭載。グラボなしでも軽〜中量級ゲームが遊べる特殊な立ち位置のCPUです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen5-7600x">
+                    <div class="model-name">Ryzen 5 7600X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 5 7600X.jpg" alt="Ryzen 5 7600X" class="product-image">
+                        <div class="product-info">
+                            <p>AM5プラットフォームの入門に最適なミドルレンジモデルです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="product-card" id="i9-14900kf">
-            <div class="model-name">i9-14900KF</div>
-            <div class="product-content">
-                <img src="i9-14900KF.jpg" alt="i9-14900KF" class="product-image">
-                <div class="product-info">
-                    <p>i9-14900Kの内蔵グラフィック非搭載モデル。グラボ必須の環境で最高性能を求める方に。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4319d23e.80c5cb02.4319d23f.832ccbfe/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbestdo-rk-shop%2F0735858546980%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            <div class="detailed-item detailed-amd">
+                <h3>Ryzen 5000シリーズ ( Zen 3 )</h3>
+
+                <div class="product-card" id="ryzen9-5950x">
+                    <div class="model-name">Ryzen 9 5950X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 9 5950X.jpg" alt="Ryzen 9 5950X" class="product-image">
+                        <div class="product-info">
+                            <p>AM4世代の最高峰。多コアを活かした動画エンコードや3Dレンダリングで活躍します。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen9-5900x">
+                    <div class="model-name">Ryzen 9 5900X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 9 5900X.jpg" alt="Ryzen 9 5900X" class="product-image">
+                        <div class="product-info">
+                            <p>クリエイター用途で非常に人気が高かったモデル。現在でもマルチ性能は健在です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen7-5800x">
+                    <div class="model-name">Ryzen 7 5800X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 7 5800X.jpg" alt="Ryzen 7 5800X" class="product-image">
+                        <div class="product-info">
+                            <p>発熱と性能のバランスが良いハイエンドモデルとして評価された1台です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen7-5700x">
+                    <div class="model-name">Ryzen 7 5700X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 7 5700X.jpg" alt="Ryzen 7 5700X" class="product-image">
+                        <div class="product-info">
+                            <p>特に扱いやすさとコスパの高さでロングセラーとなりました。AM4環境のアップグレードに。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen5-5600">
+                    <div class="model-name">Ryzen 5 5600</div>
+                    <div class="product-content">
+                        <img src="Ryzen 5 5600.jpg" alt="Ryzen 5 5600" class="product-image">
+                        <div class="product-info">
+                            <p>超低予算でゲーミングPCを組む際の強い味方。フルHD環境であれば現在でも十分に戦えます。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen5-5500">
+                    <div class="model-name">Ryzen 5 5500</div>
+                    <div class="product-content">
+                        <img src="Ryzen 5 5500.jpg" alt="Ryzen 5 5500" class="product-image">
+                        <div class="product-info">
+                            <p>限界までコストを削る際の選択肢。軽いゲームを中心にプレイする方におすすめです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="product-card" id="i9-14900">
-            <div class="model-name">i9-14900</div>
-            <div class="product-content">
-                <img src="i9-14900.jpg" alt="i9-14900" class="product-image">
-                <div class="product-info">
-                    <p>Kモデルより消費電力を抑えた最上位クラス。扱いやすさとハイパワーを両立しています。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/5399e54b.9a097b83.5399e54c.a802b4a7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecjoy%2F20543352%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            <div class="detailed-item detailed-amd">
+                <h3>Ryzen 3000シリーズ ( Zen 2 )</h3>
+
+                <div class="product-card" id="ryzen9-3950x">
+                    <div class="model-name">Ryzen 9 3950X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 9 3950X.jpg" alt="Ryzen 9 3950X" class="product-image">
+                        <div class="product-info">
+                            <p>かつてのメインストリーム最高峰。現在では主に中古市場で、安価に多コア環境を構築したい人に選ばれます。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen9-3900x">
+                    <div class="model-name">Ryzen 9 3900X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 9 3900X.jpg" alt="Ryzen 9 3900X" class="product-image">
+                        <div class="product-info">
+                            <p>多コア化の波を作った名機。当時のクリエイターPCによく採用されていました。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen7-3800x">
+                    <div class="model-name">Ryzen 7 3800X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 7 3800X.jpg" alt="Ryzen 7 3800X" class="product-image">
+                        <div class="product-info">
+                            <p>発売当時大ヒットしたモデル。最新の重量級ゲームでは少し力不足になりつつあるため、そろそろ買い替えの時期です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen7-3700x">
+                    <div class="model-name">Ryzen 7 3700X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 7 3700X.jpg" alt="Ryzen 7 3700X" class="product-image">
+                        <div class="product-info">
+                            <p>優れた消費電力とパフォーマンスで一世を風靡したハイエンドモデルです。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen5-3600x">
+                    <div class="model-name">Ryzen 5 3600X</div>
+                    <div class="product-content">
+                        <img src="Ryzen 5 3600X.jpg" alt="Ryzen 5 3600X" class="product-image">
+                        <div class="product-info">
+                            <p>かつてのド定番ミドルクラス。VALORANTなどの軽いゲームであれば現在でも稼働可能です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" id="ryzen5-3600">
+                    <div class="model-name">Ryzen 5 3600</div>
+                    <div class="product-content">
+                        <img src="Ryzen 5 3600.jpg" alt="Ryzen 5 3600" class="product-image">
+                        <div class="product-info">
+                            <p>コストパフォーマンスの高さで多くのユーザーに選ばれたミドルクラスの傑作です。</p>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/..." class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="product-card" id="i7-14700k">
-            <div class="model-name">i7-14700K</div>
-            <div class="product-content">
-                <img src="i7-14700K.jpg" alt="i7-14700K" class="product-image">
-                <div class="product-info">
-                    <p>Eコアが増量され、実質前世代のi9クラスの性能。ゲームだけでなく動画編集などのクリエイティブ用途でも大人気です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2Fic494973%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i7-14700kf">
-            <div class="model-name">i7-14700KF</div>
-            <div class="product-content">
-                <img src="i7-14700KF.jpg" alt="i7-14700KF" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックなしのi7-14700K。グラフィックボードを組み合わせるゲーマーに最適です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4fc6e.7693c242.4cd4fc6f.968eb72e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F0735858546942%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i7-14700">
-            <div class="model-name">i7-14700</div>
-            <div class="product-content">
-                <img src="i7-14700.jpg" alt="i7-14700" class="product-image">
-                <div class="product-info">
-                    <p>無印モデル。Kモデルほどの極端な冷却環境を必要とせず、高いマルチタスク性能を発揮します。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fayq1m2rkjz%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i7-14700f">
-            <div class="model-name">i7-14700F</div>
-            <div class="product-content">
-                <img src="i7-14700F.jpg" alt="i7-14700F" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックなしの無印i7。コストを抑えつつハイエンドゲーミング環境を組みたい方に。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2Fic497965%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-14400">
-            <div class="model-name">i5-14400</div>
-            <div class="product-content">
-                <img src="i5-14400.jpg" alt="i5-14400" class="product-image">
-                <div class="product-info">
-                    <p>発熱が控えめで安価な空冷クーラーで運用可能。フルHDゲーミングに十分な性能を持つ定番モデルです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2Fic497967%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-14400f">
-            <div class="model-name">i5-14400F</div>
-            <div class="product-content">
-                <img src="i5-14400F.jpg" alt="i5-14400F" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックを省いたミドルクラスのド定番。ゲーミングPCの入門として最も選ばれやすいモデルの一つです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2Fic497968%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="detailed-item detailed-intel">
-        <h3>第13世代 ( Raptor Lake )</h3>
-
-        <div class="product-card" id="i9-13900k">
-            <div class="model-name">i9-13900K</div>
-            <div class="product-content">
-                <img src="i9-13900K.jpg" alt="i9-13900K" class="product-image">
-                <div class="product-info">
-                    <p>前世代のフラグシップ。現在でもトップクラスの性能を維持しており、重い作業も難なくこなします。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4395614f.01b27b09.43956150.da91d118/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoah-shopping%2F0735858526616%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i9-13900kf">
-            <div class="model-name">i9-13900KF</div>
-            <div class="product-content">
-                <img src="i9-13900KF.jpg" alt="i9-13900KF" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックなしの前世代フラグシップ。ハイエンドグラボとの組み合わせに。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4395614f.01b27b09.43956150.da91d118/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoah-shopping%2F0735858526593%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i7-13700k">
-            <div class="model-name">i7-13700K</div>
-            <div class="product-content">
-                <img src="i7-13700K.jpg" alt="i7-13700K" class="product-image">
-                <div class="product-info">
-                    <p>ハイエンドの定番として活躍したモデル。高いシングルスレッド性能でゲーム適性が高いです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a0e52.372f96a0.539a0e53.9c5b02cb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fscarlet2021%2Fb0bcf57fl5%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i7-13700kf">
-            <div class="model-name">i7-13700KF</div>
-            <div class="product-content">
-                <img src="i7-13700KF.jpg" alt="i7-13700KF" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックなしのi7。高性能を維持しつつコストを少し抑えられます。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4395614f.01b27b09.43956150.da91d118/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoah-shopping%2F0735858526685%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-13600k">
-            <div class="model-name">i5-13600K</div>
-            <div class="product-content">
-                <img src="i5-13600K.jpg" alt="i5-13600K" class="product-image">
-                <div class="product-info">
-                    <p>発売当時、圧倒的なコストパフォーマンスで自作PC市場を席巻した名機です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a1223.de398b54.539a1224.73e19278/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhappylifestyleshop%2F1130-065887%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-13600kf">
-            <div class="model-name">i5-13600KF</div>
-            <div class="product-content">
-                <img src="i5-13600KF.jpg" alt="i5-13600KF" class="product-image">
-                <div class="product-info">
-                    <p>i5-13600Kの内蔵グラフィック非搭載モデル。ゲーム専用機としてのコスパは抜群です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a14c2.3060324b.539a14c3.14339651/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsokutei%2F735858526739%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-13400">
-            <div class="model-name">i5-13400</div>
-            <div class="product-content">
-                <img src="i5-13400.jpg" alt="i5-13400" class="product-image">
-                <div class="product-info">
-                    <p>爆発的に売れたミドルクラス。初めてのゲーミングPCに選ばれることが多く、現在でも十分現役です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a1669.af92c1cf.539a166a.7ad98f32/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famericagoodvibes%2Fayn6r2rkjx%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-13400f">
-            <div class="model-name">i5-13400F</div>
-            <div class="product-content">
-                <img src="i5-13400F.jpg" alt="i5-13400F" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックなしの13世代ミドルクラス。安価に安定した環境を構築できます。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2025-04-01-941%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="detailed-item detailed-intel">
-        <h3>第12世代 ( Alder Lake )</h3>
-
-        <div class="product-card" id="i9-12900k">
-            <div class="model-name">i9-12900K</div>
-            <div class="product-content">
-                <img src="i9-12900K.jpg" alt="i9-12900K" class="product-image">
-                <div class="product-info">
-                    <p>PコアとEコアのハイブリッド構造を初めて採用した記念碑的フラグシップモデル。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fayzpfmrk5c%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i9-12900kf">
-            <div class="model-name">i9-12900KF</div>
-            <div class="product-content">
-                <img src="i9-12900KF.jpg" alt="i9-12900KF" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックを省いた第12世代の最高峰モデルです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Faygyblrkrn%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i7-12700k">
-            <div class="model-name">i7-12700K</div>
-            <div class="product-content">
-                <img src="i7-12700K.jpg" alt="i7-12700K" class="product-image">
-                <div class="product-info">
-                    <p>安定した性能を持ち、中古市場などでもコストを抑えつつ高い性能を求める層に需要があります。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd5c02c.16ec7554.4cd5c02d.8e512e31/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakiba-u-shop%2F2133070185891%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i7-12700kf">
-            <div class="model-name">i7-12700KF</div>
-            <div class="product-content">
-                <img src="i7-12700KF.jpg" alt="i7-12700KF" class="product-image">
-                <div class="product-info">
-                    <p>i7-12700Kから内蔵グラフィックを省き、よりグラフィックボードとの併用に特化しています。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4319d23e.80c5cb02.4319d23f.832ccbfe/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbestdo-rk-shop%2F0735858498982%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-12600k">
-            <div class="model-name">i5-12600K</div>
-            <div class="product-content">
-                <img src="i5-12600K.jpg" alt="i5-12600K" class="product-image">
-                <div class="product-info">
-                    <p>i5シリーズで初めてEコアを搭載し、マルチタスク性能が飛躍的に向上したモデルです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fayfx2trkd7%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-12600kf">
-            <div class="model-name">i5-12600KF</div>
-            <div class="product-content">
-                <img src="i5-12600KF.jpg" alt="i5-12600KF" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィックなしの12世代ハイミドル。現在でも十分に戦える性能を持っています。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a1669.af92c1cf.539a166a.7ad98f32/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famericagoodvibes%2Faygy6hrkk5%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-12400">
-            <div class="model-name">i5-12400</div>
-            <div class="product-content">
-                <img src="i5-12400.jpg" alt="i5-12400" class="product-image">
-                <div class="product-info">
-                    <p>内蔵グラフィック搭載で扱いやすい12世代の定番。サブPCや事務用にも人気です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2Fic477502%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="i5-12400f">
-            <div class="model-name">i5-12400F</div>
-            <div class="product-content">
-                <img src="i5-12400F.jpg" alt="i5-12400F" class="product-image">
-                <div class="product-info">
-                    <p>型落ちセールや中古で絶大な人気。予算を極限まで抑えたゲーミングPCを組む際のド定番です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a2230.b38b6136.539a2231.6f0fe296/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftrenditemshop%2Fb09shm1z6g%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="detailed-item detailed-amd">
-        <h3>Ryzen 9000シリーズ ( Zen 5 )</h3>
-
-        <div class="product-card" id="ryzen9-9950x">
-            <div class="model-name">Ryzen 9 9950X</div>
-            <div class="product-content">
-                <img src="Ryzen 9 9950X.jpg" alt="Ryzen 9 9950X" class="product-image">
-                <div class="product-info">
-                    <p>最上位モデル。16コア32スレッドの圧倒的なパワーで、クリエイティブ作業に一切の隙がありません。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F0730143315272-44-22814-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen7-9700x">
-            <div class="model-name">Ryzen 7 9700X</div>
-            <div class="product-content">
-                <img src="Ryzen 7 9700X.jpg" alt="Ryzen 7 9700X" class="product-image">
-                <div class="product-info">
-                    <p>電力効率が非常に高く、少ない発熱で前世代の最上位に迫る性能を発揮する扱いやすいハイエンドです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F0730143315593-44-22814-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen5-9600x">
-            <div class="model-name">Ryzen 5 9600X</div>
-            <div class="product-content">
-                <img src="Ryzen 5 9600X.jpg" alt="Ryzen 5 9600X" class="product-image">
-                <div class="product-info">
-                    <p>ミドルレンジながら1コアあたりの性能が極めて高く、最新ゲームを快適に動かすベースとして優秀です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4395614f.01b27b09.43956150.da91d118/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnoah-shopping%2F0730143315609%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="detailed-item detailed-amd">
-        <h3>Ryzen 8000G / 7000シリーズ ( Zen 4 )</h3>
-
-        <div class="product-card" id="ryzen9-7950x">
-            <div class="model-name">Ryzen 9 7950X</div>
-            <div class="product-content">
-                <img src="Ryzen 9 7950X.jpg" alt="Ryzen 9 7950X" class="product-image">
-                <div class="product-info">
-                    <p>クリエイター向け最高峰。多コアの強みを活かした並列処理に長けています。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4e922.c6019376.4cd4e923.faf9da93/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpsidekick%2F0730143314534%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen9-7950x3d">
-            <div class="model-name">Ryzen 9 7950X3D</div>
-            <div class="product-content">
-                <img src="Ryzen 9 7950X3D.jpg" alt="Ryzen 9 7950X3D" class="product-image">
-                <div class="product-info">
-                    <p>超大容量キャッシュによりゲーム性能を極限まで高めつつ、クリエイティブ作業もこなす無敵のモデルです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Faytrnsrk9m%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen7-7800x3d">
-            <div class="model-name">Ryzen 7 7800X3D</div>
-            <div class="product-content">
-                <img src="Ryzen 7 7800X3D.jpg" alt="Ryzen 7 7800X3D" class="product-image">
-                <div class="product-info">
-                    <p>「世界最高のゲーミングCPU」。FPSやMMOで劇的なフレームレートを叩き出し、プロゲーマーの使用率も極めて高い大傑作です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F0730143314930-44-22814-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen7-7700x">
-            <div class="model-name">Ryzen 7 7700X</div>
-            <div class="product-content">
-                <img src="Ryzen 7 7700X.jpg" alt="Ryzen 7 7700X" class="product-image">
-                <div class="product-info">
-                    <p>バランスの取れたハイエンドモデル。ゲームから作業まで幅広くこなします。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4fc6e.7693c242.4cd4fc6f.968eb72e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fksdenki%2F0730143314428%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen5-8600g">
-            <div class="model-name">Ryzen 5 8600G</div>
-            <div class="product-content">
-                <img src="Ryzen 5 8600G.jpg" alt="Ryzen 5 8600G" class="product-image">
-                <div class="product-info">
-                    <p>強力な内蔵グラフィックを搭載。グラボなしでも軽〜中量級ゲームが遊べる特殊な立ち位置のCPUです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/43956911.6cd5b5f6.43956912.78fe9f9f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshoptsukumo%2F9173179018%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen5-7600x">
-            <div class="model-name">Ryzen 5 7600X</div>
-            <div class="product-content">
-                <img src="Ryzen 5 7600X.jpg" alt="Ryzen 5 7600X" class="product-image">
-                <div class="product-info">
-                    <p>AM5プラットフォームの入門に最適なミドルレンジモデルです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4374fac5.caf52694.4374fac6.6da26bd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcellar%2F1050020445%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="detailed-item detailed-amd">
-        <h3>Ryzen 5000シリーズ ( Zen 3 )</h3>
-
-        <div class="product-card" id="ryzen9-5950x">
-            <div class="model-name">Ryzen 9 5950X</div>
-            <div class="product-content">
-                <img src="Ryzen 9 5950X.jpg" alt="Ryzen 9 5950X" class="product-image">
-                <div class="product-info">
-                    <p>AM4世代の最高峰。多コアを活かした動画エンコードや3Dレンダリングで活躍します。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/432429bf.549c8cd8.432429c0.0207c368/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fb-surprise2%2F0730143312745%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen9-5900x">
-            <div class="model-name">Ryzen 9 5900X</div>
-            <div class="product-content">
-                <img src="Ryzen 9 5900X.jpg" alt="Ryzen 9 5900X" class="product-image">
-                <div class="product-info">
-                    <p>クリエイター用途で非常に人気が高かったモデル。現在でもマルチ性能は健在です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/432c232b.433b0b61.432c232c.90b4bd9a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhome-carpentry%2F1050020679%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen7-5800x">
-            <div class="model-name">Ryzen 7 5800X</div>
-            <div class="product-content">
-                <img src="Ryzen 7 5800X.jpg" alt="Ryzen 7 5800X" class="product-image">
-                <div class="product-info">
-                    <p>発熱と性能のバランスが良いハイエンドモデルとして評価された1台です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a42ba.27f97bbd.539a42bc.009614ab/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsugartime%2Fpccm-7%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen7-5700x">
-            <div class="model-name">Ryzen 7 5700X</div>
-            <div class="product-content">
-                <img src="Ryzen 7 5700X.jpg" alt="Ryzen 7 5700X" class="product-image">
-                <div class="product-info">
-                    <p>特に扱いやすさとコスパの高さでロングセラーとなりました。AM4環境のアップグレードに。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a40c9.cdeb7ca9.539a40ca.4b49833b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fajimura4861%2Fb0bxt2715g%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen5-5600">
-            <div class="model-name">Ryzen 5 5600</div>
-            <div class="product-content">
-                <img src="Ryzen 5 5600.jpg" alt="Ryzen 5 5600" class="product-image">
-                <div class="product-info">
-                    <p>超低予算でゲーミングPCを組む際の強い味方。フルHD環境であれば現在でも十分に戦えます。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4e922.c6019376.4cd4e923.faf9da93/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpsidekick%2F0730143314190%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen5-5500">
-            <div class="model-name">Ryzen 5 5500</div>
-            <div class="product-content">
-                <img src="Ryzen 5 5500.jpg" alt="Ryzen 5 5500" class="product-image">
-                <div class="product-info">
-                    <p>限界までコストを削る際の選択肢。軽いゲームを中心にプレイする方におすすめです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F0730143314121-44-22814-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="detailed-item detailed-amd">
-        <h3>Ryzen 3000シリーズ ( Zen 2 )</h3>
-
-        <div class="product-card" id="ryzen9-3950x">
-            <div class="model-name">Ryzen 9 3950X</div>
-            <div class="product-content">
-                <img src="Ryzen 9 3950X.jpg" alt="Ryzen 9 3950X" class="product-image">
-                <div class="product-info">
-                    <p>かつてのメインストリーム最高峰。現在では主に中古市場で、安価に多コア環境を構築したい人に選ばれます。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2024-11-13-106%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen9-3900x">
-            <div class="model-name">Ryzen 9 3900X</div>
-            <div class="product-content">
-                <img src="Ryzen 9 3900X.jpg" alt="Ryzen 9 3900X" class="product-image">
-                <div class="product-info">
-                    <p>多コア化の波を作った名機。当時のクリエイターPCによく採用されていました。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2024-11-13-92%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen7-3800x">
-            <div class="model-name">Ryzen 7 3800X</div>
-            <div class="product-content">
-                <img src="Ryzen 7 3800X.jpg" alt="Ryzen 7 3800X" class="product-image">
-                <div class="product-info">
-                    <p>発売当時大ヒットしたモデル。最新の重量級ゲームでは少し力不足になりつつあるため、そろそろ買い替えの時期です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2024-11-13-123%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen7-3700x">
-            <div class="model-name">Ryzen 7 3700X</div>
-            <div class="product-content">
-                <img src="Ryzen 7 3700X.jpg" alt="Ryzen 7 3700X" class="product-image">
-                <div class="product-info">
-                    <p>優れた消費電力とパフォーマンスで一世を風靡したハイエンドモデルです。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd5c02c.16ec7554.4cd5c02d.8e512e31/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakiba-u-shop%2F2133073903638%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen5-3600x">
-            <div class="model-name">Ryzen 5 3600X</div>
-            <div class="product-content">
-                <img src="Ryzen 5 3600X.jpg" alt="Ryzen 5 3600X" class="product-image">
-                <div class="product-info">
-                    <p>かつてのド定番ミドルクラス。VALORANTなどの軽いゲームであれば現在でも稼働可能です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/3c47c8af.4735518d.3c47c8b0.5aa13e32/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fomatsuri-life2%2Fb07sqbfn2d%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card" id="ryzen5-3600">
-            <div class="model-name">Ryzen 5 3600</div>
-            <div class="product-content">
-                <img src="Ryzen 5 3600.jpg" alt="Ryzen 5 3600" class="product-image">
-                <div class="product-info">
-                    <p>コストパフォーマンスの高さで多くのユーザーに選ばれたミドルクラスの傑作です。</p>
-                    <a href="https://hb.afl.rakuten.co.jp/ichiba/432c232b.433b0b61.432c232c.90b4bd9a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhome-carpentry%2F1050015132%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
         <section id="choosing">
             <h2>5. 結論：用途・予算別おすすめCPUの選び方</h2>
             <div class="choosing-container">
                 <div class="choosing-text">
-                    
-                    
                     <h3>これからPCを新規購入・自作する人</h3>
                     <ul>
                         <li><strong>最高性能を求める：</strong> Ryzen 7 7800X3D や Core Ultra 9 285K。4Kゲーミングや高リフレッシュレート環境に必須です.</li>
@@ -1055,7 +1108,7 @@ section {
     </main>
 
     <footer>
-        <p>&copy; 2026 しょーでんゲーミング. 記事内容の無断転載を禁じます.</p>
+        <p>&copy; 2026 しょーでん自作PCブログ. 記事内容の無断転載を禁じます.</p>
     </footer>
 </body>
 </html>
