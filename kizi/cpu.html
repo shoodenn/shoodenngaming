@@ -1,459 +1,388 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ゲーミングPC用CPU徹底解説ガイド | しょーでんゲーミング</title>
-    <style>
-        /* =========================================
-           デザインシステム
-          ========================================= */
-        :root {
-            --bg-color: #0c0e12;
-            --content-bg: #161a22;
-            --text-color: #e0e6ed;
-            --sub-text-color: #a0acba;
-            --intel-blue: #0071c5;
-            --amd-red: #da291c;
-            --border-color: #2a3140;
-            --font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲーミングPC用CPU彻底解説ガイド | しょーでんゲーミング</title>
+    <style>
+        /* =========================================
+           シンプルで清潔感のあるデザイン
+           ========================================= */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f8f9fa; /* 薄いグレーの背景 */
+            margin: 0;
+            padding: 0;
+        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* ヘッダー */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+        }
 
-        body {
-            font-family: var(--font-family);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-            font-size: 16px;
-        }
+        .site-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #111;
+        }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s;
-        }
+        /* メインコンテンツ */
+        main {
+            max-width: 960px; /* 見やすさのためにコンテンツ幅を制限 */
+            margin: 30px auto;
+            background: #fff;
+            padding: 40px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
 
-        h1, h2, h3, h4 {
-            color: #fff;
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-        }
+        h1.page-title {
+            font-size: 32px;
+            text-align: center;
+            border-bottom: 3px solid var(--intel-blue); /* Intel/Ryzen徹底比較と色を合わせる（プロンプト3の色） */
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            color: #111;
+        }
 
-        p {
-            margin-bottom: 1.5em;
-            color: var(--sub-text-color);
-        }
+        h2 {
+            font-size: 26px;
+            border-left: 6px solid #333;
+            padding-left: 15px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            color: #111;
+        }
 
-        strong {
-            color: #fff;
-        }
+        h3 {
+            font-size: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 35px;
+            color: #444;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
 
-        /* =========================================
-           レイアウト
-          ========================================= */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: var(--content-bg);
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
+        h4 {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
 
-        /* =========================================
-           コンポーネント
-          ========================================= */
+        p {
+            margin-bottom: 20px;
+        }
 
-        /* ヘッダー */
-        header {
-            text-align: center;
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 40px;
-        }
+        /* 画像配置用フレックス */
+        .intro-container, .choosing-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-        .site-logo {
-            font-size: 32px;
-            font-weight: bold;
-            color: #fff;
-        }
+        .choosing-container {
+            flex-direction: row-reverse; /* 選び方セクションはテキストを右に */
+        }
 
-        /* 見出し */
-        .container h1.page-title {
-            font-size: 36px;
-            text-align: center;
-            border-bottom: 3px solid var(--intel-blue);
-            padding-bottom: 15px;
-        }
+        .intro-text, .choosing-text {
+            flex: 1;
+        }
 
-        h2.section-title {
-            font-size: 28px;
-            border-left: 6px solid var(--border-color);
-            padding-left: 15px;
-            background-color: rgba(255, 255, 255, 0.03);
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+        /* 画像のでかすぎを防ぐ適切な大きさ */
+        .character-image {
+            width: 250px; /* 適切な幅 */
+            height: auto;
+            border-radius: 8px; /* 少し角丸 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 軽い影 */
+            flex-shrink: 0; /* 画像が潰れるのを防ぐ */
+        }
 
-        h3.generation-title {
-            font-size: 22px;
-            background: #2a3140;
-            padding: 10px 15px;
-            border-radius: 4px;
-        }
+        .info-box {
+            background-color: #f0f4f8;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #0056b3;
+        }
 
-        h4.model-item-title {
-            font-size: 19px;
-            color: var(--sub-text-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-        }
+        /* 崩れていた表を修正 */
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+        }
 
-        /* 強調テキスト */
-        .info-box {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 6px;
-            margin: 20px 0;
-            position: relative;
-        }
+        table.comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* 列幅を固定 */
+        }
 
-        .info-box strong {
-            display: block;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
+        table.comparison-table th, table.comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 15px;
+        }
 
-        /* 表 */
-        .comparison-table-wrapper {
-            overflow-x: auto;
-            margin: 25px 0;
-        }
+        table.comparison-table th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+        }
 
-        table.comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-        }
+        table.comparison-table th.brand-column-header {
+            width: 15%; /* カテゴリー列を少し広く */
+        }
 
-        table.comparison-table th, table.comparison-table td {
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            text-align: left;
-            vertical-align: top;
-        }
+        table.comparison-table th:not(.brand-column-header), table.comparison-table td:not(:first-child) {
+            width: 21.25%; /* 各世代列を均等に */
+        }
 
-        table.comparison-table th {
-            background-color: #20242e;
-            color: #fff;
-            font-weight: bold;
-        }
+        table.comparison-table td {
+            color: #555;
+        }
 
-        table.comparison-table td {
-            color: var(--sub-text-color);
-        }
+        /* スクリーンショットに似た、整頓されたIntel/AMDヘッダー行 */
+        table.comparison-table .brand-header-row th {
+            background-color: #222;
+            color: #fff;
+            text-align: left;
+            font-weight: bold;
+        }
 
-        table.comparison-table tr:nth-child(even) td {
-            background-color: rgba(255, 255, 255, 0.02);
-            color: var(--sub-text-color);
-        }
+        /* ゼブラ・ストライプ */
+        table.comparison-table tr:nth-child(even):not(.brand-header-row) td {
+            background-color: #fdfdfd;
+        }
 
-        .brand-intel { color: var(--intel-blue); font-weight: bold; }
-        .brand-amd { color: var(--amd-red); font-weight: bold; }
+        table.comparison-table span.brand-intel { color: var(--intel-blue); font-weight: bold; }
+        table.comparison-table span.brand-amd { color: var(--amd-red); font-weight: bold; }
 
-        /* 全モデル詳細解説 */
-        .detailed-item-wrapper {
-            margin-top: 25px;
-        }
-        .detailed-item {
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            margin-bottom: 20px;
-        }
-        .detailed-item h4 { margin-top: 0; }
-        .detailed-item p:last-child { margin-bottom: 0; }
+        /* 詳細解説セクション */
+        .detailed-item-wrapper {
+            margin-top: 25px;
+        }
+        .detailed-item {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .model-name {
+            font-weight: bold;
+            font-size: 1.15em;
+            color: #d9534f;
+            display: block;
+            margin-bottom: 8px;
+        }
 
-        /* リスト */
-        ul.point-list {
-            list-style-type: none;
-            padding-left: 20px;
-            margin-bottom: 1.5em;
-        }
+        /* 選び方セクション */
+        .detailed-choosing {
+            margin-top: 25px;
+        }
+        .detailed-choosing h4 { margin-top: 0; }
+        .detailed-choosing p:last-child { margin-bottom: 0; }
+        ul.point-list { margin-bottom: 20px; }
+        ul.point-list li { margin-bottom: 8px; }
 
-        ul.point-list li {
-            position: relative;
-            color: var(--sub-text-color);
-            padding-bottom: 5px;
-        }
-
-        ul.point-list li::before {
-            content: ">>";
-            position: absolute;
-            left: -20px;
-            color: var(--sub-text-color);
-        }
-
-        /* フッター */
-        footer {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            margin-top: 40px;
-            color: var(--sub-text-color);
-            font-size: 14px;
-        }
-
-        /* 選び方セクション */
-        .choosing-item {
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .choosing-item h3 { margin-bottom: 10px; }
-        .choosing-item p { margin-bottom: 10px; }
-
-    </style>
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            background-color: #fff;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="site-logo">しょーでんゲーミング</div>
-        </header>
+    <header>
+        <div class="site-title">しょーでんゲーミング</div>
+    </header>
 
-        <main>
-            <h1 class="page-title">ゲーミングPC用CPU徹底解説ガイド | Intel・Ryzen徹底比較</h1>
+    <main>
+        <h1 class="page-title">ゲーミングPC用CPU徹底解説ガイド | Intel・Ryzen徹底比較と色を合わせる（プロンプト3の色）</h1>
 
-            <section id="cpu_basics">
-                <h2 class="section-title">1. CPUとは？ (PCの『脳』の役割)</h2>
-                <p>CPU（Central Processing Unit）は、PCにおける<strong>「脳」</strong>に例えられる最も重要なパーツです。ゲームにおいては、マウスやキーボードの入力処理、キャラクターのAI、物理演算、そしてグラフィックボードへの描画指示を担っています。</p>
-                <div class="info-box">
-                    <strong>ゲーマーがCPUにこだわるべき理由：</strong>
-                    どれほど高性能なグラフィックボード（GPU）を持っていても、CPUが弱いと「GPUへの指示出し」が追いつかず、ゲームがカクついたり、フレームレートが上がらなくなったりします。これを「CPUボトルネック」と呼びます。快適なプレイにはバランスが不可欠です.
-                </div>
-            </section>
+        <section id="what_is_cpu">
+            <h2>1. CPUとは？ (PCの『脳』の役割)</h2>
+            <div class="intro-container">
+                <img src="cputowa.png" alt="CPUの役割について喋るキャラクター" class="character-image">
+                <div class="intro-text">
+                    <p>CPU（Central Processing Unit）は、PCにおける<strong>「脳」</strong>に例えられる最も重要なパーツです。ゲームにおいては、マウスやキーボードの入力処理、キャラクターのAI、物理演算、そしてグラフィックボードへの描画指示を担っています。</p>
+                    <div class="info-box">
+                        <strong>ゲーマーがCPUにこだわるべき理由：</strong>
+                        高性能なグラフィックボード（GPU）を持っていても、CPUが弱いと「GPUへの指示出し」が追いつかず、ゲームがカクついたり、フレームレートが上がらなくなったりします。これを「CPUボトルネック」と呼びます。快適なプレイにはバランスが不可欠です.
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section id="brands">
-                <h2 class="section-title">2. IntelとRyzenの違いと表記のルール</h2>
-                <p>現在、ゲーミングPCのCPUは、Intel（インテル）とAMD（エーエムディー）の2社が覇を競っています。</p>
-                <p><span class="brand-intel">Intel（インテル）:</span> 「Core」シリーズを展開。シングルスレッド性能（1つの処理能力）が高く、昔から多くのゲームへの最適化が進んでいます. 最近は「Pコア（性能重視）」と「Eコア（効率重視）」を分けるハイブリッド構造が特徴です.</p>
-                <p><span class="brand-amd">AMD Ryzen（ライゼン）:</span> 「Ryzen」シリーズを展開。コストパフォーマンスの高さで人気を集め、現在は<strong>「X3D」</strong>モデルなどゲームに特化した独自の機能を持ち、特定のタイトルではIntelを圧倒することもあります.</p>
-                
-                <h3>基本の用語解説（型番の末尾）</h3>
-                <ul class="point-list">
-                    <li><strong>「K」や「X」：</strong> オーバークロック対応の高クロックモデル。性能が高い分、よく冷えるクーラーが必要です.</li>
-                    <li><strong>「F」：</strong> 内蔵グラフィックスがないモデル。グラボを必ず挿すゲーミングPCでは、安く買える「F」を選ぶのが基本テクニックです.</li>
-                    <li><strong>「X3D」：</strong> AMD特有のゲーム特化モデル。大容量キャッシュを搭載し、ゲームのフレームレートが劇的に伸びます.</li>
-                    <li><strong>「G」：</strong> 強力な内蔵グラフィックスを持つモデル. グラボなしでPCを組む場合や、小型PCを作りたい場合に選ばれます.</li>
-                </ul>
-            </section>
+        <section id="brands">
+            <h2>2. IntelとRyzenの違いと表記のルール</h2>
+            <p>現在、ゲーミングPCのCPUは、Intel（インテル）とAMD（エーエムディー）の2社が覇を競っています。</p>
+            <p><span class="brand-intel">Intel（インテル）:</span> 「Core」シリーズを展開。シングルスレッド性能（1つの処理能力）が高く、昔から多くのゲームへの最適化が進んでいます. 最近は「Pコア（性能重視）」と「Eコア（効率重視）」を分けるハイブリッド構造が特徴です.</p>
+            <p><span class="brand-amd">AMD Ryzen（ライゼン）:</span> 「Ryzen」シリーズを展開。コストパフォーマンスの高さで人気を集め、現在は「X3D」モデルなどゲームに特化した独自の機能を持ち、特定のタイトルではIntelを圧倒することもあります.</p>
+            
+            <h3>基本の用語解説（型番の末尾）</h3>
+            <ul>
+                <li><strong>「K」や「X」：</strong> オーバークロック対応の高クロックモデル。性能が高い分、よく冷えるクーラーが必要です.</li>
+                <li><strong>「F」：</strong> 内蔵グラフィックスがないモデル。グラボを必ず挿すゲーミングPCでは、安く買える「F」を選ぶのが基本テクニックです.</li>
+                <li><strong>「X3D」：</strong> AMD特有のゲーム特化モデル。大容量キャッシュを搭載し、ゲームのフレームレートが劇的に伸びます.</li>
+                <li><strong>「G」：</strong> 強力な内蔵グラフィックスを持つモデル. グラボなしでPCを組む場合や、小型PCを作りたい場合に選ばれます.</li>
+            </ul>
+        </section>
 
-            <section id="model_matrix">
-                <h2 class="section-title">3. 世代別・ブランド別主要モデル一覧表</h2>
-                <p>最新の世代から3世代前までの、ゲーミング用途で主流となる主要モデルを整理しました.</p>
-                <div class="comparison-table-wrapper">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>カテゴリー</th>
-                                <th>最新</th>
-                                <th>1世代前</th>
-                                <th>2世代前</th>
-                                <th>3世代前</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th><span class="brand-intel">Intel</span></th>
-                                <td><span class="brand-intel">Core Ultra 200S</span></td>
-                                <td><strong>第14世代</strong></td>
-                                <td><strong>第13世代</strong></td>
-                                <td><strong>第12世代</strong></td>
-                            </tr>
-                            <tr>
-                                <td>最上位フラグシップ</td>
-                                <td>Ultra 9 285K</td>
-                                <td>i9-14900K / KF</td>
-  0                               <td>i9-13900K / KF</td>
-  0                               <td>i9-12900K / KF</td>
-                            </tr>
-                            <tr>
-                                <td>ハイエンド</td>
-                                <td>Ultra 7 265K / KF</td>
-                                <td>i7-14700K / KF</td>
-  0                               <td>i7-13700K / KF</td>
-  0                               <td>i7-12700K / KF</td>
-                            </tr>
-                            <tr>
-                                <td>ミドルレンジ</td>
-                                <td>Ultra 5 245K / KF</td>
-                                <td>i5-14600K / KF<br>i5-14400 / F</td>
-                                <td>i5-13600K / KF<br>i5-13400 / F</td>
-                                <td>i5-12600K / KF<br>i5-12400 / F</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <th><span class="brand-amd">AMD</span></th>
-                                <td><span class="brand-amd">Ryzen 9000</span></td>
-                                <td><strong>Ryzen 8000G / 7000</strong></td>
-  0                               <td><strong>Ryzen 5000</strong></td>
-  0                               <td><strong>Ryzen 3000</strong></td>
-                            </tr>
-                            <tr>
-                                <td>最上位フラグシップ</td>
-                                <td>Ryzen 9 9950X</td>
-                                <td>Ryzen 9 7950X / 7950X3D</td>
-  0                               <td>Ryzen 9 5950X / 5900X</td>
-  0         0                       <td>Ryzen 9 3950X / 3900X</td>
-                            </tr>
-                            <tr>
-                                <td>ハイエンド</td>
-                                <td>Ryzen 7 9700X</td>
-                                <td>Ryzen 7 7800X3D / 7700X</td>
-  0                               <td>Ryzen 7 5800X / 5800X3D<br>Ryzen 7 5700X</td>
-  0         0                       <td>Ryzen 7 3800X / 3700X</td>
-                            </tr>
-                            <tr>
-                                <td>ミドルレンジ</td>
-                                <td>Ryzen 5 9600X</td>
-                                <td>Ryzen 5 8600G / 7600X</td>
-  0         0                       <td>Ryzen 5 5600X / 5600<br>Ryzen 5 5500</td>
-  0         0                       <td>Ryzen 5 3600X / 3600</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+        <section id="model_matrix">
+            <h2>3. 世代別・ブランド別主要モデル一覧表</h2>
+            <p>最新の世代から3世代前までの、ゲーミング用途で主流となる主要モデルを整理しました.（スクリーンショットimage_18.pngの内容を正確に転記）</p>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="brand-column-header">カテゴリー</th>
+                            <th>最新</th>
+                            <th>1世代前</th>
+                            <th>2世代前</th>
+                            <th>3世代前</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="brand-header-row"><th colspan="5">Intel</th></tr>
+                        <tr>
+                            <th>最上位フラグシップ</th>
+                            <td>Core Ultra 200S<br>Ultra 9 285K</td>
+                            <td>第14世代<br>i9-14900K / KF</td>
+                            <td>第13世代<br>i9-13900K / KF</td>
+                            <td>第12世代<br>i9-12900K / KF</td>
+                        </tr>
+                        <tr>
+                            <th>ハイエンド</th>
+                            <td>Ultra 7 265K / KF</td>
+                            <td>i7-14700K / KF</td>
+                            <td>i7-13700K / KF</td>
+                            <td>i7-12700K / KF</td>
+                        </tr>
+                        <tr>
+                            <th>ミドルレンジ</th>
+                            <td>Ultra 5 245K / KF</td>
+                            <td>i5-14600K / KF<br>i5-14400 / F</td>
+                            <td>i5-13600K / KF<br>i5-13400 / F</td>
+                            <td>i5-12600K / KF<br>i5-12400 / F</td>
+                        </tr>
+                        <tr class="brand-header-row"><th colspan="5">AMD</th></tr>
+                        <tr>
+                            <th>最上位フラグシップ</th>
+                            <td>Ryzen 9000<br>Ryzen 9 9950X</td>
+                            <td>Ryzen 8000G / 7000<br>Ryzen 9 7950X / 7950X3D</td>
+                            <td>Ryzen 5000<br>Ryzen 9 5950X / 5900X</td>
+                            <td>Ryzen 3000<br>Ryzen 9 3950X / 3900X</td>
+                        </tr>
+                        <tr>
+                            <th>ハイエンド</th>
+                            <td>Ryzen 7 9700X</td>
+                            <td>Ryzen 7 7800X3D / 7700X</td>
+                            <td>Ryzen 7 5800X / 5800X3D<br>Ryzen 7 5700X</td>
+                            <td>Ryzen 7 3800X / 3700X</td>
+                        </tr>
+                        <tr>
+                            <th>ミドルレンジ</th>
+                            <td>Ryzen 5 9600X</td>
+                            <td>Ryzen 5 8600G / 7600X</td>
+                            <td>Ryzen 5 5600X / 5600<br>Ryzen 5 5500</td>
+                            <td>Ryzen 5 3600X / 3600</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-            <section id="detailed_overview">
-                <h2 class="section-title">4. 各世代・全モデル詳細解説（主要ピックアップ）</h2>
-                <p>上記の表に記載した全モデルについて、それぞれの特徴とゲーマー目線での立ち位置を一つ一つ解説します。</p>
+        <section id="detailed_overview">
+            <h2>4. 各世代・全モデル詳細解説（主要ピックアップ）</h2>
+            <p>表に記載した主要モデルの特徴を解説します.</p>
+            <div class="detailed-item detailed-intel">
+                <h3>Core Ultra 200Sシリーズ ( Arrow Lake )</h3>
+                <p>Ultra 9 285K / Ultra 7 265K / Ultra 5 245K</p>
+                <p>電力効率が大幅に向上し、発熱が控えめに. 最新規格に対応した一から組む人向けです.</p>
+            </div>
+            <div class="detailed-item detailed-intel">
+                <h3>第14世代 ( Raptor Lake Refresh )</h3>
+                <p>i9-14900K / KF</p>
+                <p>最大6GHz駆動のモンスター. 強力な冷却が必要ですが、競技ゲーマーに.</p>
+                <p>i7-14700K / KF</p>
+                <p>Eコアが増量され、実質i9クラス. 動画編集などマルチタスクに人気.</p>
+                <p>i5-14400 / F</p>
+                <p>発熱が控えめで安価な空冷で運用可能. フルHDゲーミングに十分.</p>
+            </div>
+            <div class="detailed-item detailed-intel">
+                <h3>第13世代 ( Raptor Lake )</h3>
+                <p>i5-13400 / F</p>
+                <p>爆発的に売れたミドルクラス。初めてのゲーミングPCに最適.</p>
+            </div>
+            <div class="detailed-item detailed-intel">
+                <h3>第12世代 ( Alder Lake )</h3>
+                <p>i5-12400F</p>
+                <p>型落ちセールや中古で人気。安価なゲーミングPCの定番.</p>
+            </div>
+            <div class="detailed-item detailed-amd">
+                <h3>Ryzen 9000シリーズ ( Zen 5 )</h3>
+                <p>Ryzen 9 9950X / Ryzen 7 9700X / Ryzen 5 9600X</p>
+                <p>1コアあたりの性能が高く発熱がマイルド. クリエイティブ作業に隙がありません. 今後出る「X3D」モデルに期待が集まります.</p>
+            </div>
+            <div class="detailed-item detailed-amd">
+                <h3>Ryzen 8000G / 7000シリーズ ( Zen 4 )</h3>
+                <p><strong>Ryzen 7 7800X3D</strong></p>
+                <p>「世界最高のゲーミングCPU」。FPSやMMOで劇的なフレームレートを出し、プロゲーマーの使用率も極めて高い大傑作です.</p>
+                <p>Ryzen 5 8600G / 8700G</p>
+                <p>強力な内蔵グラフィック. グラボなしで軽〜中量級ゲームが遊べます.</p>
+            </div>
+            <div class="detailed-item detailed-amd">
+                <h3>Ryzen 5000シリーズ ( Zen 3 )</h3>
+                <p>Ryzen 7 5700X3D / 5800X3D</p>
+                <p>旧マザーボードを BIOSアップデートで活用可能. ゲーム性能は最新に匹敵するコスパ最強の裏技です. 5700X3Dが人気.</p>
+            </div>
+        </section>
 
-                <h3 class="generation-title">【Intel 最新】Core Ultra 200Sシリーズ (Arrow Lake)</h3>
-                <div class="detailed-item detailed-intel">
-                    <h4 class="model-item-title">Core Ultra 9 285K / Ultra 7 265K / Ultra 5 245K</h4>
-                    <p>新しい命名規則に刷新された世代. 電力効率が劇的に向上し、低消費電力で高いパフォーマンスを出せます. 最新規格のパーツで一からPCを組みたい人向けです.</p>
-                </div>
+        <section id="choosing">
+            <h2>5. 結論：用途・予算別おすすめCPUの選び方</h2>
+            <div class="choosing-container">
+                <div class="choosing-text">
+                    <p>自分がゲーミングPCで何を重視するかで選ぶのがポイント！</p>
+                    
+                    <h3>これからPCを新規購入・自作する人</h3>
+                    <ul>
+                        <li><strong>最高性能を求める：</strong> Ryzen 7 7800X3D や Core Ultra 9 285K。4Kゲーミングや高リフレッシュレート環境に必須です.</li>
+                        <li><strong>標準的な構成：</strong> Core i5-14600K や Ryzen 5 9600X。ほとんどのゲームが快適に動く黄金比です.</li>
+                        <li><strong>長く使いたい：</strong> AMDのAM5プラットフォーム（7000/9000系）を選ぶと、将来的にマザーボードを変えずにCPUだけ交換できる可能性が高くおすすめです.</li>
+                    </ul>
 
-                <h3 class="generation-title">【Intel 1世代前】第14世代 (Raptor Lake Refresh)</h3>
-                <div class="detailed-item detailed-intel">
-                    <h4 class="model-item-title">i9-14900K / KF</h4>
-                    <p>最大6GHzで駆動するモンスターCPU. 冷却には強力な水冷クーラーが必須ですが、フレームレートを1fpsでも高くしたい競技ゲーマー向け.</p>
-                    <h4 class="model-item-title">i7-14700K / KF</h4>
-                    <p>前世代からEコアが増量され、実質i9クラスの性能を持つ大人気モデル. 動画編集などもこなすゲーマーに非常に人気があります.</p>
-                    <h4 class="model-item-title">i5-14600K / KF</h4>
-                    <p>ミドルクラスの定番。価格とゲーム性能のバランスが非常に良く、自作PCで最もスタンダードな選択肢の一つです. 強力な空冷クーラーで運用可能です.</p>
-                    <h4 class="model-item-title">i5-14400 / F</h4>
-                    <p>発熱が控えめで、安価な空冷クーラーでも運用できるコスパモデル. フルHDゲーミングなら十分すぎる性能を持ちます.</p>
-                </div>
+                    <h3>スペック不足でアップグレードを検討中の人</h3>
+                    <ul>
+                        <li><strong>Intel 第12世代以前を使っている：</strong> マザーボードごと交換して、第14世代かCore Ultraへの移行がおすすめ.</li>
+                        <li><strong>Ryzen 1000〜3000系を使っている：</strong> マザーボードのBIOSをアップデートして「Ryzen 7 5700X3D」に載せ替えるのが、一番安上がりで劇的に性能が上がる最強の裏技です.</li>
+                    </ul>
 
-                <h3 class="generation-title">【Intel 2世代前】第13世代 (Raptor Lake)</h3>
-                <div class="detailed-item detailed-intel">
-                    <h4 class="model-item-title">i9-13900K / KF</h4>
-                    <p>元フラグシップ. 14900Kと性能差はわずかなので、安く買えるならこちらを選ぶ選択肢もあります.</p>
-                    <h4 class="model-item-title">i7-13700K / KF</h4>
-                    <p>第13世代のハイエンド。重いゲームでも全くボトルネックになりません. セール品などで人気でした.</p>
-                    <h4 class="model-item-title">i5-13400 / F</h4>
-                    <p>第13世代のミドルクラス。初めてのゲーミングPCに最適な性能で、爆発的に売れた名機です.</p>
-                </div>
+                    <h3>予算をとにかく抑えたい人</h3>
+                    <p>Core i5-12400F や Ryzen 5 7600 などを狙うのが賢い選択です. CPU本体の価格を安く抑えて、浮いたお金をワンランク上のグラフィックボード（GPU）に回した方が、ゲーム全体の快適さは向上します.</p>
+                </div>
+                <img src="cpuerabi.png" alt="CPUの選び方について解説するキャラクター" class="character-image">
+            </div>
+        </section>
+    </main>
 
-                <h3 class="generation-title">【Intel 3世代前】第12世代 (Alder Lake)</h3>
-                <div class="detailed-item detailed-intel">
-                    <h4 class="model-item-title">i9-12900K / i7-12700K / i5-12400F</h4>
-                    <p>発売当時は最強クラスでしたが、現在は第13/14世代のi5に並ばれつつあります. 中古や型落ちセールで非常に安ければアリ. 特に12400Fは安価なゲーミングPCの定番でした.</p>
-                </div>
-
-                <h3 class="generation-title">【AMD 最新】Ryzen 9000シリーズ (Zen 5)</h3>
-                <div class="detailed-item detailed-amd">
-                    <h4 class="model-item-title">Ryzen 9 9950X / Ryzen 7 9700X / Ryzen 5 9600X</h4>
-                    <p>「Zen 5」アーキテクチャを採用した最新世代. 1コアあたりの処理能力が高く、発熱もマイルドになりました. ゲーミングだけでなくクリエイティブな作業割合が多い人に隙がありません. 今後出るであろう「X3D」モデルに期待が集まります.</p>
-                </div>
-
-                <h3 class="generation-title">【AMD 1世代前】Ryzen 8000G / 7000シリーズ (Zen 4)</h3>
-                <div class="detailed-item detailed-amd">
-                    <h4 class="model-item-title">Ryzen 7 7800X3D</h4>
-                    <p><strong>「世界最高のゲーミングCPU」</strong>と名高い大傑作。大容量の3Dキャッシュにより、FPSやMMOなどのゲームで劇的なフレームレートを叩き出し、プロゲーマーの使用率も極めて高いです.</p>
-                    <h4 class="model-item-title">Ryzen 9 7950X3D / 7950X</h4>
-                    <p>X3Dモデルはゲーム性能とマルチコア性能を両立したロマンあふれるモデル. 7950Xはクリエイティブな作業がメインの人向けです.</p>
-                    <h4 class="model-item-title">Ryzen 5 8600G / 8700G</h4>
-                    <p>強力な内蔵グラフィックスを持つモデル. Valorantや原神などの軽〜中量級ゲームがこれ単体で遊べます.</p>
-                </div>
-
-                <h3 class="generation-title">【AMD 2世代前】Ryzen 5000シリーズ (Zen 3)</h3>
-                <div class="detailed-item detailed-amd">
-                    <h4 class="model-item-title">Ryzen 7 5800X3D / 5700X3D</h4>
-                    <p>旧世代（AM4ソケット）の完成形。古いRyzenを使っている人が、マザーボードを変えずに最後のアップグレードとして載せ替えるケースが多いです. ゲーム性能は最新世代に匹敵します. 5700X3Dが人気です.</p>
-                    <h4 class="model-item-title">Ryzen 5 5600X / 5600 / 5500</h4>
-                    <p>かつて覇権を握った名機。フルHDゲーミングなら現在でも余裕でこなせます. 5600 / 5500は格安自作PCで根強い人気があります.</p>
-                </div>
-
-                <h3 class="generation-title">【AMD 3世代前】Ryzen 3000シリーズ (Zen 2)</h3>
-                <div class="detailed-item detailed-amd">
-                    <h4 class="model-item-title">Ryzen 9 3900X / Ryzen 7 3700X / Ryzen 5 3600</h4>
-                    <p>現在は性能的に厳しく、最新ゲームではボトルネックになります. これを使っている人は、Ryzen 5000シリーズへのアップグレードが劇的に快適になります.</p>
-                </div>
-            </section>
-
-            <section id="scenarios">
-                <h2 class="section-title">5. 結論：用途・予算別おすすめCPUの選び方</h2>
-                <p>最後に、あなたが「ゲーミングPCで何を重視するか」に基づいた、具体的なCPUの選び方を詳しく解説します.</p>
-
-                <div class="detailed-choosing">
-                    <div class="choosing-item">
-                        <h3>FPS/競技ゲームで1fpsでも多く稼ぎたい人</h3>
-                        <p>Apex、Valorantなどで、240Hz/360Hzモニタを活かしたい場合.</  p>
-                        <ul class="point-list">
-                            <li><strong>おすすめ：AMD Ryzen 7 7800X3D</strong>。世界最強のゲーミング性能は、FPSゲーマーにとって唯一無二の選択肢です.</li>
-                            <li>（今後出る Ryzen 7 9800X3D（仮称）も大本命になります）</li>
-                        </ul>
-                    </div>
-
-                    <div class="choosing-item">
-                        <h3>大規模なMod、シミュレーション、MMOを快適に遊びたい人</h3>
-                        <p>マイクラの Mod大量構成、Cities: Skylines、モンハンなどの処理が重いゲーム.</p>
-                        <ul class="point-list">
-                            <li><strong>おすすめ：Ryzen 7 7800X3D または Intel Core i7-14700K / KF</strong>. X3Dは大容量キャッシュ、14700Kは多コアと高クロックで、複雑な物理演算やキャラクター処理をスムーズにこなします.</li>
-                        </ul>
-                    </div>
-
-                    <div class="choosing-item">
-                        <h3>ゲームをしながら配信・動画編集もやりたい人</h3>
-                        <p>OBSで配信しながら重いゲームを動かすなど、マルチタスクが必要な場合.</p>
-                        <ul class="point-list">
-                            <li><strong>おすすめ：Intel Core i7-14700K / KF 以上 または Ryzen 9 シリーズ</strong>. IntelのハイブリッドアーキテクチャやAMDの多コアCPUは、配信時のフレームレート低下を防げます.</li>
-                        </ul>
-                    </div>
-
-                    <div class="choosing-item">
-                        <h3>コスパ重視！フルHDで普通に遊べれば十分な人</h3>
-                        <p>4K画質にはこだわらず、Apexや原神などが快適に動けばいい場合.</p>
-                        <ul class="point-list">
-                            <li><strong>おすすめ：Intel Core i5-14600K / 14400F または Ryzen 5 7600X / 7600</strong>. 価格と性能のバランスが一番良く、エントリー〜ミドルクラスのPCに最適です.</li>
-                        </ul>
-                    </div>
-
-                    <div class="choosing-item">
-                        <h3>型落ちのRyzenをアップグレードしたい人</h3>
-                        <p>Ryzen 1000〜3000系（AM4マザーボード）を使っている場合.</p>
-                        <ul class="point-list">
-                            <li><strong>おすすめ：AMD Ryzen 7 5700X3D</strong>. マザーボードを交換せずにBIOSアップデートだけで載せ替え可能. 異次元の性能向上を実感できます. コスパ最強の裏技です.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2026 しょーでんゲーミング. 記事内容の無断転載を禁じます.</p>
-        </footer>
-    </div>
+    <footer>
+        <p>&copy; 2026 しょーでんゲーミング. 記事内容の無断転載を禁じます.</p>
+    </footer>
 </body>
 </html>
