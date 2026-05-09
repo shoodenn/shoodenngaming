@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ゲーミングPC用CPU彻底解説ガイド | しょーでんゲーミング</title>
+    <title>ゲーミングPC用CPU徹底解説ガイド | しょーでんゲーミング</title>
     <style>
-        /* =========================================
-           シンプルで清潔感のあるデザイン
-           ========================================= */
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             line-height: 1.8;
             color: #333;
-            background-color: #f8f9fa; /* 薄いグレーの背景 */
+            background-color: #f8f9fa;
             margin: 0;
             padding: 0;
         }
 
-        /* ヘッダー */
         header {
             background-color: #fff;
             border-bottom: 1px solid #ddd;
@@ -31,9 +27,8 @@
             color: #111;
         }
 
-        /* メインコンテンツ */
         main {
-            max-width: 960px; /* 見やすさのためにコンテンツ幅を制限 */
+            max-width: 960px;
             margin: 30px auto;
             background: #fff;
             padding: 40px;
@@ -45,7 +40,7 @@
         h1.page-title {
             font-size: 32px;
             text-align: center;
-            border-bottom: 3px solid var(--intel-blue); /* Intel/Ryzen徹底比較と色を合わせる（プロンプト3の色） */
+            border-bottom: 3px solid var(--intel-blue);
             padding-bottom: 15px;
             margin-bottom: 40px;
             color: #111;
@@ -81,7 +76,6 @@
             margin-bottom: 20px;
         }
 
-        /* 画像配置用フレックス */
         .intro-container, .choosing-container {
             display: flex;
             align-items: flex-start;
@@ -90,20 +84,19 @@
         }
 
         .choosing-container {
-            flex-direction: row-reverse; /* 選び方セクションはテキストを右に */
+            flex-direction: row-reverse;
         }
 
         .intro-text, .choosing-text {
             flex: 1;
         }
 
-        /* 画像のでかすぎを防ぐ適切な大きさ */
         .character-image {
-            width: 250px; /* 適切な幅 */
+            width: 250px;
             height: auto;
-            border-radius: 8px; /* 少し角丸 */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 軽い影 */
-            flex-shrink: 0; /* 画像が潰れるのを防ぐ */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
 
         .info-box {
@@ -114,7 +107,6 @@
             border-left: 4px solid #0056b3;
         }
 
-        /* 崩れていた表を修正 */
         .comparison-table-wrapper {
             overflow-x: auto;
             margin: 25px 0;
@@ -123,7 +115,7 @@
         table.comparison-table {
             width: 100%;
             border-collapse: collapse;
-            table-layout: fixed; /* 列幅を固定 */
+            table-layout: fixed;
         }
 
         table.comparison-table th, table.comparison-table td {
@@ -141,18 +133,17 @@
         }
 
         table.comparison-table th.brand-column-header {
-            width: 15%; /* カテゴリー列を少し広く */
+            width: 15%;
         }
 
         table.comparison-table th:not(.brand-column-header), table.comparison-table td:not(:first-child) {
-            width: 21.25%; /* 各世代列を均等に */
+            width: 21.25%;
         }
 
         table.comparison-table td {
             color: #555;
         }
 
-        /* スクリーンショットに似た、整頓されたIntel/AMDヘッダー行 */
         table.comparison-table .brand-header-row th {
             background-color: #222;
             color: #fff;
@@ -160,7 +151,6 @@
             font-weight: bold;
         }
 
-        /* ゼブラ・ストライプ */
         table.comparison-table tr:nth-child(even):not(.brand-header-row) td {
             background-color: #fdfdfd;
         }
@@ -168,7 +158,6 @@
         table.comparison-table span.brand-intel { color: var(--intel-blue); font-weight: bold; }
         table.comparison-table span.brand-amd { color: var(--amd-red); font-weight: bold; }
 
-        /* 詳細解説セクション */
         .detailed-item-wrapper {
             margin-top: 25px;
         }
@@ -186,7 +175,6 @@
             margin-bottom: 8px;
         }
 
-        /* 選び方セクション */
         .detailed-choosing {
             margin-top: 25px;
         }
@@ -195,7 +183,6 @@
         ul.point-list { margin-bottom: 20px; }
         ul.point-list li { margin-bottom: 8px; }
 
-        /* フッター */
         footer {
             text-align: center;
             padding: 30px;
@@ -213,7 +200,7 @@
     </header>
 
     <main>
-        <h1 class="page-title">ゲーミングPC用CPU徹底解説ガイド | Intel・Ryzen徹底比較と色を合わせる（プロンプト3の色）</h1>
+        <h1 class="page-title">ゲーミングPC用CPU徹底解説ガイド</h1>
 
         <section id="what_is_cpu">
             <h2>1. CPUとは？ (PCの『脳』の役割)</h2>
@@ -246,7 +233,7 @@
 
         <section id="model_matrix">
             <h2>3. 世代別・ブランド別主要モデル一覧表</h2>
-            <p>最新の世代から3世代前までの、ゲーミング用途で主流となる主要モデルを整理しました.（スクリーンショットimage_18.pngの内容を正確に転記）</p>
+            <p>最新の世代から3世代前までの、ゲーミング用途で主流となる主要モデルを整理しました.</p>
             <div class="comparison-table-wrapper">
                 <table class="comparison-table">
                     <thead>
