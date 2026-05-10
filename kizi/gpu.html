@@ -267,7 +267,74 @@
             </div>
         </div>
 
-        <h2 id="section2" class="section-title">2. 歴代GPUモデル一覧表</h2>
+        <style>
+    /* アフィリエイトリンク用スタイル */
+    .rakuten-btn {
+        display: inline-block;
+        background-color: #bf0000;
+        color: #ffffff !important;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 10px;
+        font-size: 14px;
+        transition: background-color 0.3s;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .rakuten-btn:hover {
+        background-color: #990000;
+    }
+    .product-list ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .product-list li {
+        margin-bottom: 15px;
+    }
+    .affiliate-card {
+        display: flex;
+        align-items: center;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #fcfcfc;
+    }
+    .affiliate-img {
+        width: 120px;
+        height: auto;
+        margin-right: 20px;
+        object-fit: contain;
+    }
+    .affiliate-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .no-link-item {
+        padding: 10px 0;
+        border-bottom: 1px dashed #ccc;
+        color: #555;
+    }
+    /* スマホ表示時の調整 */
+    @media (max-width: 600px) {
+        .affiliate-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .affiliate-img {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+        .affiliate-info {
+            align-items: center;
+        }
+    }
+</style>
+
+<h2 id="section2" class="section-title">2. 歴代GPUモデル一覧表</h2>
         <table>
             <thead>
                 <tr>
@@ -314,9 +381,25 @@
         <p>一切の妥協を許さないウルトラハイエンドモデル。4K解像度で高リフレッシュレートを叩き出し、8Kゲーミングすら視野に入るモンスターGPUです。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5090 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 5090 32GB GDDR7</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 5090 SUPRIM X 32G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5090 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx5090.jpg" alt="ASUS ROG Astral GeForce RTX 5090" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> ROG Astral GeForce RTX™ 5090 OC Edition</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a1669.af92c1cf.539a166a.7ad98f32/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famericagoodvibes%2Fays22mrkqz%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx5090.jpg" alt="MSI GeForce RTX 5090 SUPRIM" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 5090 32G SUPRIM LIQUID SOC</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd50cbc.3c89492b.4cd50cbd.d68eb57c/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fspeedwagon%2F10013692%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -324,9 +407,25 @@
         <p>前世代の最上位に匹敵する性能を持ちながら、消費電力を最適化したハイエンドモデル。4Kゲーミングの新たなスタンダードです。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5080 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 5080 16GB GDDR7</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 5080 GAMING X TRIO 16G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5080 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx5080.jpg" alt="ASUS TUF Gaming GeForce RTX 5080" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX ™ 5080 16GB GDDR7 OC Edition</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a1669.af92c1cf.539a166a.7ad98f32/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famericagoodvibes%2Fayqsshrkmc%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx5080.jpg" alt="MSI GeForce RTX 5080 GAMING TRIO" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 5080 16G GAMING TRIO OC WHITE</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4711377292177-44-73080-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -334,9 +433,25 @@
         <p>WQHD解像度で快適に遊べるだけでなく、DLSSを活用すれば4Kでも十分に戦えるアッパーミドルモデル。最もコストパフォーマンスに優れます。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5070 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 5070 OC Edition 12GB GDDR7</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 5070 VENTUS 3X 12G OC</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5070 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx5070.jpg" alt="ASUS Dual GeForce RTX 5070" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> Dual GeForce RTX 5070 OC Edition 12GB GDDR7</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/431ae9db.19bd2526.431ae9dc.de4cf89a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-zoa%2Fitm0015909725%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx5070.jpg" alt="MSI GeForce RTX 5070 VENTUS" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 5070 VENTUS 3X 12G OC</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4311b0be.354a715c.4311b0bf.e4d18bfc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F4711377308229%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -344,9 +459,25 @@
         <p>フルHD〜WQHDで高いフレームレートを安定して出せるミドルクラスの定番モデル。多くのPCゲーマーにとって最適な選択肢です。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5060 Ti Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 5060 Ti 8GB GDDR7</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 5060 Ti GAMING X 8G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5060 Ti Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx5060ti.jpg" alt="ASUS TUF Gaming GeForce RTX 5060 Ti" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 5060 Ti 8GB GDDR7</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F0199291058170-44-73966-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx5060ti.jpg" alt="MSI GeForce RTX 5060 Ti VENTUS" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 5060 Ti 8G VENTUS 2X OC WHITE PLUS</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4311b0be.354a715c.4311b0bf.e4d18bfc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F4711377340304%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -354,9 +485,25 @@
         <p>フルHDゲーミングの入門に最適なコストパフォーマンスモデル。最新技術を手軽に体験でき、消費電力も低く扱いやすいです。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし・リファレンス仕様準拠)</li>
-                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 5060 8GB GDDR7</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 5060 VENTUS 2X 8G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし・リファレンス仕様準拠)</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx5060.jpg" alt="ASUS Dual GeForce RTX 5060" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> Dual GeForce RTX 5060 8GB GDDR7</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/53a3782d.6fe22870.53a3782e.359e40bc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Felectricunagi%2F1311-006285%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx5060.jpg" alt="MSI GeForce RTX 5060 VENTUS" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 5060 VENTUS 2X 8G</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4311b0be.354a715c.4311b0bf.e4d18bfc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F4711377344272%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -368,9 +515,17 @@
         <p>登場時に世界を驚愕させた超ド級GPU。現在でも最高峰の性能を誇り、クリエイター用途やVRでも圧倒的なパフォーマンスを発揮します。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4090 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 4090 SUPRIM X 24G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4090 Founders Edition</li>
+                <li class="no-link-item"><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X (在庫なし)</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx4090.jpg" alt="MSI GeForce RTX 4090 SUPRIM" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 4090 SUPRIM X 24G</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a0e52.372f96a0.539a0e53.9c5b02cb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fscarlet2021%2Fb0bg92gy61%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -378,9 +533,17 @@
         <p>無印のRTX 4080をブラッシュアップし、より高い性能と優れた価格設定を実現したハイエンドモデル。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4080 SUPER Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 4080 SUPER OC Edition 16GB GDDR6X</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 4080 SUPER SUPRIM X 16G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4080 SUPER Founders Edition</li>
+                <li class="no-link-item"><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 4080 SUPER OC Edition 16GB GDDR6X</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx4080.jpg" alt="MSI GeForce RTX 4080 Ventus 3X OC" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 4080 16GB Ventus 3X OC</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fayhfcwrkpv%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -388,9 +551,25 @@
         <p>フルHD〜WQHD環境における覇権モデル。発熱も少なく扱いやすいため、多くのBTOパソコンで採用されています。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4070 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 4070 12GB GDDR6X</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 4070 VENTUS 2X 12G OC</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4070 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx4070ti.jpg" alt="ASUS TUF Gaming GeForce RTX 4070 Ti" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 4070 Ti 12GB GDDR6X</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd5c02c.16ec7554.4cd5c02d.8e512e31/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakiba-u-shop%2F2133073733563%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx4070.jpg" alt="MSI GeForce RTX 4070 VENTUS" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 4070 VENTUS 2X 12G OC</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2024-11-08-1071%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -398,9 +577,25 @@
         <p>フルHDで高FPSを狙うゲーマーに人気のミドルクラス。8GB版と16GB版が存在し、用途に合わせて選べます。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4060 Ti Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 4060 Ti 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 4060 Ti GAMING X 8G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4060 Ti Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx4060ti.jpg" alt="ASUS DUAL-RTX4060TI-O8G" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> DUAL-RTX4060TI-O8G</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/53a39d14.e7590241.53a39d15.3b58dd07/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcross-one%2Fcsb4b90528bb%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx4060ti.jpg" alt="MSI Geforce RTX 4060 Ti Ventus 2X" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> Geforce RTX 4060 Ti Ventus 2X</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fay4f1brkkx%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -408,9 +603,25 @@
         <p>フルHDゲーミングのための決定版。省電力性が非常に高く、電源容量の少ないPCからのアップグレードにも最適です。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし・リファレンス仕様準拠)</li>
-                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 4060 OC Edition 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 4060 GAMING X 8G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし・リファレンス仕様準拠)</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx4060.jpg" alt="ASUS Dual GeForce RTX 4060" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> Dual GeForce RTX 4060 OC Edition 8GB GDDR6</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a1669.af92c1cf.539a166a.7ad98f32/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famericagoodvibes%2Fay6z1prkb8%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx4060.jpg" alt="MSI GeForce RTX 4060 Ventus 2X" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 4060 Ventus 2X</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2025-04-01-893%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -422,9 +633,25 @@
         <p>24GBの大容量VRAMを搭載し、当時のクリエイターやエンスージアストを熱狂させたウルトラハイエンド。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3090 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 3090 OC Edition 24GB GDDR6X</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 3090 SUPRIM X 24G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3090 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx3090.jpg" alt="ASUS ROG Strix GeForce RTX 3090" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 3090 OC Edition 24GB GDDR6X</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a40c9.cdeb7ca9.539a40ca.4b49833b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fajimura4861%2Fsb08lq7gxnx%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx3090.jpg" alt="MSI GeForce RTX 3090 SUPRIM" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 3090 SUPRIM X 24G</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a1669.af92c1cf.539a166a.7ad98f32/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Famericagoodvibes%2Faynnp3rkhv%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -432,9 +659,25 @@
         <p>4Kゲーミングを身近にした立役者。メモリは10GB/12GBモデルが存在し、重いゲームでも設定次第で快適に動作します。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3080 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 3080 V2 OC Edition 10GB GDDR6X</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 3080 GAMING Z TRIO 10G LHR</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3080 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx3080.jpg" alt="ASUS ROG Strix GeForce RTX 3080" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 3080 V2 OC Edition 10GB GDDR6X</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2024-07-20-14192%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx3080.jpg" alt="MSI GeForce RTX 3080 GAMING Z TRIO" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 3080 GAMING Z TRIO 10G LHR</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fay6sryrkrq%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -442,9 +685,25 @@
         <p>前世代のトップモデルRTX 2080 Tiに匹敵する性能をミドルクラスの価格で実現した革命的モデル。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3070 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 3070 V2 OC Edition 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 3070 GAMING Z TRIO 8G LHR</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3070 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx3070.jpg" alt="ASUS TUF Gaming GeForce RTX 3070" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 3070 V2 OC Edition 8GB GDDR6</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/53a3b572.ec0d1b55.53a3b573.66157c8e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhauteproduit%2F2024-06-06-2361%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx3070.jpg" alt="MSI GeForce RTX 3070 GAMING Z TRIO" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 3070 GAMING Z TRIO 8G LHR</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd4f399.4665d150.4cd4f39a.ace87ddc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpalmsamerica%2Fay7mmwrktz%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -452,9 +711,25 @@
         <p>RTX 30シリーズの中で最もコストパフォーマンスに優れると評価された名機。フルHD〜WQHDで活躍します。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3060 Ti Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 3060 Ti V2 OC Edition 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 3060 Ti GAMING X 8G LHR</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3060 Ti Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx3060ti.jpg" alt="ASUS Dual GeForce RTX 3060 Ti" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> Dual GeForce RTX 3060 Ti V2 OC Edition 8GB GDDR6</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4374fac5.caf52694.4374fac6.6da26bd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcellar%2F1050020462%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx3060ti.jpg" alt="MSI GeForce RTX 3060 Ti GAMING X" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 3060 Ti GAMING X 8G LHR</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd5c02c.16ec7554.4cd5c02d.8e512e31/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakiba-u-shop%2F2133071918924%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -462,9 +737,25 @@
         <p>Steamのハードウェア調査で長らく使用率No.1に君臨した伝説的モデル。12GBのVRAMを搭載し、VRChatやAI画像生成の入門用としても重宝されました。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし)</li>
-                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 3060 V2 OC Edition 12GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 3060 VENTUS 2X 12G OC</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし)</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx3060.jpg" alt="ASUS TUF Gaming GeForce RTX 3060" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 3060 V2 OC Edition 12GB GDDR6</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4374fac5.caf52694.4374fac6.6da26bd2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fexcellar%2F1050028355%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx3060.jpg" alt="MSI GeForce RTX 3060 VENTUS" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 3060 VENTUS 2X 12G OC</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd5c02c.16ec7554.4cd5c02d.8e512e31/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakiba-u-shop%2F2133071925120%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -472,9 +763,25 @@
         <p>レイトレーシングやDLSSを最も手軽に体験できるエントリーモデル。軽いゲームを中心に遊ぶ方向けです。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> (公式展開なし)</li>
-                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 3050 OC Edition 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 3050 VENTUS 2X 8G OC</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> (公式展開なし)</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx3050.jpg" alt="ASUS Dual GeForce RTX 3050" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> Dual GeForce RTX 3050 OC Edition 8GB GDDR6</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/431ae9db.19bd2526.431ae9dc.de4cf89a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fe-zoa%2Fitm0015843962%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx3050.jpg" alt="MSI GeForce RTX 3050 VENTUS" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 3050 VENTUS 2X 8G OC</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4311b0be.354a715c.4311b0bf.e4d18bfc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F0824142385173%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -486,9 +793,25 @@
         <p>当時の最高峰モデル。現行のRTX 3070や4060 Tiと同等の性能を持っており、今でもフルHD〜WQHDで現役で活躍できます。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2080 Ti Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Matrix GeForce RTX 2080 Ti</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 2080 Ti LIGHTNING Z</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2080 Ti Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx2080ti.jpg" alt="ASUS ROG STRIX RTX2080TI" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> ROG-STRIX-RTX2080TI-O11G-GAMING</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/53a3b572.ec0d1b55.53a3b573.66157c8e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhauteproduit%2F2024-07-24-2948%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx2080ti.jpg" alt="MSI GeForce RTX 2080 Ti GAMING X TRIO" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 2080 Ti GAMING X TRIO</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2024-07-20-14264%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -496,9 +819,25 @@
         <p>RTXシリーズの幕開けを飾ったハイエンドモデル。新次元のグラフィックス技術を世に知らしめました。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2080 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2080 OC edition 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 2080 GAMING X TRIO</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2080 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx2070.jpg" alt="ASUS ROG STRIX RTX2070" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> ROG-STRIX-RTX2070-O8G-GAMING</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/3c47d7aa.a729bc43.3c47d7ab.e4f524e2/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fmujica-felice%2Fhb07jfyt2kd%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx2080super.jpg" alt="MSI GeForce RTX 2080 SUPER" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 2080 SUPER GAMING X TRIO</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/53a3d2f5.67b7186f.53a3d2f6.df426a2f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ftales-store%2F202505111003274537694274135%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -506,9 +845,9 @@
         <p>無印の2070から大幅な性能向上を果たし、当時のミドルハイ市場を席巻した大人気モデル。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2070 SUPER Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2070 SUPER Advanced edition 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 2070 SUPER GAMING X TRIO</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2070 SUPER Founders Edition</li>
+                <li class="no-link-item"><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2070 SUPER Advanced edition 8GB (リンクなし)</li>
+                <li class="no-link-item"><span class="maker-label">MSI:</span> GeForce RTX 2070 SUPER GAMING X TRIO (在庫なし)</li>
             </ul>
         </div>
 
@@ -516,9 +855,25 @@
         <p>フルHDで高画質設定を楽しめるミドルハイクラスとして登場し、多くのゲーマーに愛用されました。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2070 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2070 OC edition 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 2070 ARMOR 8G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2070 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx2070.jpg" alt="ASUS ROG Strix GeForce RTX 2070" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2070 OC edition 8GB GDDR6</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd5c02c.16ec7554.4cd5c02d.8e512e31/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakiba-u-shop%2F2133073242188%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="msirtx2070.jpg" alt="MSI GeForce RTX 2070 ARMOR" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> GeForce RTX 2070 ARMOR 8G</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4cd5c02c.16ec7554.4cd5c02d.8e512e31/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fakiba-u-shop%2F2133073202878%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -526,9 +881,17 @@
         <p>レイトレーシング入門機として普及。最新の激重タイトルは厳しいものの、ValorantやApex Legendsなどの競技タイトルであれば今でも快適です。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2060 Founders Edition</li>
-                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2060 OC edition 6GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> GeForce RTX 2060 GAMING Z 6G</li>
+                <li class="no-link-item"><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2060 Founders Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <img src="asusrtx2060.jpg" alt="ASUS ROG Strix GeForce RTX 2060" class="affiliate-img">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2060 OC edition 6GB GDDR6</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/53a3b572.ec0d1b55.53a3b573.66157c8e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhauteproduit%2F2024-06-06-697%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="no-link-item"><span class="maker-label">MSI:</span> GeForce RTX 2060 GAMING Z 6G (在庫なし)</li>
             </ul>
         </div>
 
@@ -539,9 +902,23 @@
         <p>AMDの誇るフラッグシップモデル。RTX 4080 SUPERに対抗する性能を持ちながら、24GBの大容量VRAMを搭載し、純粋な描画性能とコスパの高さが魅力です。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">AMD公式:</span> AMD Radeon RX 7900 XTX (リファレンスモデル)</li>
-                <li><span class="maker-label">ASUS:</span> TUF Gaming Radeon RX 7900 XTX OC Edition 24GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> Radeon RX 7900 XTX GAMING TRIO CLASSIC 24G</li>
+                <li>
+                    <div class="affiliate-card">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">AMD公式:</span> AMD Radeon RX 7900 XTX (リファレンスモデル)</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a0e52.372f96a0.539a0e53.9c5b02cb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fscarlet2021%2Fb0btpk5j68%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="no-link-item"><span class="maker-label">ASUS:</span> TUF Gaming Radeon RX 7900 XTX OC Edition 24GB GDDR6 (リンクなし)</li>
+                <li>
+                    <div class="affiliate-card">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">MSI:</span> Radeon RX 7900 XTX GAMING TRIO CLASSIC 24G</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/539a17d6.47617686.539a17d7.9253ac24/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbearhomes%2F2024-07-20-13877%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
@@ -549,9 +926,23 @@
         <p>フルHDゲーミング向けのハイコスパモデル。同価格帯のGeForceよりもフレームレートが出やすい傾向にあり、予算を抑えたいゲーマーに人気です。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">AMD公式:</span> AMD Radeon RX 7600 (リファレンスモデル)</li>
-                <li><span class="maker-label">ASUS:</span> Dual Radeon RX 7600 OC Edition 8GB GDDR6</li>
-                <li><span class="maker-label">MSI:</span> Radeon RX 7600 MECH 2X CLASSIC 8G OC</li>
+                <li>
+                    <div class="affiliate-card">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">AMD公式:</span> AMD Radeon RX 7600 (リファレンスモデル)</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4311b0be.354a715c.4311b0bf.e4d18bfc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F4710483942037%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="affiliate-card">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">ASUS:</span> Dual Radeon RX 7600 OC Edition 8GB GDDR6</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/43169190.cbd9827d.43169191.fa2ee83b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpckoubou%2Fm4s1p1161758%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="no-link-item"><span class="maker-label">MSI:</span> Radeon RX 7600 MECH 2X CLASSIC 8G OC (リンクなし)</li>
             </ul>
         </div>
 
@@ -559,9 +950,23 @@
         <p>Intelが本格参入を果たしたデスクトップ向けGPUの最上位。AV1エンコードにいち早く対応し、動画編集や配信に強く、度重なるドライバアップデートでゲーム性能も大きく向上しています。</p>
         <div class="product-list">
             <ul>
-                <li><span class="maker-label">Intel公式:</span> Intel Arc A770 Limited Edition 16GB</li>
-                <li><span class="maker-label">ASRock:</span> (※ArcはASUS/MSIの展開が少ないため代表として記載) Intel Arc A770 Phantom Gaming D 8GB OC</li>
-                <li><span class="maker-label">Sparkle:</span> SPARKLE Intel Arc A770 TITAN OC Edition</li>
+                <li>
+                    <div class="affiliate-card">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">Intel公式:</span> Intel Arc A770 Limited Edition 16GB</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/4319d23e.80c5cb02.4319d23f.832ccbfe/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbestdo-rk-shop%2F0735858501002%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="no-link-item"><span class="maker-label">ASRock:</span> Intel Arc A770 Phantom Gaming D 8GB OC (リンクなし)</li>
+                <li>
+                    <div class="affiliate-card">
+                        <div class="affiliate-info">
+                            <span><span class="maker-label">Sparkle:</span> SPARKLE Intel Arc A770 TITAN OC Edition</span>
+                            <a href="https://hb.afl.rakuten.co.jp/ichiba/5399e54b.9a097b83.5399e54c.a802b4a7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fecjoy%2F20714055%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
 
