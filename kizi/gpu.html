@@ -13,6 +13,12 @@
             --border-color: #e0e0e0;
         }
 
+        /* スムーススクロールと、固定ヘッダーに隠れないための余白設定 */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* 少し余裕を持たせて調整 */
+        }
+
         body {
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             line-height: 1.8;
@@ -102,23 +108,22 @@
         /* 画像とテキストを横並びにするレイアウト設定 */
         .section-flex-container {
             display: flex;
-            align-items: flex-start; /* 上揃えで配置 */
-            gap: 40px; /* テキストと画像の間の隙間 */
+            align-items: flex-start;
+            gap: 40px;
             margin-top: 60px;
             margin-bottom: 40px;
         }
 
         .section-text-area {
-            flex: 1; /* テキスト部分を広く取る */
+            flex: 1;
         }
 
-        /* flexコンテナ内の見出しは上の余白を消す */
         .section-text-area h2.section-title {
             margin-top: 0;
         }
 
         .section-image-area {
-            flex: 0 0 300px; /* 画像エリアの幅を300pxに固定（ちょうどいい大きさに） */
+            flex: 0 0 300px;
         }
 
         .section-image-area img {
@@ -128,7 +133,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        /* スマホなどの狭い画面用（縦並びにする） */
         @media (max-width: 768px) {
             .section-flex-container {
                 flex-direction: column;
@@ -174,6 +178,18 @@
             background-color: var(--box-bg);
             font-weight: bold;
             white-space: nowrap;
+        }
+
+        /* テーブル内のリンクを目立たせる */
+        table a {
+            color: var(--link-color);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        table a:hover {
+            color: #0d47a1;
+            text-decoration: none;
         }
 
         /* モデル紹介のリスト */
@@ -250,6 +266,7 @@
                 <img src="gputowa.png" alt="GPUとは？の解説画像">
             </div>
         </div>
+
         <h2 id="section2" class="section-title">2. 歴代GPUモデル一覧表</h2>
         <table>
             <thead>
@@ -263,27 +280,27 @@
             <tbody>
                 <tr>
                     <td>RTX 50シリーズ (最新)</td>
-                    <td>RTX 5090, RTX 5080</td>
-                    <td>RTX 5070, RTX 5060 Ti</td>
-                    <td>RTX 5060</td>
+                    <td><a href="#rtx5090">RTX 5090</a>, <a href="#rtx5080">RTX 5080</a></td>
+                    <td><a href="#rtx5070">RTX 5070</a>, <a href="#rtx5060ti">RTX 5060 Ti</a></td>
+                    <td><a href="#rtx5060">RTX 5060</a></td>
                 </tr>
                 <tr>
                     <td>RTX 40シリーズ</td>
-                    <td>RTX 4090, RTX 4080 SUPER</td>
-                    <td>RTX 4070, RTX 4060 Ti</td>
-                    <td>RTX 4060</td>
+                    <td><a href="#rtx4090">RTX 4090</a>, <a href="#rtx4080super">RTX 4080 SUPER</a></td>
+                    <td><a href="#rtx4070">RTX 4070</a>, <a href="#rtx4060ti">RTX 4060 Ti</a></td>
+                    <td><a href="#rtx4060">RTX 4060</a></td>
                 </tr>
                 <tr>
                     <td>RTX 30シリーズ</td>
-                    <td>RTX 3090, RTX 3080</td>
-                    <td>RTX 3070, RTX 3060 Ti</td>
-                    <td>RTX 3060, RTX 3050</td>
+                    <td><a href="#rtx3090">RTX 3090</a>, <a href="#rtx3080">RTX 3080</a></td>
+                    <td><a href="#rtx3070">RTX 3070</a>, <a href="#rtx3060ti">RTX 3060 Ti</a></td>
+                    <td><a href="#rtx3060">RTX 3060</a>, <a href="#rtx3050">RTX 3050</a></td>
                 </tr>
                 <tr>
                     <td>RTX 20シリーズ</td>
-                    <td>RTX 2080 Ti, RTX 2080</td>
-                    <td>RTX 2070 SUPER, RTX 2070</td>
-                    <td>RTX 2060</td>
+                    <td><a href="#rtx2080ti">RTX 2080 Ti</a>, <a href="#rtx2080">RTX 2080</a></td>
+                    <td><a href="#rtx2070super">RTX 2070 SUPER</a>, <a href="#rtx2070">RTX 2070</a></td>
+                    <td><a href="#rtx2060">RTX 2060</a></td>
                 </tr>
             </tbody>
         </table>
@@ -293,7 +310,7 @@
         <h3 class="series-title">最新世代：GeForce RTX 50シリーズ</h3>
         <p>最新のアーキテクチャを採用し、AI処理性能とレイトレーシング性能が極限まで高められた現行最強のシリーズです。</p>
 
-        <h4 class="model-name">RTX 5090</h4>
+        <h4 id="rtx5090" class="model-name">RTX 5090</h4>
         <p>一切の妥協を許さないウルトラハイエンドモデル。4K解像度で高リフレッシュレートを叩き出し、8Kゲーミングすら視野に入るモンスターGPUです。</p>
         <div class="product-list">
             <ul>
@@ -303,7 +320,7 @@
             </ul>
         </div>
 
-        <h4 class="model-name">RTX 5080</h4>
+        <h4 id="rtx5080" class="model-name">RTX 5080</h4>
         <p>前世代の最上位に匹敵する性能を持ちながら、消費電力を最適化したハイエンドモデル。4Kゲーミングの新たなスタンダードです。</p>
         <div class="product-list">
             <ul>
@@ -313,7 +330,7 @@
             </ul>
         </div>
 
-        <h4 class="model-name">RTX 5070</h4>
+        <h4 id="rtx5070" class="model-name">RTX 5070</h4>
         <p>WQHD解像度で快適に遊べるだけでなく、DLSSを活用すれば4Kでも十分に戦えるアッパーミドルモデル。最もコストパフォーマンスに優れます。</p>
         <div class="product-list">
             <ul>
@@ -323,10 +340,31 @@
             </ul>
         </div>
 
+        <h4 id="rtx5060ti" class="model-name">RTX 5060 Ti</h4>
+        <p>フルHD〜WQHDで高いフレームレートを安定して出せるミドルクラスの定番モデル。多くのPCゲーマーにとって最適な選択肢です。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5060 Ti Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 5060 Ti 8GB GDDR7</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 5060 Ti GAMING X 8G</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx5060" class="model-name">RTX 5060</h4>
+        <p>フルHDゲーミングの入門に最適なコストパフォーマンスモデル。最新技術を手軽に体験でき、消費電力も低く扱いやすいです。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし・リファレンス仕様準拠)</li>
+                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 5060 8GB GDDR7</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 5060 VENTUS 2X 8G</li>
+            </ul>
+        </div>
+
+
         <h3 class="series-title">1世代前：GeForce RTX 40シリーズ</h3>
         <p>DLSS 3（フレーム生成技術）に対応し、現在でも現役バリバリで活躍するシェア率トップクラスのシリーズです。</p>
 
-        <h4 class="model-name">RTX 4090</h4>
+        <h4 id="rtx4090" class="model-name">RTX 4090</h4>
         <p>登場時に世界を驚愕させた超ド級GPU。現在でも最高峰の性能を誇り、クリエイター用途やVRでも圧倒的なパフォーマンスを発揮します。</p>
         <div class="product-list">
             <ul>
@@ -336,7 +374,17 @@
             </ul>
         </div>
 
-        <h4 class="model-name">RTX 4070</h4>
+        <h4 id="rtx4080super" class="model-name">RTX 4080 SUPER</h4>
+        <p>無印のRTX 4080をブラッシュアップし、より高い性能と優れた価格設定を実現したハイエンドモデル。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4080 SUPER Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 4080 SUPER OC Edition 16GB GDDR6X</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 4080 SUPER SUPRIM X 16G</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx4070" class="model-name">RTX 4070</h4>
         <p>フルHD〜WQHD環境における覇権モデル。発熱も少なく扱いやすいため、多くのBTOパソコンで採用されています。</p>
         <div class="product-list">
             <ul>
@@ -346,7 +394,17 @@
             </ul>
         </div>
 
-        <h4 class="model-name">RTX 4060</h4>
+        <h4 id="rtx4060ti" class="model-name">RTX 4060 Ti</h4>
+        <p>フルHDで高FPSを狙うゲーマーに人気のミドルクラス。8GB版と16GB版が存在し、用途に合わせて選べます。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4060 Ti Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 4060 Ti 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 4060 Ti GAMING X 8G</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx4060" class="model-name">RTX 4060</h4>
         <p>フルHDゲーミングのための決定版。省電力性が非常に高く、電源容量の少ないPCからのアップグレードにも最適です。</p>
         <div class="product-list">
             <ul>
@@ -356,10 +414,21 @@
             </ul>
         </div>
 
+
         <h3 class="series-title">2世代前：GeForce RTX 30シリーズ</h3>
         <p>マイニングブームやパンデミック期のゲーミング需要を支えた名機揃い。現在でもフルHDであれば十分戦える性能を持っています。</p>
 
-        <h4 class="model-name">RTX 3080</h4>
+        <h4 id="rtx3090" class="model-name">RTX 3090</h4>
+        <p>24GBの大容量VRAMを搭載し、当時のクリエイターやエンスージアストを熱狂させたウルトラハイエンド。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3090 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 3090 OC Edition 24GB GDDR6X</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 3090 SUPRIM X 24G</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx3080" class="model-name">RTX 3080</h4>
         <p>4Kゲーミングを身近にした立役者。メモリは10GB/12GBモデルが存在し、重いゲームでも設定次第で快適に動作します。</p>
         <div class="product-list">
             <ul>
@@ -369,7 +438,27 @@
             </ul>
         </div>
 
-        <h4 class="model-name">RTX 3060</h4>
+        <h4 id="rtx3070" class="model-name">RTX 3070</h4>
+        <p>前世代のトップモデルRTX 2080 Tiに匹敵する性能をミドルクラスの価格で実現した革命的モデル。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3070 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 3070 V2 OC Edition 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 3070 GAMING Z TRIO 8G LHR</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx3060ti" class="model-name">RTX 3060 Ti</h4>
+        <p>RTX 30シリーズの中で最もコストパフォーマンスに優れると評価された名機。フルHD〜WQHDで活躍します。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3060 Ti Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 3060 Ti V2 OC Edition 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 3060 Ti GAMING X 8G LHR</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx3060" class="model-name">RTX 3060</h4>
         <p>Steamのハードウェア調査で長らく使用率No.1に君臨した伝説的モデル。12GBのVRAMを搭載し、VRChatやAI画像生成の入門用としても重宝されました。</p>
         <div class="product-list">
             <ul>
@@ -379,10 +468,21 @@
             </ul>
         </div>
 
+        <h4 id="rtx3050" class="model-name">RTX 3050</h4>
+        <p>レイトレーシングやDLSSを最も手軽に体験できるエントリーモデル。軽いゲームを中心に遊ぶ方向けです。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> (公式展開なし)</li>
+                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 3050 OC Edition 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 3050 VENTUS 2X 8G OC</li>
+            </ul>
+        </div>
+
+
         <h3 class="series-title">3世代前：GeForce RTX 20シリーズ</h3>
         <p>初めて「リアルタイムレイトレーシング（RTX）」と「DLSS」に対応した革新的な世代。現代のグラフィック技術の基礎を築きました。</p>
 
-        <h4 class="model-name">RTX 2080 Ti</h4>
+        <h4 id="rtx2080ti" class="model-name">RTX 2080 Ti</h4>
         <p>当時の最高峰モデル。現行のRTX 3070や4060 Tiと同等の性能を持っており、今でもフルHD〜WQHDで現役で活躍できます。</p>
         <div class="product-list">
             <ul>
@@ -392,7 +492,37 @@
             </ul>
         </div>
 
-        <h4 class="model-name">RTX 2060</h4>
+        <h4 id="rtx2080" class="model-name">RTX 2080</h4>
+        <p>RTXシリーズの幕開けを飾ったハイエンドモデル。新次元のグラフィックス技術を世に知らしめました。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2080 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2080 OC edition 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 2080 GAMING X TRIO</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx2070super" class="model-name">RTX 2070 SUPER</h4>
+        <p>無印の2070から大幅な性能向上を果たし、当時のミドルハイ市場を席巻した大人気モデル。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2070 SUPER Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2070 SUPER Advanced edition 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 2070 SUPER GAMING X TRIO</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx2070" class="model-name">RTX 2070</h4>
+        <p>フルHDで高画質設定を楽しめるミドルハイクラスとして登場し、多くのゲーマーに愛用されました。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2070 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2070 OC edition 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 2070 ARMOR 8G</li>
+            </ul>
+        </div>
+
+        <h4 id="rtx2060" class="model-name">RTX 2060</h4>
         <p>レイトレーシング入門機として普及。最新の激重タイトルは厳しいものの、ValorantやApex Legendsなどの競技タイトルであれば今でも快適です。</p>
         <div class="product-list">
             <ul>
@@ -452,6 +582,6 @@
                 <img src="fpssetumei.png" alt="フレームレート（FPS）についての解説画像">
             </div>
         </div>
-        </div>
+    </div>
 </body>
 </html>
