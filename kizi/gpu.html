@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲーミングPC用GPU徹底解説ガイド | しょーでんゲーミング</title>
+    <style>
+        :root {
+            --primary-color: #333;
+            --link-color: #1a73e8;
+            --bg-color: #f9f9fc;
+            --box-bg: #f4f7f9;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--primary-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-header {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        h1.page-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .title-line {
+            border-bottom: 3px solid var(--link-color);
+            margin: 0 auto 40px auto;
+            width: 100%;
+        }
+
+        /* 目次デザイン */
+        .toc {
+            background-color: var(--box-bg);
+            border-radius: 4px;
+            padding: 40px;
+            margin-bottom: 60px;
+            border: 1px solid #e9ecef;
+        }
+
+        .toc h2 {
+            text-align: center;
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+        }
+
+        .toc a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* 見出しデザイン */
+        h2.section-title {
+            border-left: 6px solid var(--primary-color);
+            padding-left: 15px;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            line-height: 1.2;
+        }
+
+        h3.series-title {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            color: #444;
+        }
+
+        h4.model-name {
+            background-color: #f0f0f0;
+            padding: 10px 15px;
+            border-left: 4px solid var(--link-color);
+            margin-top: 30px;
+        }
+
+        /* テーブルデザイン */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--box-bg);
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* モデル紹介のリスト */
+        .product-list {
+            margin-top: 15px;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+
+        .product-list ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .product-list li {
+            margin-bottom: 10px;
+            padding-left: 1.5em;
+            text-indent: -1.5em;
+        }
+
+        .product-list li::before {
+            content: "■";
+            color: var(--link-color);
+            margin-right: 0.5em;
+            font-size: 0.8em;
+        }
+
+        .maker-label {
+            display: inline-block;
+            width: 90px;
+            font-weight: bold;
+        }
+
+        .desc-text {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="site-header">
+        しょーでんゲーミング
+    </div>
+
+    <div class="container">
+        <h1 class="page-title">ゲーミングPC用GPU徹底解説ガイド</h1>
+        <div class="title-line"></div>
+
+        <div class="toc">
+            <h2>目次</h2>
+            <ul>
+                <li><a href="#section1">1. GPUとは？（映像処理の要）</a></li>
+                <li><a href="#section2">2. 歴代GPUモデル一覧表</a></li>
+                <li><a href="#section3">3. 各モデル詳細解説（RTX 50〜20シリーズ）</a></li>
+                <li><a href="#section4">4. その他のGPU（Radeon・Intel Arc）詳細解説</a></li>
+                <li><a href="#section5">5. まとめ：用途に合わせたGPUの選び方</a></li>
+            </ul>
+        </div>
+
+        <h2 id="section1" class="section-title">1. GPUとは？（映像処理の要）</h2>
+        <div class="desc-text">
+            <p>GPU（Graphics Processing Unit）は、PCにおける「映像処理」を専門に行うパーツです。ゲームの高画質な3Dグラフィックを滑らかに描画するためには、CPU以上にこのGPUの性能が重要になります。</p>
+            <p>現在、ゲーミングPC向けのGPU市場はNVIDIA社の「GeForce」シリーズが圧倒的なシェアを誇り、次いでAMD社の「Radeon」シリーズ、そして近年参入したIntel社の「Arc」シリーズが存在します。各ボードメーカー（ASUSやMSIなど）は、NVIDIAやAMDから提供されたチップを基に、独自の冷却ファンやデザインを施したグラフィックボード（グラボ）を製造・販売しています。</p>
+        </div>
+
+        <h2 id="section2" class="section-title">2. 歴代GPUモデル一覧表</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>世代</th>
+                    <th>ハイエンド（4K・最高画質）</th>
+                    <th>ミドルレンジ（WQHD・フルHD高FPS）</th>
+                    <th>エントリー（フルHD標準）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>RTX 50シリーズ (最新)</td>
+                    <td>RTX 5090, RTX 5080</td>
+                    <td>RTX 5070, RTX 5060 Ti</td>
+                    <td>RTX 5060</td>
+                </tr>
+                <tr>
+                    <td>RTX 40シリーズ</td>
+                    <td>RTX 4090, RTX 4080 SUPER</td>
+                    <td>RTX 4070, RTX 4060 Ti</td>
+                    <td>RTX 4060</td>
+                </tr>
+                <tr>
+                    <td>RTX 30シリーズ</td>
+                    <td>RTX 3090, RTX 3080</td>
+                    <td>RTX 3070, RTX 3060 Ti</td>
+                    <td>RTX 3060, RTX 3050</td>
+                </tr>
+                <tr>
+                    <td>RTX 20シリーズ</td>
+                    <td>RTX 2080 Ti, RTX 2080</td>
+                    <td>RTX 2070 SUPER, RTX 2070</td>
+                    <td>RTX 2060</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="section3" class="section-title">3. 各モデル詳細解説（RTX 50〜20シリーズ）</h2>
+        
+        <h3 class="series-title">最新世代：GeForce RTX 50シリーズ</h3>
+        <p>最新のアーキテクチャを採用し、AI処理性能とレイトレーシング性能が極限まで高められた現行最強のシリーズです。</p>
+
+        <h4 class="model-name">RTX 5090</h4>
+        <p>一切の妥協を許さないウルトラハイエンドモデル。4K解像度で高リフレッシュレートを叩き出し、8Kゲーミングすら視野に入るモンスターGPUです。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5090 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 5090 32GB GDDR7</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 5090 SUPRIM X 32G</li>
+            </ul>
+        </div>
+
+        <h4 class="model-name">RTX 5080</h4>
+        <p>前世代の最上位に匹敵する性能を持ちながら、消費電力を最適化したハイエンドモデル。4Kゲーミングの新たなスタンダードです。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5080 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 5080 16GB GDDR7</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 5080 GAMING X TRIO 16G</li>
+            </ul>
+        </div>
+
+        <h4 class="model-name">RTX 5070</h4>
+        <p>WQHD解像度で快適に遊べるだけでなく、DLSSを活用すれば4Kでも十分に戦えるアッパーミドルモデル。最もコストパフォーマンスに優れます。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 5070 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 5070 OC Edition 12GB GDDR7</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 5070 VENTUS 3X 12G OC</li>
+            </ul>
+        </div>
+
+        <h3 class="series-title">1世代前：GeForce RTX 40シリーズ</h3>
+        <p>DLSS 3（フレーム生成技術）に対応し、現在でも現役バリバリで活躍するシェア率トップクラスのシリーズです。</p>
+
+        <h4 class="model-name">RTX 4090</h4>
+        <p>登場時に世界を驚愕させた超ド級GPU。現在でも最高峰の性能を誇り、クリエイター用途やVRでも圧倒的なパフォーマンスを発揮します。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4090 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 4090 OC Edition 24GB GDDR6X</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 4090 SUPRIM X 24G</li>
+            </ul>
+        </div>
+
+        <h4 class="model-name">RTX 4070</h4>
+        <p>フルHD〜WQHD環境における覇権モデル。発熱も少なく扱いやすいため、多くのBTOパソコンで採用されています。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 4070 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 4070 12GB GDDR6X</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 4070 VENTUS 2X 12G OC</li>
+            </ul>
+        </div>
+
+        <h4 class="model-name">RTX 4060</h4>
+        <p>フルHDゲーミングのための決定版。省電力性が非常に高く、電源容量の少ないPCからのアップグレードにも最適です。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし・リファレンス仕様準拠)</li>
+                <li><span class="maker-label">ASUS:</span> Dual GeForce RTX 4060 OC Edition 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 4060 GAMING X 8G</li>
+            </ul>
+        </div>
+
+        <h3 class="series-title">2世代前：GeForce RTX 30シリーズ</h3>
+        <p>マイニングブームやパンデミック期のゲーミング需要を支えた名機揃い。現在でもフルHDであれば十分戦える性能を持っています。</p>
+
+        <h4 class="model-name">RTX 3080</h4>
+        <p>4Kゲーミングを身近にした立役者。メモリは10GB/12GBモデルが存在し、重いゲームでも設定次第で快適に動作します。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 3080 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 3080 V2 OC Edition 10GB GDDR6X</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 3080 GAMING Z TRIO 10G LHR</li>
+            </ul>
+        </div>
+
+        <h4 class="model-name">RTX 3060</h4>
+        <p>Steamのハードウェア調査で長らく使用率No.1に君臨した伝説的モデル。12GBのVRAMを搭載し、VRChatやAI画像生成の入門用としても重宝されました。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> (公式モデル展開なし)</li>
+                <li><span class="maker-label">ASUS:</span> TUF Gaming GeForce RTX 3060 V2 OC Edition 12GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 3060 VENTUS 2X 12G OC</li>
+            </ul>
+        </div>
+
+        <h3 class="series-title">3世代前：GeForce RTX 20シリーズ</h3>
+        <p>初めて「リアルタイムレイトレーシング（RTX）」と「DLSS」に対応した革新的な世代。現代のグラフィック技術の基礎を築きました。</p>
+
+        <h4 class="model-name">RTX 2080 Ti</h4>
+        <p>当時の最高峰モデル。現行のRTX 3070や4060 Tiと同等の性能を持っており、今でもフルHD〜WQHDで現役で活躍できます。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2080 Ti Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Matrix GeForce RTX 2080 Ti</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 2080 Ti LIGHTNING Z</li>
+            </ul>
+        </div>
+
+        <h4 class="model-name">RTX 2060</h4>
+        <p>レイトレーシング入門機として普及。最新の激重タイトルは厳しいものの、ValorantやApex Legendsなどの競技タイトルであれば今でも快適です。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">NVIDIA公式:</span> NVIDIA GeForce RTX 2060 Founders Edition</li>
+                <li><span class="maker-label">ASUS:</span> ROG Strix GeForce RTX 2060 OC edition 6GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> GeForce RTX 2060 GAMING Z 6G</li>
+            </ul>
+        </div>
+
+        <h2 id="section4" class="section-title">4. その他のGPU（Radeon・Intel Arc）詳細解説</h2>
+        <p>GeForce以外の選択肢として、AMDのRadeonシリーズやIntelのArcシリーズがあります。特定のゲームや用途においてはGeForceを上回るコストパフォーマンスを発揮します。</p>
+
+        <h4 class="model-name">AMD Radeon RX 7900 XTX</h4>
+        <p>AMDの誇るフラッグシップモデル。RTX 4080 SUPERに対抗する性能を持ちながら、24GBの大容量VRAMを搭載し、純粋な描画性能とコスパの高さが魅力です。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">AMD公式:</span> AMD Radeon RX 7900 XTX (リファレンスモデル)</li>
+                <li><span class="maker-label">ASUS:</span> TUF Gaming Radeon RX 7900 XTX OC Edition 24GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> Radeon RX 7900 XTX GAMING TRIO CLASSIC 24G</li>
+            </ul>
+        </div>
+
+        <h4 class="model-name">AMD Radeon RX 7600</h4>
+        <p>フルHDゲーミング向けのハイコスパモデル。同価格帯のGeForceよりもフレームレートが出やすい傾向にあり、予算を抑えたいゲーマーに人気です。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">AMD公式:</span> AMD Radeon RX 7600 (リファレンスモデル)</li>
+                <li><span class="maker-label">ASUS:</span> Dual Radeon RX 7600 OC Edition 8GB GDDR6</li>
+                <li><span class="maker-label">MSI:</span> Radeon RX 7600 MECH 2X CLASSIC 8G OC</li>
+            </ul>
+        </div>
+
+        <h4 class="model-name">Intel Arc A770</h4>
+        <p>Intelが本格参入を果たしたデスクトップ向けGPUの最上位。AV1エンコードにいち早く対応し、動画編集や配信に強く、度重なるドライバアップデートでゲーム性能も大きく向上しています。</p>
+        <div class="product-list">
+            <ul>
+                <li><span class="maker-label">Intel公式:</span> Intel Arc A770 Limited Edition 16GB</li>
+                <li><span class="maker-label">ASRock:</span> (※ArcはASUS/MSIの展開が少ないため代表として記載) Intel Arc A770 Phantom Gaming D 8GB OC</li>
+                <li><span class="maker-label">Sparkle:</span> SPARKLE Intel Arc A770 TITAN OC Edition</li>
+            </ul>
+        </div>
+
+        <h2 id="section5" class="section-title">5. まとめ：用途に合わせたGPUの選び方</h2>
+        <div class="desc-text">
+            <p>GPU選びは「どの解像度で」「何のゲームを」「どのくらいのフレームレートで」遊びたいかによって決まります。</p>
+            <ul>
+                <li><strong>4K・最高画質で遊びたい：</strong> RTX 5090, 5080, 4090 (予算を惜しまないハイエンド向け)</li>
+                <li><strong>WQHD・高リフレッシュレートを狙いたい：</strong> RTX 5070, 4070, RX 7900シリーズ (バランス重視)</li>
+                <li><strong>フルHDで競技タイトルを快適に遊びたい：</strong> RTX 4060, RX 7600 (コスパ最強、初めてのゲーミングPC向け)</li>
+            </ul>
+            <p>ご自身のプレイ環境と予算に合わせて、最適なグラフィックボードを選択してください。</p>
+        </div>
+
+    </div>
+</body>
+</html>
