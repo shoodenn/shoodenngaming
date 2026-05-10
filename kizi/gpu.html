@@ -133,7 +133,7 @@
             white-space: nowrap;
         }
 
-        /* モデル紹介のリスト */
+        /* モデル紹介のリスト（重なりを修正した部分） */
         .product-list {
             margin-top: 15px;
             padding: 20px;
@@ -150,15 +150,17 @@
 
         .product-list li {
             margin-bottom: 10px;
-            padding-left: 1.5em;
-            text-indent: -1.5em;
+            padding-left: 1.2em; /* 記号用のスペースを確保 */
+            position: relative; /* 記号の配置基準にする */
         }
 
         .product-list li::before {
             content: "■";
             color: var(--link-color);
-            margin-right: 0.5em;
             font-size: 0.8em;
+            position: absolute; /* 左端に絶対配置 */
+            left: 0;
+            top: 0.3em; /* テキストとの高さを微調整 */
         }
 
         .maker-label {
