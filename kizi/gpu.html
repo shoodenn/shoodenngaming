@@ -150,17 +150,17 @@
 
         .product-list li {
             margin-bottom: 10px;
-            padding-left: 1.2em; /* 記号用のスペースを確保 */
-            position: relative; /* 記号の配置基準にする */
+            padding-left: 1.2em;
+            position: relative;
         }
 
         .product-list li::before {
             content: "■";
             color: var(--link-color);
             font-size: 0.8em;
-            position: absolute; /* 左端に絶対配置 */
+            position: absolute;
             left: 0;
-            top: 0.3em; /* テキストとの高さを微調整 */
+            top: 0.3em;
         }
 
         .maker-label {
@@ -173,14 +173,15 @@
             margin-bottom: 20px;
         }
 
-        /* 挿入画像用のスタイル */
+        /* 挿入画像用のスタイル（サイズ修正済み） */
         .inserted-image {
-            max-width: 100%;
+            max-width: 400px; /* 大きすぎないように上限を400pxに設定 */
+            width: 100%; /* スマホなどの狭い画面では画面幅に合わせる */
             height: auto;
             display: block;
-            margin: 30px auto; /* 中央揃え、上下に余白 */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 軽い影で浮かせる */
-            border-radius: 4px; /* 軽い角丸 */
+            margin: 30px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* 少しだけ影を調整 */
+            border-radius: 8px; /* 角を少し丸くして柔らかい印象に */
         }
     </style>
 </head>
