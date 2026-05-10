@@ -133,7 +133,7 @@
             white-space: nowrap;
         }
 
-        /* モデル紹介のリスト（重なりを修正した部分） */
+        /* モデル紹介のリスト */
         .product-list {
             margin-top: 15px;
             padding: 20px;
@@ -172,6 +172,16 @@
         .desc-text {
             margin-bottom: 20px;
         }
+
+        /* 挿入画像用のスタイル */
+        .inserted-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 30px auto; /* 中央揃え、上下に余白 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 軽い影で浮かせる */
+            border-radius: 4px; /* 軽い角丸 */
+        }
     </style>
 </head>
 <body>
@@ -196,6 +206,7 @@
         </div>
 
         <h2 id="section1" class="section-title">1. GPUとは？（映像処理の要）</h2>
+        <img src="gputowa.png" alt="GPUとは？の解説画像" class="inserted-image">
         <div class="desc-text">
             <p>GPU（Graphics Processing Unit）は、PCにおける「映像処理」を専門に行うパーツです。ゲームの高画質な3Dグラフィックを滑らかに描画するためには、CPU以上にこのGPUの性能が重要になります。</p>
             <p>現在、ゲーミングPC向けのGPU市場はNVIDIA社の「GeForce」シリーズが圧倒的なシェアを誇り、次いでAMD社の「Radeon」シリーズ、そして近年参入したIntel社の「Arc」シリーズが存在します。各ボードメーカー（ASUSやMSIなど）は、NVIDIAやAMDから提供されたチップを基に、独自の冷却ファンやデザインを施したグラフィックボード（グラボ）を製造・販売しています。</p>
@@ -396,6 +407,7 @@
             </ul>
             <p>ご自身のプレイ環境と予算に合わせて、最適なグラフィックボードを選択してください。</p>
         </div>
+        <img src="fpssetumei.png" alt="フレームレート（FPS）についての解説画像" class="inserted-image">
 
     </div>
 </body>
