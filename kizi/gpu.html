@@ -93,35 +93,52 @@
         h2.section-title {
             border-left: 6px solid var(--primary-color);
             padding-left: 15px;
-            font-size: 1.8rem;
-            line-height: 1.2;
-            margin: 0; /* マージンはラッパー側で管理 */
-        }
-
-        /* 見出しと画像を横並びにするラッパー */
-        .section-header-wrap {
-            display: flex;
-            align-items: center; /* 縦方向の中央で揃える */
             margin-top: 60px;
             margin-bottom: 30px;
-            gap: 20px; /* 見出しと画像の間の隙間 */
+            font-size: 1.8rem;
+            line-height: 1.2;
         }
 
-        /* 見出し横の画像サイズ */
-        .heading-image {
-            height: 200px; /* 見出しの横に収まるちょうどいい高さ */
-            width: auto;
+        /* 画像とテキストを横並びにするレイアウト設定 */
+        .section-flex-container {
+            display: flex;
+            align-items: flex-start; /* 上揃えで配置 */
+            gap: 40px; /* テキストと画像の間の隙間 */
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .section-text-area {
+            flex: 1; /* テキスト部分を広く取る */
+        }
+
+        /* flexコンテナ内の見出しは上の余白を消す */
+        .section-text-area h2.section-title {
+            margin-top: 0;
+        }
+
+        .section-image-area {
+            flex: 0 0 300px; /* 画像エリアの幅を300pxに固定（ちょうどいい大きさに） */
+        }
+
+        .section-image-area img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        @media (max-width: 600px) {
-            .section-header-wrap {
+        /* スマホなどの狭い画面用（縦並びにする） */
+        @media (max-width: 768px) {
+            .section-flex-container {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 20px;
             }
-            .heading-image {
-                margin-top: 15px;
-                height: 150px;
+            .section-image-area {
+                flex: auto;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
             }
         }
 
@@ -221,19 +238,19 @@
             </ul>
         </div>
 
-        <div class="section-header-wrap">
-            <h2 id="section1" class="section-title">1. GPUとは？（映像処理の要）</h2>
-            <img src="gputowa.png" alt="GPUとは？の解説画像" class="heading-image">
+        <div class="section-flex-container">
+            <div class="section-text-area">
+                <h2 id="section1" class="section-title">1. GPUとは？（映像処理の要）</h2>
+                <div class="desc-text">
+                    <p>GPU（Graphics Processing Unit）は、PCにおける「映像処理」を専門に行うパーツです。ゲームの高画質な3Dグラフィックを滑らかに描画するためには、CPU以上にこのGPUの性能が重要になります。</p>
+                    <p>現在、ゲーミングPC向けのGPU市場はNVIDIA社の「GeForce」シリーズが圧倒的なシェアを誇り、次いでAMD社の「Radeon」シリーズ、そして近年参入したIntel社の「Arc」シリーズが存在します。各ボードメーカー（ASUSやMSIなど）は、NVIDIAやAMDから提供されたチップを基に、独自の冷却ファンやデザインを施したグラフィックボード（グラボ）を製造・販売しています。</p>
+                </div>
+            </div>
+            <div class="section-image-area">
+                <img src="gputowa.png" alt="GPUとは？の解説画像">
+            </div>
         </div>
-
-        <div class="desc-text">
-            <p>GPU（Graphics Processing Unit）は、PCにおける「映像処理」を専門に行うパーツです。ゲームの高画質な3Dグラフィックを滑らかに描画するためには、CPU以上にこのGPUの性能が重要になります。</p>
-            <p>現在、ゲーミングPC向けのGPU市場はNVIDIA社の「GeForce」シリーズが圧倒的なシェアを誇り、次いでAMD社の「Radeon」シリーズ、そして近年参入したIntel社の「Arc」シリーズが存在します。各ボードメーカー（ASUSやMSIなど）は、NVIDIAやAMDから提供されたチップを基に、独自の冷却ファンやデザインを施したグラフィックボード（グラボ）を製造・販売しています。</p>
-        </div>
-
-        <div class="section-header-wrap">
-            <h2 id="section2" class="section-title">2. 歴代GPUモデル一覧表</h2>
-        </div>
+        <h2 id="section2" class="section-title">2. 歴代GPUモデル一覧表</h2>
         <table>
             <thead>
                 <tr>
@@ -271,9 +288,7 @@
             </tbody>
         </table>
 
-        <div class="section-header-wrap">
-            <h2 id="section3" class="section-title">3. 各モデル詳細解説（RTX 50〜20シリーズ）</h2>
-        </div>
+        <h2 id="section3" class="section-title">3. 各モデル詳細解説（RTX 50〜20シリーズ）</h2>
         
         <h3 class="series-title">最新世代：GeForce RTX 50シリーズ</h3>
         <p>最新のアーキテクチャを採用し、AI処理性能とレイトレーシング性能が極限まで高められた現行最強のシリーズです。</p>
@@ -387,9 +402,7 @@
             </ul>
         </div>
 
-        <div class="section-header-wrap">
-            <h2 id="section4" class="section-title">4. その他のGPU（Radeon・Intel Arc）詳細解説</h2>
-        </div>
+        <h2 id="section4" class="section-title">4. その他のGPU（Radeon・Intel Arc）詳細解説</h2>
         <p>GeForce以外の選択肢として、AMDのRadeonシリーズやIntelのArcシリーズがあります。特定のゲームや用途においてはGeForceを上回るコストパフォーマンスを発揮します。</p>
 
         <h4 class="model-name">AMD Radeon RX 7900 XTX</h4>
@@ -422,21 +435,23 @@
             </ul>
         </div>
 
-        <div class="section-header-wrap">
-            <h2 id="section5" class="section-title">5. まとめ：用途に合わせたGPUの選び方</h2>
-            <img src="fpssetumei.png" alt="フレームレート（FPS）についての解説画像" class="heading-image">
+        <div class="section-flex-container">
+            <div class="section-text-area">
+                <h2 id="section5" class="section-title">5. まとめ：用途に合わせたGPUの選び方</h2>
+                <div class="desc-text">
+                    <p>GPU選びは「どの解像度で」「何のゲームを」「どのくらいのフレームレートで」遊びたいかによって決まります。</p>
+                    <ul>
+                        <li><strong>4K・最高画質で遊びたい：</strong> RTX 5090, 5080, 4090 (予算を惜しまないハイエンド向け)</li>
+                        <li><strong>WQHD・高リフレッシュレートを狙いたい：</strong> RTX 5070, 4070, RX 7900シリーズ (バランス重視)</li>
+                        <li><strong>フルHDで競技タイトルを快適に遊びたい：</strong> RTX 4060, RX 7600 (コスパ最強、初めてのゲーミングPC向け)</li>
+                    </ul>
+                    <p>ご自身のプレイ環境と予算に合わせて、最適なグラフィックボードを選択してください。</p>
+                </div>
+            </div>
+            <div class="section-image-area">
+                <img src="fpssetumei.png" alt="フレームレート（FPS）についての解説画像">
+            </div>
         </div>
-        
-        <div class="desc-text">
-            <p>GPU選びは「どの解像度で」「何のゲームを」「どのくらいのフレームレートで」遊びたいかによって決まります。</p>
-            <ul>
-                <li><strong>4K・最高画質で遊びたい：</strong> RTX 5090, 5080, 4090 (予算を惜しまないハイエンド向け)</li>
-                <li><strong>WQHD・高リフレッシュレートを狙いたい：</strong> RTX 5070, 4070, RX 7900シリーズ (バランス重視)</li>
-                <li><strong>フルHDで競技タイトルを快適に遊びたい：</strong> RTX 4060, RX 7600 (コスパ最強、初めてのゲーミングPC向け)</li>
-            </ul>
-            <p>ご自身のプレイ環境と予算に合わせて、最適なグラフィックボードを選択してください。</p>
         </div>
-
-    </div>
 </body>
 </html>
