@@ -1,302 +1,294 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>しょーでんゲーミング</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>しょーでんゲーミング</title>
 
-    <!-- OGP（SNSシェア時の設定） -->
-<meta property="og:title" content="しょーでんゲーミング" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://shoodenn.github.io/shoodenngaming/" />
-<meta property="og:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti.png" />
-<meta property="og:site_name" content="しょーでんゲーミング" />
-<meta property="og:description" content="ゲーミングPC特化ブログ" />
+    <meta property="og:title" content="しょーでんゲーミング" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shoodenn.github.io/shoodenngaming/" />
+    <meta property="og:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti.png" />
+    <meta property="og:site_name" content="しょーでんゲーミング" />
+    <meta property="og:description" content="ゲーミングPC特化ブログ" />
 
-<!-- X（旧Twitter）用の設定 -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="しょーでんゲーミング" />
-<meta name="twitter:description" content="ゲーミングPC特化ブログ" />
-<meta name="twitter:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti.png" />
-    
-    <style>
-        /* 全体の基本設定 */
-        body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7f6;
-        }
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="しょーでんゲーミング" />
+    <meta name="twitter:description" content="ゲーミングPC特化ブログ" />
+    <meta name="twitter:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti.png" />
+    
+    <style>
+        /* 全体の基本設定 */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+        }
 
-        /* ヘッダーデザイン */
-        header {
-            background-color: #1a1a1a;
-            color: #00d2ff; /* ゲーミングっぽい水色 */
-            text-align: center;
-            padding: 2.5rem 1rem;
-            border-bottom: 4px solid #00d2ff;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-        }
+        /* ヘッダーデザイン */
+        header {
+            background-color: #1a1a1a;
+            color: #00d2ff; /* ゲーミングっぽい水色 */
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-bottom: 4px solid #00d2ff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+        }
 
-        /* メインコンテンツのコンテナ */
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+        /* メインコンテンツのコンテナ */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
 
-        /* 見出しデザイン */
-        h2 {
-            color: #1a1a1a;
-            border-left: 5px solid #00d2ff;
-            padding-left: 10px;
-            margin-top: 2.5rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-        h3 {
-            color: #333;
-            margin-top: 2rem;
-            background-color: #f0f8ff;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-        }
+        /* 見出しデザイン */
+        h2 {
+            color: #1a1a1a;
+            border-left: 5px solid #00d2ff;
+            padding-left: 10px;
+            margin-top: 2.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: #333;
+            margin-top: 2rem;
+            background-color: #f0f8ff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
 
-        p {
-            margin-bottom: 1.5rem;
-        }
+        p {
+            margin-bottom: 1.5rem;
+        }
 
-        /* 自己紹介と画像の横並びレイアウト */
-        .intro-section {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            background-color: #fafafa;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            margin-bottom: 2rem;
-        }
-        .intro-text {
-            flex: 1;
-        }
-        .intro-image {
-            flex-shrink: 0;
-            width: 200px; /* 画像の大きさを適切に設定 */
-            text-align: center;
-        }
-        .intro-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
+        /* 自己紹介と画像の横並びレイアウト */
+        .intro-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background-color: #fafafa;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+        .intro-text {
+            flex: 1;
+        }
+        .intro-image {
+            flex-shrink: 0;
+            width: 200px; /* 画像の大きさを適切に設定 */
+            text-align: center;
+        }
+        .intro-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
 
-        /* リストのデザイン */
-        ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            background-color: #fff3f3;
-            padding: 1.5rem 1.5rem 1.5rem 2.5rem;
-            border-radius: 8px;
-        }
-        ul li {
-            margin-bottom: 0.5rem;
-        }
+        /* リストのデザイン */
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            background-color: #fff3f3;
+            padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+            border-radius: 8px;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+        }
 
-        /* リンクカード（アイキャッチ付き）のデザイン */
-        .link-card {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            padding: 1rem;
-            margin: 1rem 0 2.5rem 0;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.3s ease;
-        }
-        .link-card:hover {
-            border-color: #00d2ff;
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.2);
-            transform: translateY(-2px);
-        }
-        .link-card img {
-            width: 160px;
-            height: auto;
-            border-radius: 4px;
-            margin-right: 20px;
-            object-fit: cover;
-        }
-        .link-card-content {
-            flex: 1;
-        }
-        .link-card-title {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #007bff;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        .link-card-desc {
-            font-size: 0.9rem;
-            color: #666;
-        }
+        /* リンクカード（アイキャッチ付き）のデザイン */
+        .link-card {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0 2.5rem 0;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .link-card:hover {
+            border-color: #00d2ff;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .link-card img {
+            width: 160px;
+            height: auto;
+            border-radius: 4px;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+        .link-card-content {
+            flex: 1;
+        }
+        .link-card-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .link-card-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
 
-        /* フッター */
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: #1a1a1a;
-            color: #ccc;
-            margin-top: 3rem;
-            font-size: 0.9rem;
-        }
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #1a1a1a;
+            color: #ccc;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
 
-        /* スマホ向けレスポンシブ対応 */
-        @media (max-width: 768px) {
-            .container {
-                margin: 1rem;
-                padding: 1.5rem;
-            }
-            .intro-section {
-                flex-direction: column; /* スマホでは縦並びに */
-                text-align: center;
-            }
-            .intro-image {
-                width: 150px;
-                margin-top: 1rem;
-            }
-            .link-card {
-                flex-direction: column; /* スマホではカードを縦長に */
-                text-align: center;
-            }
-            .link-card img {
-                width: 100%;
-                margin: 0 0 1rem 0;
-            }
-        }
-    </style>
+        /* スマホ向けレスポンシブ対応 */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            .intro-section {
+                flex-direction: column; /* スマホでは縦並びに */
+                text-align: center;
+            }
+            .intro-image {
+                width: 150px;
+                margin-top: 1rem;
+            }
+            .link-card {
+                flex-direction: column; /* スマホではカードを縦長に */
+                text-align: center;
+            }
+            .link-card img {
+                width: 100%;
+                margin: 0 0 1rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>しょーでんゲーミング</h1>
-    </header>
+    <header>
+        <h1>しょーでんゲーミング</h1>
+    </header>
 
-    <div class="container">
-        <!-- 挨拶と自己紹介セクション -->
-        <p>しょーでんゲーミングへようこそ！しょーでんです。<br>
-        まず「しょーでんって誰？」って思いますよね。なので軽く自己紹介します。</p>
+    <div class="container">
+        <p>しょーでんゲーミングへようこそ！しょーでんです。<br>
+        まず「しょーでんって誰？」って思いますよね。なので軽く自己紹介します。</p>
 
-        <!-- 追加したアイキャッチ画像 -->
-        <div style="text-align: center; margin: 2rem 0;">
-            <img src="aikyatti.png" alt="アイキャッチ画像" style="max-width: 100%; height: auto; border-radius: 8px;">
-        </div>
+        <div style="text-align: center; margin: 2rem 0;">
+            <img src="aikyatti.png" alt="アイキャッチ画像" style="max-width: 100%; height: auto; border-radius: 8px;">
+        </div>
 
-        <h2>自己紹介</h2>
-        
-        <div class="intro-section">
-            <div class="intro-text">
-                <p>しょーでんと申します。<br>
-                2026年現在23歳の男で、発達障害を持っています。</p>
-                
-                <p>このブログを運営するきっかけ、なぜこのジャンルなのかというと、僕自身ゲーミングPCやPCに興味があり、高校（特別支援学校）を卒業してから、自分のパソコン選びでたくさんの失敗を重ねて今の愛機と出会ったからです。</p>
+        <h2>自己紹介</h2>
+        
+        <div class="intro-section">
+            <div class="intro-text">
+                <p>しょーでんと申します。<br>
+                2026年現在23歳の男で、発達障害を持っています。</p>
+                
+                <p>このブログを運営するきっかけ、なぜこのジャンルなのかというと、僕自身ゲーミングPCやPCに興味があり、高校（特別支援学校）を卒業してから、自分のパソコン選びでたくさんの失敗を重ねて今の愛機と出会ったからです。</p>
 
-                <p><strong>【今の愛機】</strong><br>
-                GALLERIA（ガレリア）のゲーミングノートPC<br>
-                ・Core i7 13620H<br>
-                ・RTX 4060 Laptop<br>
-                ・メモリ：DDR5 32GB 1枚（自分で増設しました）<br>
-                ・ストレージ：Samsung 990Pro 1TB & 2TB 合計3TB（自分で増設しました）</p>
+                <p><strong>【今の愛機】</strong><br>
+                GALLERIA（ガレリア）のゲーミングノートPC<br>
+                ・Core i7 13620H<br>
+                ・RTX 4060 Laptop<br>
+                ・メモリ：DDR5 32GB 1枚（自分で増設しました）<br>
+                ・ストレージ：Samsung 990Pro 1TB & 2TB 合計3TB（自分で増設しました）</p>
 
-                <p><strong>【過去の数々の失敗】</strong></p>
-                <ul>
-                    <li>デスクトップPCをアップグレードしようとして、CPUとマザーボードの互換性が合わずに失敗</li>
-                    <li>なんとなく性能が良さそうだからと、ストレージやメモリを妥協してMacを選んで失敗</li>
-                    <li>CPU性能だけを見て安いノートPCを買い、GPUがしょぼくてゲームができず失敗</li>
-                    <li>自作しようとして、ハードオフで動作未確認の電源ユニットを購入し、SSDを1個ぶっ壊す</li>
-                </ul>
+                <p><strong>【過去の数々の失敗】</strong></p>
+                <ul>
+                    <li>デスクトップPCをアップグレードしようとして、CPUとマザーボードの互換性が合わずに失敗</li>
+                    <li>なんとなく性能が良さそうだからと、ストレージやメモリを妥協してMacを選んで失敗</li>
+                    <li>CPU性能だけを見て安いノートPCを買い、GPUがしょぼくてゲームができず失敗</li>
+                    <li>自作しようとして、ハードオフで動作未確認の電源ユニットを購入し、SSDを1個ぶっ壊す</li>
+                </ul>
 
-                <p>このようにいろいろな失敗を僕自身経験して、そのうちに知識がついてきました。<br>
-                そんな僕が、読者の皆さんが同じような失敗をせず、遠回りせずに自分にピッタリなゲーミングPCと出会えたらうれしいなと思って、この「しょーでんゲーミング」というブログを運営することにしました。</p>
+                <p>このようにいろいろな失敗を僕自身経験して、そのうちに知識がついてきました。<br>
+                そんな僕が、読者の皆さんが同じような失敗をせず、遠回りせずに自分にピッタリなゲーミングPCと出会えたらうれしいなと思って、この「しょーでんゲーミング」というブログを運営することにしました。</p>
 
-                <p style="font-weight: bold; color: #e74c3c; margin-top: 1.5rem;">
-                現在作りかけですが、これから「しょーでんゲーミング」を拡大していく予定です！
-                </p>
-            </div>
-            <!-- 挨拶画像の表示エリア -->
-            <div class="intro-image">
-                <img src="onnnanoaisatu.png" alt="挨拶する女の子の画像">
-            </div>
-        </div>
+                <p style="font-weight: bold; color: #e74c3c; margin-top: 1.5rem;">
+                現在作りかけですが、これから「しょーでんゲーミング」を拡大していく予定です！
+                </p>
+            </div>
+            <div class="intro-image">
+                <img src="onnnanoaisatu.png" alt="挨拶する女の子の画像">
+            </div>
+        </div>
 
-        <!-- ゲーミングPCの構成解説セクション -->
-        <h2>初心者向け！ゲーミングPCの構成とパーツ解説</h2>
-        <p>ゲーミングPCは難しそうに見えますが、実は決まったパーツの組み合わせでできています。<br>
-        デスクトップのゲーミングPCは、以下のパーツを全体をまとめる<strong>「ケース」</strong>の中に組み込んで完成します。</p>
+        <h2>初心者向け！ゲーミングPCの構成とパーツ解説</h2>
+        <p>ゲーミングPCは難しそうに見えますが、実は決まったパーツの組み合わせでできています。<br>
+        デスクトップのゲーミングPCは、以下のパーツを全体をまとめる<strong>「ケース」</strong>の中に組み込んで完成します。</p>
 
-        <h3>CPU（シーピーユー）</h3>
-        <p>人間でいう「脳みそ」にあたるパーツです。パソコン全体の計算処理を行います。ゲームを動かすための指示を出したり、普段の動作のサクサク感に直結します。</p>
-        
-        <!-- CPU徹底解説ページへのリンクカード -->
-        <a href="https://shoodenn.github.io/shoodenngaming/kizi/cpu.html" class="link-card">
-            <img src="https://shoodenn.github.io/shoodenngaming/aikyatti/cpu.png" alt="CPUのアイキャッチ画像">
-            <div class="link-card-content">
-                <span class="link-card-title">CPUについて詳しく知りたい方はこちら</span>
-                <span class="link-card-desc">CPUの役割や選び方、性能の見方について徹底解説しています！</span>
-            </div>
-        </a>
+        <h3>CPU（シーピーユー）</h3>
+        <p>人間でいう「脳みそ」にあたるパーツです。パソコン全体の計算処理を行います。ゲームを動かすための指示を出したり、普段の動作のサクサク感に直結します。</p>
+        
+        <a href="https://shoodenn.github.io/shoodenngaming/kizi/cpu.html" class="link-card">
+            <img src="https://shoodenn.github.io/shoodenngaming/aikyatti/cpu.png" alt="CPUのアイキャッチ画像">
+            <div class="link-card-content">
+                <span class="link-card-title">CPUについて詳しく知りたい方はこちら</span>
+                <span class="link-card-desc">CPUの役割や選び方、性能の見方について徹底解説しています！</span>
+            </div>
+        </a>
 
-        <h3>GPU（グラフィックボード / ビデオカード）</h3>
-        <p>映像を画面に映し出すための専用のパーツです。ゲーミングPCにおいて<strong>最も重要なパーツ</strong>であり、この性能が低いとゲームの映像がカクカクしてしまいます。綺麗な画質でゲームを遊ぶために必須です。</p>
+        <h3>GPU（グラフィックボード / ビデオカード）</h3>
+        <p>映像を画面に映し出すための専用のパーツです。ゲーミングPCにおいて<strong>最も重要なパーツ</strong>であり、この性能が低いとゲームの映像がカクカクしてしまいます。綺麗な画質でゲームを遊ぶために必須です。</p>
 
-        <!-- GPU徹底解説ページへのリンクカード -->
-        <a href="https://shoodenn.github.io/shoodenngaming/kizi/gpu.html" class="link-card">
-            <img src="https://shoodenn.github.io/shoodenngaming/aikyatti/gpu.png" alt="GPUのアイキャッチ画像">
-            <div class="link-card-content">
-                <span class="link-card-title">GPUについて詳しく知りたい方はこちら</span>
-                <span class="link-card-desc">ゲーミングPCの心臓部！GPUの役割やNVIDIA、Radeonなどの違いを徹底解説！</span>
-            </div>
-        </a>
+        <a href="https://shoodenn.github.io/shoodenngaming/kizi/gpu.html" class="link-card">
+            <img src="https://shoodenn.github.io/shoodenngaming/aikyatti/gpu.png" alt="GPUのアイキャッチ画像">
+            <div class="link-card-content">
+                <span class="link-card-title">GPUについて詳しく知りたい方はこちら</span>
+                <span class="link-card-desc">ゲーミングPCの心臓部！GPUの役割やNVIDIA、Radeonなどの違いを徹底解説！</span>
+            </div>
+        </a>
 
-        <h3>マザーボード</h3>
-        <p>すべてのパーツを接続するための「大きな基盤」です。これがないと各パーツが通信できません。CPUとマザーボードには「互換性（ソケット）」があり、適当に買うと僕のように失敗します。</p>
+        <h3>マザーボード</h3>
+        <p>すべてのパーツを接続するための「大きな基盤」です。これがないと各パーツが通信できません。CPUとマザーボードには「互換性（ソケット）」があり、適当に買うと僕のように失敗します。</p>
 
-        <h3>メモリ（RAM）</h3>
-        <p>作業をするための「机の広さ」です。ゲームを開きながらブラウザを見たり、ボイスチャットをするには、机が広い（容量が大きい）必要があります。ゲーミングPCなら16GB〜32GBが一般的です。</p>
+        <h3>メモリ（RAM）</h3>
+        <p>作業をするための「机の広さ」です。ゲームを開きながらブラウザを見たり、ボイスチャットをするには、机が広い（容量が大きい）必要があります。ゲーミングPCなら16GB〜32GBが一般的です。</p>
 
-        <h3>ストレージ（SSDやHDD）</h3>
-        <p>データを保存しておく「引き出し」です。最近は読み込みが圧倒的に速い「SSD」が主流です。ゲームのロード時間を短くするためにはSSDが必須です。</p>
+        <h3>ストレージ（SSDやHDD）</h3>
+        <p>データを保存しておく「引き出し」です。最近は読み込みが圧倒的に速い「SSD」が主流です。ゲームのロード時間を短くするためにはSSDが必須です。</p>
 
-        <h3>電源ユニット</h3>
-        <p>コンセントからの電気を各パーツに配る「心臓」です。パーツの消費電力に合った容量（W数）を選ぶ必要があります。動作未確認の中古を買うと、僕のように他のパーツまで壊す恐れがあるので注意です！</p>
+        <h3>電源ユニット</h3>
+        <p>コンセントからの電気を各パーツに配る「心臓」です。パーツの消費電力に合った容量（W数）を選ぶ必要があります。動作未確認の中古を買うと、僕のように他のパーツまで壊す恐れがあるので注意です！</p>
 
-        <h2>よく言われる「スペック」と「ボトルネック」とは？</h2>
-        <p>パソコンの性能のことをよく<strong>「スペック」</strong>と呼びます。スペックが高い＝性能が良いということです。</p>
+        <h2>よく言われる「スペック」と「ボトルネック」とは？</h2>
+        <p>パソコンの性能のことをよく<strong>「スペック」</strong>と呼びます。スペックが高い＝性能が良いということです。</p>
 
-        <h3>そもそもボトルネックとは？</h3>
-        <p>パーツを組み合わせる上で注意しなければならないのが<strong>「ボトルネック」</strong>です。<br>
-        ボトルのネック（瓶の首）が細くなっていると、中身のジュースが少しずつしか出ませんよね。これと同じ現象がPCでも起こります。</p>
+        <h3>そもそもボトルネックとは？</h3>
+        <p>パーツを組み合わせる上で注意しなければならないのが<strong>「ボトルネック」</strong>です。<br>
+        ボトルのネック（瓶の首）が細くなっていると、中身のジュースが少しずつしか出ませんよね。これと同じ現象がPCでも起こります。</p>
 
-        <p>例えば、めちゃくちゃ性能の良い「GPU」を積んでいるのに、計算を指示する「CPU」の性能が低すぎると、CPUの指示待ちになってしまい、GPUが本気を出すことができません。<br>
-        逆に、CPUが超高性能でも、GPUがしょぼければ（過去の僕のように）ゲームは動きません。このように、<strong>一部の性能の低いパーツが足を引っ張り、全体の性能を落としてしまう現象</strong>を「ボトルネック」と呼びます。バランスの良いパーツ選びが重要です！</p>
+        <p>例えば、めちゃくちゃ性能の良い「GPU」を積んでいるのに、計算を指示する「CPU」の性能が低すぎると、CPUの指示待ちになってしまい、GPUが本気を出すことができません。<br>
+        逆に、CPUが超高性能でも、GPUがしょぼければ（過去の僕のように）ゲームは動きません。このように、<strong>一部の性能の低いパーツが足を引っ張り、全体の性能を落としてしまう現象</strong>を「ボトルネック」と呼びます。バランスの良いパーツ選びが重要です！</p>
 
-    </div>
+    </div>
 
-    <footer>
-        <p>しょーでんゲーミングは現在作りかけです。これからまだまだ拡大する予定です！</p>
-        <p>&copy; 2026 しょーでんゲーミング All Rights Reserved.</p>
-    </footer>
+    <footer>
+        <p>しょーでんゲーミングは現在作りかけです。これからまだまだ拡大する予定です！</p>
+        <p>&copy; 2026 しょーでんゲーミング All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
