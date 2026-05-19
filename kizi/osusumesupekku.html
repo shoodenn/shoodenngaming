@@ -5,130 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2026年ゲーミングPC これを買えば間違いない 用途別おすすめスペックとモデル紹介 | しょーでんゲーミング</title>
     <style>
+        /* 全体の色設定 */
         :root {
-            --primary-color: #00ffcc;
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-color: #c9d1d9;
-            --accent-color: #ff3e00;
+            --main-blue: #0056b3;
+            --sub-blue: #e7f1ff;
+            --accent-orange: #ff6600;
+            --text-dark: #333333;
+            --bg-white: #ffffff;
+            --border-gray: #dddddd;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: #f8f9fa; /* ほんの少しグレーを入れることで白背景のコンテンツを際立たせます */
+            color: var(--text-dark);
+            line-height: 1.8;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background: linear-gradient(135deg, #1f2937, #111827);
+            background-color: var(--bg-white);
+            border-bottom: 4px solid var(--main-blue);
             padding: 40px 20px;
             text-align: center;
-            border-bottom: 3px solid var(--primary-color);
+        }
+
+        header p {
+            color: var(--main-blue);
+            font-weight: bold;
+            margin: 0;
         }
 
         h1 {
-            color: #ffffff;
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin: 10px 0 0 0;
+            color: #111;
         }
 
         .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 0 20px;
+            max-width: 960px;
+            margin: 30px auto;
+            background-color: var(--bg-white);
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-radius: 8px;
         }
 
         section {
-            background-color: var(--card-bg);
-            padding: 25px;
-            margin-bottom: 30px;
-            border-radius: 12px;
-            border-left: 5px solid var(--primary-color);
+            margin-bottom: 50px;
         }
 
         h2 {
-            color: var(--primary-color);
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 10px;
+            font-size: 1.5rem;
+            border-left: 8px solid var(--main-blue);
+            padding: 5px 15px;
+            background-color: var(--sub-blue);
+            margin-bottom: 25px;
         }
 
         h3 {
-            color: #58a6ff;
+            font-size: 1.25rem;
+            color: var(--main-blue);
+            border-bottom: 2px solid var(--sub-blue);
+            padding-bottom: 5px;
+            margin-top: 30px;
         }
 
         .point-box {
-            background-color: #0d1117;
-            padding: 15px;
-            border: 1px dashed var(--primary-color);
+            background-color: #fff9f0;
+            border: 2px solid #ffe0b3;
+            padding: 20px;
             border-radius: 8px;
-            margin: 15px 0;
+            margin: 20px 0;
         }
 
-        .warning {
-            color: var(--accent-color);
+        .warning-text {
+            color: #d93025;
             font-weight: bold;
+            text-decoration: underline;
         }
 
         .spec-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
+            margin: 20px 0;
         }
 
-        .spec-table th, .spec-table td {
-            border: 1px solid #30363d;
+        .spec-table th {
+            width: 30%;
+            background-color: #f2f2f2;
+            border: 1px solid var(--border-gray);
             padding: 12px;
             text-align: left;
         }
 
-        .spec-table th {
-            background-color: #21262d;
+        .spec-table td {
+            border: 1px solid var(--border-gray);
+            padding: 12px;
         }
 
         .link-banner {
-            background: linear-gradient(90deg, #238636, #2ea043);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            text-decoration: none;
             display: block;
+            background-color: var(--main-blue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
             font-weight: bold;
-            margin: 20px 0;
+            border-radius: 8px;
+            margin: 30px 0;
+            transition: opacity 0.3s;
         }
 
-        .laptop-model {
-            background: #21262d;
+        .link-banner:hover {
+            opacity: 0.8;
+        }
+
+        .laptop-card {
+            border: 1px solid var(--border-gray);
             padding: 20px;
             border-radius: 8px;
-            margin-top: 15px;
+            margin-top: 20px;
+        }
+
+        .important-note {
+            background-color: #fdf2f2;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 30px;
+            color: #666;
             font-size: 0.9rem;
-            color: #8b949e;
         }
 
-        .btn-affiliate {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
+        ul li {
+            margin-bottom: 8px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <p style="color: var(--primary-color); font-weight: bold;">しょーでんゲーミング</p>
+    <p>しょーでんゲーミング</p>
     <h1>2026年ゲーミングPC これを買えば間違いない<br>用途別おすすめスペックとモデル紹介</h1>
 </header>
 
@@ -137,70 +162,59 @@
     <!-- 選び方の解説 -->
     <section>
         <h2>ゲーミングPCの選び方：見るべきポイント</h2>
-        <p>ゲーミングPCを選ぶ際に必ずチェックすべきは以下の4点、そして必要に応じて消費電力です。</p>
-        <ul>
-            <li><strong>CPU：</strong> PCの頭脳。ゲームの処理速度に直結します。</li>
-            <li><strong>GPU（グラフィックボード）：</strong> 最重要パーツ。映像の綺麗さと滑らかさを決めます。</li>
-            <li><strong>メモリ：</strong> 作業スペース。不足するとカクつきの原因に。</li>
-            <li><strong>SSD容量：</strong> ゲームの起動速度と保存容量。最近のゲームは1本100GB超えもザラです。</li>
-            <li><strong>消費電力：</strong> 性能が高いほど電気を食います。電源ユニットの容量も確認しましょう。</li>
-        </ul>
-
-        <h3>ノートPC派へのアドバイス</h3>
-        <p>しょーでんのように頻繁に持ち運ぶ人はノートPC一択ですが、選ぶ際の基準は基本デスクトップと同じです。ただし、<strong>「SSDやメモリの交換・増設が可能か」</strong>は絶対に見落とさないでください！</p>
+        <p>ゲーミングPCを選ぶ際に必ずチェックすべきは、<strong>CPU・GPU・メモリ・SSD容量</strong>です。また、高スペックを狙うなら<strong>消費電力</strong>も確認しましょう。</p>
+        
+        <p>しょーでんのように頻繁に持ち運ぶ必要がある方には「ゲーミングノート」がおすすめですが、選ぶ基準はデスクトップと大きく変わりません。ただし、ノートPCで特筆して見るべきは、<strong>「SSDやメモリの交換・増設が可能かどうか」</strong>です。</p>
+        
         <div class="point-box">
-            <p><strong>★増設不可のモデルを買うと後悔する理由</strong><br>
-            「容量が足りなくなった」「動作を重く感じてメモリを足したい」と思った時に、基板に直付けされているモデルだと買い替えるしかなくなります。</p>
+            <strong>★ここを見落とすと後悔する！</strong><br>
+            最近のノートPCには、メモリが基板に直付けされていて増設できないモデルもあります。「安かったから」と増設不可のモデルを買ってしまうと、後で性能不足を感じた時に買い替えるしかなくなってしまいます。
         </div>
     </section>
 
-    <!-- 妥協できる点・できない点 -->
+    <!-- 妥協の判断基準 -->
     <section>
-        <h2>妥協してもいい部分・ダメな部分</h2>
+        <h2>妥協しても後悔が薄い部分・妥協できない部分</h2>
         
         <h3>【デスクトップの場合】</h3>
-        <p>デスクトップは後からパーツを替えられるのが強みです。全体的に幅広く妥協しても「あとでアップグレード」すれば大きな失敗にはなりませんが、<strong>過度な妥協は禁物</strong>です。</p>
-        <p class="warning">⚠️ 注意：インテルの場合、LGA1700より古いマザーボード構成を選んでしまうと、将来CPUを替えたい時にマザーボードごと交換が必要になります。その際、Windows OSの再購入が必要になるケースもあり、結局新品を買うのと同じくらい費用がかかる「安物買いの銭失い」になるパターンが多いです。</p>
+        <p>デスクトップはパーツの交換が容易なため、幅広く妥協しても後からアップグレードすれば大きな失敗にはなりません。しかし、<strong>過度な妥協は危険</strong>です。</p>
+        <p>例えば、Intel CPUであれば「LGA1700」より古いマザーボードを選んでしまうと、次回のアップグレード時にマザーボードごと交換が必要になります。その場合、Windows OSの再購入が必要になることもあり、<span class="warning-text">結局PCを1台買い替えるのと同じくらい費用がかかる</span>場合があります。</p>
 
         <h3>【ノートPCの場合】</h3>
-        <p>ノートPCは<strong>「CPUとGPUは絶対に妥協しないこと」</strong>が鉄則です！これらは後から交換できません。逆にメモリやSSDは後から増設可能なモデルを選べば、初期スペックは少し抑えても後悔しません。実は、この点さえ押さえればノートの方が考え方はシンプルです。</p>
-        <p>※デメリットとして、同じ世代のパーツでも電力制限があるため、デスクトップ版よりは性能が劣る点は理解しておきましょう。</p>
+        <p>ノートPCにおいて、<span class="warning-text">CPUとGPUは絶対に妥協しないでください。</span>これらは後から交換が不可能です。逆に、メモリやSSDは「後から増設可能なモデル」を選んでおけば、最初は低めのスペックで妥協しても後悔しません。実は、この点さえ理解していれば、ノートPCの方が選び方はシンプルです。</p>
+        <p><strong>注意点：</strong>ノートPCはバッテリー駆動や発熱を抑えるために電力が制限されています。同じ世代のCPU/GPUでも、デスクトップ版より性能は劣るというデメリットは理解しておきましょう。</p>
     </section>
 
     <a href="https://shoodenn.github.io/shoodenngaming/" class="link-banner">
-        ゲーミングPCの知識をさらに深めたい方はこちらをチェック！
+        ゲーミングPCの知識をさらに深めたい方はこちら
     </a>
 
     <!-- 用途別おすすめスペック -->
     <section>
-        <h2>用途別おすすめスペック 3パターン</h2>
+        <h2>用途別おすすめスペック 3つのパターン</h2>
 
-        <h3>1. とにかくゲームがプレイできればいい（フルHD/60FPS）</h3>
-        <p>4K編集などはせず、まずは快適に遊びたい方向け。ボトルネックが少なくバランス最強です。</p>
+        <h3>1. フルHD/60FPSで快適にプレイしたい</h3>
+        <p>とにかくゲームができればいい、4K編集などは予定していない方向けのバランス重視構成です。</p>
         <table class="spec-table">
-            <tr><th>CPU</th><td>Intel Core i7-14700 または同等品</td></tr>
+            <tr><th>CPU</th><td>Intel Core i7-14700 または同等</td></tr>
             <tr><th>GPU</th><td>RTX 5060Ti</td></tr>
-            <tr><th>メモリ</th><td>DDR4/DDR5 32GB</td></tr>
+            <tr><th>メモリ</th><td>DDR4 または DDR5 32GB</td></tr>
             <tr><th>SSD</th><td>1TB</td></tr>
         </table>
-        <p><strong>解説：</strong>RTX 5060Tiなら大抵のゲームはフルHDでヌルヌル動きます。</p>
+        <p>RTX 5060Tiなら、大抵のゲームをフルHD環境でヌルヌルと快適に楽しめます。</p>
 
-        <hr>
-
-        <h3>2. 配信・4Kプレイを目指したい（ストリーマー向け）</h3>
-        <p>OBSでの配信や、裏でブラウザを開きながら高負荷な設定で遊びたい方向け。</p>
+        <h3>2. ライブ配信や4Kプレイを目指したい</h3>
+        <p>ゲームをしながらOBSやブラウザを動かしたいストリーマー向け構成です。</p>
         <table class="spec-table">
-            <tr><th>CPU</th><td>Intel Core i7-14700K (OC対応)</td></tr>
+            <tr><th>CPU</th><td>Intel Core i7-14700K または同等</td></tr>
             <tr><th>GPU</th><td>RTX 5080</td></tr>
             <tr><th>メモリ</th><td>DDR5 32GB以上</td></tr>
             <tr><th>SSD</th><td>M.2 SSD 2TB</td></tr>
         </table>
-        <p><strong>解説：</strong>K付きモデルは性能を限界まで引き出せます。M.2 SSDはSATA接続より圧倒的に高速で、配信中の読み込みもスムーズです。</p>
+        <p>「K付き」モデルはオーバークロック対応で高いパフォーマンスを発揮します。M.2 SSDはSATA接続よりも圧倒的に速く、配信中の高負荷状態でも安定します。</p>
 
-        <hr>
-
-        <h3>3. 一切の妥協を許さないガチ勢スペック</h3>
-        <p>2026年最強クラス。どんな重いゲームも最高画質で。</p>
+        <h3>3. 一切の妥協を許さないガチ勢向け</h3>
+        <p>2026年現時点で考えうる最高峰のスペックです。</p>
         <table class="spec-table">
             <tr><th>CPU</th><td>Core i9-14900K</td></tr>
             <tr><th>GPU</th><td>RTX 5090</td></tr>
@@ -209,61 +223,61 @@
         </table>
     </section>
 
-    <!-- ノートおすすめ -->
+    <!-- ノートPCおすすめ -->
     <section>
         <h2>しょーでんおすすめノートPC 2選</h2>
-        <p>ノートPCなら<strong>ガレリア一択</strong>です！理由は、最近のモデルはM.2 SSDが2枚入る拡張性と、最大64GBまでのメモリ対応、そしてシンプルなデザインにあります。</p>
+        <p>ノートPCなら、しょーでんは<strong>ガレリア一択</strong>をおすすめします。デザインがシンプルでカッコいいのはもちろん、M.2 SSDが2枚搭載可能だったり、メモリが最大64GB（32GB×2）まで対応していたりと拡張性が高いからです。</p>
 
-        <div class="laptop-model">
-            <h3>① GALLERIA RL7C-R56-5N (長く使いたい人向け)</h3>
+        <div class="laptop-card">
+            <h3>GALLERIA RL7C-R56-5N</h3>
             <ul>
                 <li>CPU: Core i7-14650HX</li>
                 <li>GPU: RTX 5060 8GB (Laptop)</li>
-                <li>RAM: DDR5 16GB (増設推奨)</li>
-                <li>SSD: 500GB M.2 (増設推奨)</li>
-                <li>画面: 15.6インチ (テンキー付・光るキーボード)</li>
+                <li>メモリ: DDR5 16GB (初期状態)</li>
+                <li>SSD: 500GB M.2 (初期状態)</li>
+                <li>その他: 15.6インチ / テンキー付き / キーボード発光色変更可</li>
             </ul>
-            <p>バランスが良くボトルネックが少ない名機。メモリとSSDを増設して使うのがマジでおすすめです。</p>
+            <p><strong>解説：</strong>スペックのバランスが良く、大きなボトルネックがありません。メモリとSSDを増設して使うのが最高に快適でおすすめです。</p>
         </div>
 
-        <div class="laptop-model">
-            <h3>② GALLERIA RL7C-R35-5N (価格重視)</h3>
+        <div class="laptop-card">
+            <h3>GALLERIA RL7C-R35-5N</h3>
             <ul>
                 <li>CPU: Core i7-13620H</li>
                 <li>GPU: RTX 3050 6GB (Laptop)</li>
-                <li>RAM: DDR5 16GB</li>
-                <li>SSD: 500GB M.2</li>
+                <li>メモリ: DDR5 16GB (初期状態)</li>
+                <li>SSD: 500GB M.2 (初期状態)</li>
             </ul>
-            <p>手頃な価格でPCゲームを始めたい方向け。GPUが少し弱めですが、超重量級ゲーム以外ならサクサク動きます。</p>
+            <p><strong>解説：</strong>手頃な価格でPCゲームを始めたい方向け。GPUが少し弱めなので重すぎるゲームは注意が必要ですが、それ以外ならサクサク動作します。</p>
         </div>
 
-        <p class="warning">※最大の注意点：超高性能を求めるなら、ノートではなくデスクトップを選びましょう。ノートはあくまで「持ち運び」と「利便性」のトレードオフです。</p>
+        <div class="important-note">
+            <strong>※ノートPC最大の注意点</strong><br>
+            「超高性能」を追求し、一切の妥協をしたくないガチ勢の方は、必ずデスクトップを選んでください。ノートPCで超高スペックを求めるよりも、デスクトップの方が確実に、より安く高性能を手に入れられます。
+        </div>
     </section>
 
-    <!-- デスクトップモデル紹介（将来用） -->
+    <!-- デスクトップ紹介エリア -->
     <section>
-        <h2>デスクトップおすすめモデル 3選</h2>
-        <p>現在準備中です。具体的なアフィリエイトリンクを含めた詳細を後日公開します！</p>
-        <!-- [ここにアフィリエイトリンクを流し込む] -->
+        <h2>具体的デスクトップおすすめ3選 モデル紹介</h2>
+        <p>（※ここは後ほどアフィリエイトリンク等で作り込みます）</p>
     </section>
 
     <!-- まとめ -->
-    <section style="border-left: 5px solid var(--accent-color);">
+    <section>
         <h2>まとめ</h2>
-        <p>用途によって必要な性能は変わります。自分の「やりたいこと」に合わせて選びましょう。</p>
-        <div class="point-box">
-            <ul>
-                <li><strong>ポイント1：</strong> CPUとGPUのバランスを見て、ボトルネックを作らない！</li>
-                <li><strong>ポイント2：</strong> ノートならCPU・GPUを妥協せず、メモリ・SSDが増設可能なものを選ぶ！</li>
-            </ul>
-        </div>
-        <p>後悔のないPC選びをして、最高のゲームライフを送りましょう！</p>
+        <p>用途によって必要な性能は変わります。自分のやりたいことに合わせてスペックを選びましょう。</p>
+        <ul>
+            <li><strong>ポイント1：</strong> CPUとGPUのバランスを見て、ボトルネックになりにくい構成を選ぶ。</li>
+            <li><strong>ポイント2：</strong> ノートならCPU・GPU性能は妥協せず、メモリ・SSDを増設可能なものを選ぶ。</li>
+        </ul>
+        <p>自分のスタイルに合った最高の相棒を見つけてください！</p>
     </section>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 しょーでんゲーミング. All Rights Reserved.</p>
+    &copy; 2026 しょーでんゲーミング All Rights Reserved.
 </footer>
 
 </body>
