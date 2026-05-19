@@ -187,6 +187,28 @@
             font-size: 0.9rem;
         }
 
+        /* アドバイスエリア用のスタイルを追加 */
+        .advice-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .advice-text {
+            flex: 1;
+        }
+
+        .advice-image {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+
+        .advice-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
         /* レスポンシブ対応：スマホでは画像を上に */
         @media screen and (max-width: 768px) {
             .product-card {
@@ -201,6 +223,18 @@
                 text-align: left;
                 display: inline-block;
             }
+            /* アドバイスエリアのスマホ対応 */
+            .advice-container {
+                flex-direction: column;
+            }
+            .advice-image {
+                flex: 0 0 auto;
+                width: 100%;
+                margin-top: 20px;
+            }
+            .advice-image img {
+                max-width: 250px;
+            }
         }
     </style>
 </head>
@@ -213,7 +247,6 @@
 
 <div class="container">
 
-    <!-- 選び方の解説 -->
     <section>
         <h2>ゲーミングPCの選び方：見るべきポイント</h2>
         <p>ゲーミングPCを選ぶ際に必ずチェックすべきは、<strong>CPU・GPU・メモリ・SSD容量</strong>です。また、高スペックを狙うなら<strong>消費電力</strong>も確認しましょう。</p>
@@ -226,24 +259,29 @@
         </div>
     </section>
 
-    <!-- 妥協の判断基準 -->
     <section>
         <h2>妥協しても後悔が薄い部分・妥協できない部分</h2>
         
-        <h3>【デスクトップの場合】</h3>
-        <p>デスクトップはパーツの交換が容易なため、幅広く妥協しても後からアップグレードすれば大きな失敗にはなりません。しかし、<strong>過度な妥協は危険</strong>です。</p>
-        <p>例えば、Intel CPUであれば「LGA1700」より古いマザーボードを選んでしまうと、次回のアップグレード時にマザーボードごと交換が必要になります。その場合、Windows OSの再購入が必要になることもあり、<span class="warning-text">結局PCを1台買い替えるのと同じくらい費用がかかる</span>場合があります。</p>
+        <div class="advice-container">
+            <div class="advice-text">
+                <h3>【デスクトップの場合】</h3>
+                <p>デスクトップはパーツの交換が容易なため、幅広く妥協しても後からアップグレードすれば大きな失敗にはなりません。しかし、<strong>過度な妥協は危険</strong>です。</p>
+                <p>例えば、Intel CPUであれば「LGA1700」より古いマザーボードを選んでしまうと、次回のアップグレード時にマザーボードごと交換が必要になります。その場合、Windows OSの再購入が必要になることもあり、<span class="warning-text">結局PCを1台買い替えるのと同じくらい費用がかかる</span>場合があります。</p>
 
-        <h3>【ノートPCの場合】</h3>
-        <p>ノートPCにおいて、<span class="warning-text">CPUとGPUは絶対に妥協しないでください。</span>これらは後から交換が不可能です。逆に、メモリやSSDは「後から増設可能なモデル」を選んでおけば、最初は低めのスペックで妥協しても後悔しません。実は、この点さえ理解していれば、ノートPCの方が選び方はシンプルです。</p>
-        <p><strong>注意点：</strong>ノートPCはバッテリー駆動や発熱を抑えるために電力が制限されています。同じ世代のCPU/GPUでも、デスクトップ版より性能は劣るというデメリットは理解しておきましょう。</p>
+                <h3>【ノートPCの場合】</h3>
+                <p>ノートPCにおいて、<span class="warning-text">CPUとGPUは絶対に妥協しないでください。</span>これらは後から交換が不可能です。逆に、メモリやSSDは「後から増設可能なモデル」を選んでおけば、最初は低めのスペックで妥協しても後悔しません。実は、この点さえ理解していれば、ノートPCの方が選び方はシンプルです。</p>
+                <p><strong>注意点：</strong>ノートPCはバッテリー駆動や発熱を抑えるために電力が制限されています。同じ世代のCPU/GPUでも、デスクトップ版より性能は劣るというデメリットは理解しておきましょう。</p>
+            </div>
+            <div class="advice-image">
+                <img src="onnanoadobaisu.png" alt="アドバイス">
+            </div>
+        </div>
     </section>
 
     <a href="https://shoodenn.github.io/shoodenngaming/" class="link-banner">
         ゲーミングPCの知識をさらに深めたい方はこちら
     </a>
 
-    <!-- 用途別おすすめスペック -->
     <section>
         <h2>用途別おすすめスペック 3つのパターン</h2>
 
@@ -277,11 +315,9 @@
         </table>
     </section>
 
-    <!-- デスクトップ紹介エリア -->
     <section>
         <h2>具体的デスクトップおすすめ3選 モデル紹介</h2>
 
-        <!-- デスクトップ1 -->
         <div class="product-card">
             <div class="product-image">
                 <img src="osusume1.jpg" alt="GALLERIA XPC7M-R56T8G-GD">
@@ -293,7 +329,6 @@
             </div>
         </div>
 
-        <!-- デスクトップ2 -->
         <div class="product-card">
             <div class="product-image">
                 <img src="osusume2.jpg" alt="GALLERIA XDR7A-R58-GD">
@@ -305,7 +340,6 @@
             </div>
         </div>
 
-        <!-- デスクトップ3 -->
         <div class="product-card">
             <div class="product-image">
                 <img src="osusume3.jpg" alt="GALLERIA XMC9A-R59-GD">
@@ -318,12 +352,10 @@
         </div>
     </section>
 
-    <!-- ノートPCおすすめ -->
     <section>
         <h2>しょーでんおすすめノートPC 2選</h2>
         <p>ノートPCなら、しょーでんは<strong>ガレリア一択</strong>をおすすめします。拡張性が高く、長く使えるからです。</p>
 
-        <!-- ノート1 -->
         <div class="product-card">
             <div class="product-image">
                 <img src="osusumenooto1.jpg" alt="GALLERIA RL7C-R56-5N">
@@ -341,7 +373,6 @@
             </div>
         </div>
 
-        <!-- ノート2 -->
         <div class="product-card">
             <div class="product-image">
                 <img src="osusumenooto2.jpg" alt="GALLERIA RL7C-R35-5N">
@@ -365,7 +396,6 @@
         </div>
     </section>
 
-    <!-- まとめ -->
     <section>
         <h2>まとめ</h2>
         <p>用途によって必要な性能は変わります。自分のやりたいことに合わせてスペックを選びましょう。</p>
