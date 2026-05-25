@@ -132,53 +132,97 @@
     <h3>1. 超高スペックPC（4K最高画質・ゴリゴリの最新ゲーム向け）</h3>
     <ul>
         <li><strong>目安ワット数：1000W 〜 1200W以上</strong></li>
-        <li>RTX 4090や今後のRTX 5090など、最上位のグラボとCore i9などのハイエンドCPUを組み合わせる構成です。グラボ単体で400W以上消費することもあるため、変換効率や安定性を考慮して最低でも1000W以上の電源が推奨されます。</li>
+        <li>RTX 4090や最新のRTX 5090など、最上位のグラボとCore i9などのハイエンドCPUを組み合わせる構成です。グラボ単体で400W〜600W以上消費することもあるため、変換効率や安定性を考慮して最低でも1000W以上の電源が推奨されます。</li>
     </ul>
 
     <h3>2. ミドルスペックPC（WQHD〜高フレームレート向け）</h3>
     <ul>
         <li><strong>目安ワット数：650W 〜 850W</strong></li>
-        <li>RTX 4070シリーズなどの中間スペック帯です。一番多くのゲーマーが選ぶ構成で、バランスが良いです。将来のパーツアップグレードも考慮して750W〜850Wあたりを選んでおくと安心です。</li>
+        <li>RTX 4070 SUPERなどの中間スペック帯です。一番多くのゲーマーが選ぶ構成で、バランスが良いです。将来のパーツアップグレードも考慮して750W〜850Wあたりを選んでおくと安心です。</li>
     </ul>
 
     <h3>3. エントリースペックPC（とりあえずフルHDでゲームができればいい人向け）</h3>
     <ul>
         <li><strong>目安ワット数：500W 〜 600W</strong></li>
-        <li>RTX 4060やRTX 3060など、フルHD（1080p）環境で快適に遊べる構成です。消費電力は控えめなので、500W〜600Wあれば十分安定して動作します。</li>
+        <li>RTX 4060やRTX 3050など、フルHD（1080p）環境で遊べる構成です。消費電力は控えめなので、500W〜600Wあれば十分安定して動作します。</li>
     </ul>
 
     <hr>
 
     <h2>【実践】推奨電源ワット数 計算ツール</h2>
-    <p>自分が組みたい構成のパーツを選択すると、大体の消費電力と、安全に使うための推奨電源ワット数が計算されます。<br>
+    <p>自分が組みたい構成のパーツを選択すると、大体の最大消費電力と、安全に使うための推奨電源ワット数が計算されます。<br>
+    ※CPUは最大ターボ時の電力、GPUはTGP（最大消費電力）を基準にしています。<br>
     ※マザーボードやファンなどの基本消費電力（約50W）は自動で加算されます。</p>
 
     <div class="calculator-container">
         <form id="powerForm">
             <div class="form-group">
-                <label for="cpu">CPU</label>
+                <label for="cpu">CPU (最大消費電力の目安)</label>
                 <select id="cpu">
                     <option value="0">選択してください</option>
-                    <optgroup label="Intel Core Ultra (最新200Sシリーズ等)">
+                    <optgroup label="Intel Core Ultra (200Sシリーズ)">
                         <option value="250">Core Ultra 9 285K</option>
-                        <option value="250">Core Ultra 7 265K</option>
-                        <option value="160">Core Ultra 5 245K</option>
+                        <option value="250">Core Ultra 7 265K / 265KF</option>
+                        <option value="159">Core Ultra 5 245K / 245KF</option>
                     </optgroup>
-                    <optgroup label="Intel Core iシリーズ (14〜12世代)">
-                        <option value="253">Core i9-14900K / 13900K / 12900K</option>
-                        <option value="253">Core i7-14700K / 13700K</option>
-                        <option value="190">Core i7-12700K / 11700K</option>
-                        <option value="154">Core i5-14600K / 13600K / 12600K</option>
-                        <option value="150">Core i5-14400 / 13400 / 12400</option>
-                        <option value="110">Core i3-14100 / 13100 / 12100</option>
+                    <optgroup label="Intel 第14世代 (Raptor Lake Refresh)">
+                        <option value="253">Core i9-14900K / KF</option>
+                        <option value="219">Core i9-14900 / F</option>
+                        <option value="106">Core i9-14900T (省電力モデル)</option>
+                        <option value="253">Core i7-14700K / KF</option>
+                        <option value="219">Core i7-14700 / F</option>
+                        <option value="106">Core i7-14700T (省電力モデル)</option>
+                        <option value="181">Core i5-14600K / KF</option>
+                        <option value="154">Core i5-14500</option>
+                        <option value="148">Core i5-14400 / F</option>
+                        <option value="82">Core i5-14400T (省電力モデル)</option>
+                        <option value="110">Core i3-14100 / F</option>
+                        <option value="60">Core i3-14100T (省電力モデル)</option>
                     </optgroup>
-                    <optgroup label="AMD Ryzen (最新〜3世代前)">
-                        <option value="230">Ryzen 9 9950X / 7950X / 5950X</option>
-                        <option value="170">Ryzen 9 9900X / 7900X / 5900X</option>
-                        <option value="142">Ryzen 7 9700X / 7700X / 5800X</option>
-                        <option value="120">Ryzen 7 7800X3D / 5800X3D</option>
-                        <option value="88">Ryzen 5 9600X / 7600X / 5600X</option>
-                        <option value="65">Ryzen 5 7600 / 5600</option>
+                    <optgroup label="Intel 第13世代 (Raptor Lake)">
+                        <option value="253">Core i9-13900K / KF</option>
+                        <option value="219">Core i9-13900 / F</option>
+                        <option value="106">Core i9-13900T (省電力モデル)</option>
+                        <option value="253">Core i7-13700K / KF</option>
+                        <option value="219">Core i7-13700 / F</option>
+                        <option value="106">Core i7-13700T (省電力モデル)</option>
+                        <option value="181">Core i5-13600K / KF</option>
+                        <option value="154">Core i5-13500</option>
+                        <option value="148">Core i5-13400 / F</option>
+                        <option value="82">Core i5-13400T (省電力モデル)</option>
+                        <option value="89">Core i3-13100 / F</option>
+                    </optgroup>
+                    <optgroup label="Intel 第12世代 (Alder Lake)">
+                        <option value="241">Core i9-12900K / KF</option>
+                        <option value="202">Core i9-12900 / F</option>
+                        <option value="106">Core i9-12900T (省電力モデル)</option>
+                        <option value="190">Core i7-12700K / KF</option>
+                        <option value="180">Core i7-12700 / F</option>
+                        <option value="150">Core i5-12600K / KF</option>
+                        <option value="117">Core i5-12400 / F</option>
+                        <option value="74">Core i5-12400T (省電力モデル)</option>
+                        <option value="89">Core i3-12100 / F</option>
+                    </optgroup>
+                    <optgroup label="AMD Ryzen 9000シリーズ">
+                        <option value="230">Ryzen 9 9950X (PPT: 200W〜230W)</option>
+                        <option value="162">Ryzen 9 9900X (PPT: 162W)</option>
+                        <option value="88">Ryzen 7 9700X (PPT: 88W)</option>
+                        <option value="88">Ryzen 5 9600X (PPT: 88W)</option>
+                    </optgroup>
+                    <optgroup label="AMD Ryzen 7000シリーズ">
+                        <option value="230">Ryzen 9 7950X / 7900X</option>
+                        <option value="162">Ryzen 9 7950X3D / 7900X3D</option>
+                        <option value="142">Ryzen 7 7700X</option>
+                        <option value="142">Ryzen 5 7600X</option>
+                        <option value="88">Ryzen 7 7800X3D</option>
+                        <option value="88">Ryzen 9 7900 / Ryzen 7 7700 / Ryzen 5 7600</option>
+                    </optgroup>
+                    <optgroup label="AMD Ryzen 5000シリーズ">
+                        <option value="142">Ryzen 9 5950X / 5900X</option>
+                        <option value="142">Ryzen 7 5800X</option>
+                        <option value="142">Ryzen 7 5800X3D</option>
+                        <option value="76">Ryzen 7 5700X</option>
+                        <option value="76">Ryzen 5 5600X / 5600</option>
                     </optgroup>
                 </select>
             </div>
@@ -191,37 +235,52 @@
                         <option value="600">RTX 5090</option>
                         <option value="400">RTX 5080</option>
                         <option value="250">RTX 5070</option>
+                        <option value="150">RTX 5060</option>
+                        <option value="100">RTX 5050</option>
                     </optgroup>
                     <optgroup label="RTX 40シリーズ">
-                        <option value="450">RTX 4090</option>
-                        <option value="320">RTX 4080 / 4080 SUPER</option>
-                        <option value="285">RTX 4070 Ti / 4070 Ti SUPER</option>
-                        <option value="220">RTX 4070 / 4070 SUPER</option>
-                        <option value="160">RTX 4060 Ti</option>
+                        <option value="450">RTX 4090 / 4090 D</option>
+                        <option value="320">RTX 4080 SUPER</option>
+                        <option value="320">RTX 4080</option>
+                        <option value="285">RTX 4070 Ti SUPER</option>
+                        <option value="285">RTX 4070 Ti</option>
+                        <option value="220">RTX 4070 SUPER</option>
+                        <option value="200">RTX 4070</option>
+                        <option value="160">RTX 4060 Ti (8GB / 16GB)</option>
                         <option value="115">RTX 4060</option>
                     </optgroup>
                     <optgroup label="RTX 30シリーズ">
+                        <option value="450">RTX 3090 Ti</option>
                         <option value="350">RTX 3090 / 3080 Ti</option>
-                        <option value="320">RTX 3080</option>
+                        <option value="320">RTX 3080 (10GB / 12GB)</option>
                         <option value="290">RTX 3070 Ti</option>
                         <option value="220">RTX 3070</option>
                         <option value="200">RTX 3060 Ti</option>
                         <option value="170">RTX 3060</option>
+                        <option value="130">RTX 3050 (8GB)</option>
+                        <option value="70">RTX 3050 (6GB)</option>
                     </optgroup>
                     <optgroup label="RTX 20シリーズ / GTXシリーズ">
                         <option value="250">RTX 2080 Ti</option>
-                        <option value="215">RTX 2080 / 2080 SUPER</option>
-                        <option value="175">RTX 2070 / 2070 SUPER</option>
-                        <option value="160">RTX 2060 / 2060 SUPER</option>
+                        <option value="250">RTX 2080 SUPER</option>
+                        <option value="215">RTX 2080</option>
+                        <option value="215">RTX 2070 SUPER</option>
+                        <option value="175">RTX 2070</option>
+                        <option value="175">RTX 2060 SUPER</option>
+                        <option value="160">RTX 2060</option>
                         <option value="250">GTX 1080 Ti</option>
                         <option value="180">GTX 1080</option>
-                        <option value="120">GTX 1660 / 1660 SUPER / 1660 Ti</option>
-                        <option value="75">GTX 1650</option>
+                        <option value="120">GTX 1660 Ti / 1660 SUPER</option>
+                        <option value="120">GTX 1660</option>
+                        <option value="75">GTX 1650 SUPER / 1650</option>
                     </optgroup>
                     <optgroup label="その他 / Radeon等">
                         <option value="355">RX 7900 XTX</option>
+                        <option value="315">RX 7900 XT</option>
                         <option value="260">RX 7800 XT</option>
-                        <option value="190">RX 7600</option>
+                        <option value="245">RX 7700 XT</option>
+                        <option value="190">RX 7600 XT</option>
+                        <option value="165">RX 7600</option>
                     </optgroup>
                 </select>
             </div>
@@ -270,7 +329,7 @@
         </form>
 
         <div class="result-box">
-            <p>概算消費電力: <br><span id="total-power">0</span> W</p>
+            <p>最大時の概算消費電力: <br><span id="total-power">0</span> W</p>
             <p style="margin-top:20px;">推奨電源ユニット容量: <br><span id="rec-psu">0</span> W</p>
             <small style="color:#aaa;">※推奨容量は「概算消費電力の1.5〜2倍」を目安に余裕を持たせた数値です</small>
         </div>
