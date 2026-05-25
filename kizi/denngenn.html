@@ -5,18 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PC電源ユニットの選び方＆必要ワット数計算ツール</title>
 
-<!-- OGP（SNSシェア時の設定） -->
 <meta property="og:title" content="PC電源ユニットの選び方・ワット数計算ツール" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shoodenn.github.io/shoodenngaming/kizi/denngenn.html" />
 <meta property="og:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/denngenn.png" />
 <meta property="og:site_name" content="しょーでんゲーミング" />
-<meta property="og:description" content="ゲーミングPC　電源ユニット解説＆ワット数計算ツール" />
+<meta property="og:description" content="ゲーミングPC 電源ユニット解説＆ワット数計算ツール" />
 
-<!-- X（旧Twitter）用の設定 -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="しょーでんゲーミング" />
-<meta name="twitter:description" content="ゲーミングPC　電源ユニット解説＆ワット数計算ツール" />
+<meta name="twitter:description" content="ゲーミングPC 電源ユニット解説＆ワット数計算ツール" />
 <meta name="twitter:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/denngenn.png" />
 
 <style>
@@ -69,15 +67,6 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    @media (max-width: 768px) {
-        .intro-layout {
-            flex-direction: column-reverse;
-        }
-        .intro-image {
-            margin: 0 auto;
-            max-width: 80%;
-        }
-    }
 
     h2 {
         border-left: 5px solid #ff0055;
@@ -101,8 +90,9 @@
         border-radius: 8px;
         padding: 15px;
         margin: 15px 0 30px 0;
-        max-width: 450px; /* 記事内にスッと収まるサイズ感 */
+        max-width: 450px; 
         transition: transform 0.2s;
+        box-sizing: border-box;
     }
     .product-box:hover {
         transform: translateY(-3px);
@@ -165,6 +155,11 @@
     .radio-group {
         display: flex;
         gap: 15px;
+        flex-wrap: wrap;
+    }
+    .storage-flex {
+        display: flex;
+        gap: 10px;
     }
     .btn-calc {
         display: block;
@@ -190,7 +185,7 @@
         padding: 20px;
         border-radius: 8px;
         text-align: center;
-        display: none; /* 初期状態は非表示 */
+        display: none; 
     }
     .result-box span {
         font-size: 2em;
@@ -212,6 +207,61 @@
         height: 1px;
         background: #eee;
         margin: 40px 0;
+    }
+
+    /* === スマートフォン向けのレスポンシブデザイン === */
+    @media (max-width: 768px) {
+        body {
+            padding: 10px; /* 全体の余白を狭める */
+        }
+        .content-section {
+            padding: 20px 15px;
+        }
+        h1 {
+            font-size: 1.5em;
+        }
+        h2 {
+            font-size: 1.3em;
+            margin-top: 30px;
+        }
+        
+        /* 冒頭の横並びを縦並び（画像が上）に変更 */
+        .intro-layout {
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+        .intro-image {
+            margin: 0 auto;
+            max-width: 100%;
+        }
+
+        /* ストレージの横並びを縦並びに変更 */
+        .storage-flex {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* アフィリエイト商品ボックスを縦並びにして中央寄せ */
+        .product-box {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+            max-width: 100%; /* スマホでは横幅いっぱいに */
+        }
+        .product-img {
+            margin-right: 0;
+            margin-bottom: 15px;
+            width: 150px; /* 画像を少し大きく見せる */
+            height: 150px;
+        }
+        .product-info {
+            width: 100%;
+        }
+        .btn-rakuten {
+            display: block; /* ボタンを横幅いっぱいに近くする */
+            width: 80%;
+            margin: 0 auto;
+        }
     }
 </style>
 </head>
@@ -425,7 +475,7 @@
 
             <div class="form-group">
                 <label>ストレージ</label>
-                <div style="display:flex; gap:10px;">
+                <div class="storage-flex">
                     <div style="flex:1;">
                         <label style="font-weight:normal;">SATA SSD (枚数)</label>
                         <select id="sata_count">
@@ -464,7 +514,6 @@
 </div>
 
 <script>
-// 計算ツール用にアフィリエイト全データを定義
 const affiliateData = [
     { w: 450, img: "450w.jpg", url: "https://hb.afl.rakuten.co.jp/ichiba/54292fe9.9893815e.54292fea.d0b6824d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdenitshop-r%2F4988755041133%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" },
     { w: 500, img: "500w.jpg", url: "https://hb.afl.rakuten.co.jp/ichiba/43956911.6cd5b5f6.43956912.78fe9f9f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshoptsukumo%2F1547990014%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" },
@@ -477,9 +526,8 @@ const affiliateData = [
     { w: 1200, img: "1200w.jpg", url: "https://hb.afl.rakuten.co.jp/ichiba/4cd4e922.c6019376.4cd4e923.faf9da93/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpsidekick%2F4988755074148%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" }
 ];
 
-// 推奨W数に最適なアフィリエイト情報を1つだけ取得する関数
 function getBestAffiliate(targetW) {
-    let best = affiliateData[affiliateData.length - 1]; // デフォルトは最大(1200W)
+    let best = affiliateData[affiliateData.length - 1]; 
     for (let i = 0; i < affiliateData.length; i++) {
         if (affiliateData[i].w >= targetW) {
             best = affiliateData[i];
@@ -516,7 +564,6 @@ function calculatePower() {
     let basePower = 50;
     let totalPower = cpuPower + gpuPower + ramPower + storagePower + basePower;
     
-    // 計算式：総消費電力の1.6倍とし、50W単位で切り上げ
     let recPower = Math.ceil((totalPower * 1.6) / 50) * 50;
 
     document.getElementById('total-power').innerText = totalPower;
@@ -524,13 +571,13 @@ function calculatePower() {
     
     document.getElementById('result-box').style.display = 'block';
 
-    // 推奨W数に合ったアフィリエイトリンクを「1つだけ」表示
     const bestAffiliate = getBestAffiliate(recPower);
     const dynamicContainer = document.getElementById('dynamic-affiliate');
     
+    // JS側でのインラインスタイル（text-align: leftやmax-width等）を削除し、クラス制御に任せる
     dynamicContainer.innerHTML = `
         <p style="font-weight:bold; margin-bottom:10px; color:#1a1a24;">👇 あなたの構成にピッタリのおすすめ電源 👇</p>
-        <div class="product-box" style="margin: 0 auto; max-width: 400px; text-align: left; border: 2px solid #ff0055;">
+        <div class="product-box" style="margin: 0 auto; border: 2px solid #ff0055;">
             <img src="${bestAffiliate.img}" alt="${bestAffiliate.w}W 電源" class="product-img">
             <div class="product-info">
                 <div class="product-title">${bestAffiliate.w}W の電源</div>
