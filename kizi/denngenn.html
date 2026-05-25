@@ -47,7 +47,7 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
     
-    /* テキストと画像の横並びレイアウト */
+    /* テキストと画像の横並びレイアウト（PC用） */
     .intro-layout {
         display: flex;
         gap: 30px;
@@ -235,13 +235,20 @@
             margin-top: 30px;
         }
         
+        /* スマホ時の配置設定（ここを修正） */
         .intro-layout {
-            flex-direction: column-reverse;
+            flex-direction: column; /* 解説が上、画像が下へ移動 */
             gap: 20px;
         }
         .intro-image {
             margin: 0 auto;
             max-width: 100%;
+        }
+        /* 画像を小さくする指定（ここを追加） */
+        .intro-image img {
+            max-width: 60%; /* PCの100%から減らす。具体的な％は感覚だが、60%程度で「もう少し小さく」なる */
+            margin: 0 auto; /* 中央寄せ */
+            display: block; /* 中央寄せのために */
         }
 
         .storage-flex {
@@ -594,6 +601,7 @@ function calculatePower() {
     const bestAffiliate = getBestAffiliate(recPower);
     const dynamicContainer = document.getElementById('dynamic-affiliate');
     
+    // JS側でのインラインスタイル（text-align: leftやmax-width等）を削除し、クラス制御に任せる
     dynamicContainer.innerHTML = `
         <p style="font-weight:bold; margin-bottom:10px; color:#1a1a24;">👇 あなたの構成にピッタリのおすすめ電源 👇</p>
         <div class="product-box" style="margin: 0 auto; border: 2px solid #ff0055;">
