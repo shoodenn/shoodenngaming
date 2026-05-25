@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【しょーでんゲーミング】PC電源ユニットの選び方＆必要ワット数計算ツール</title>
+<style>
+    body {
+        font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+        line-height: 1.8;
+        color: #333;
+        background-color: #f9f9fa;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    header {
+        background-color: #1a1a24;
+        color: #00ffcc;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+        border-bottom: 4px solid #ff0055;
+    }
+    h1 {
+        margin: 0;
+        font-size: 1.8em;
+    }
+    .content-section {
+        background-color: #ffffff;
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    h2 {
+        border-left: 5px solid #ff0055;
+        padding-left: 10px;
+        font-size: 1.5em;
+        margin-top: 40px;
+    }
+    h3 {
+        color: #1a1a24;
+        border-bottom: 2px dashed #ccc;
+        padding-bottom: 5px;
+    }
+    .warning-box {
+        background-color: #fff3cd;
+        border-left: 5px solid #ffc107;
+        padding: 15px;
+        margin: 20px 0;
+        color: #856404;
+        font-weight: bold;
+    }
+    .calculator-container {
+        background-color: #f0f4f8;
+        padding: 25px;
+        border-radius: 8px;
+        border: 1px solid #d1e1f0;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    select, input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+    }
+    .radio-group {
+        display: flex;
+        gap: 15px;
+    }
+    .btn-calc {
+        display: block;
+        width: 100%;
+        background-color: #ff0055;
+        color: white;
+        border: none;
+        padding: 15px;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .btn-calc:hover {
+        background-color: #cc0044;
+    }
+    .result-box {
+        margin-top: 20px;
+        background-color: #1a1a24;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+    }
+    .result-box span {
+        font-size: 2em;
+        color: #00ffcc;
+        font-weight: bold;
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        background: #eee;
+        margin: 40px 0;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>しょーでんゲーミング</h1>
+    <p>PC電源ユニットの選び方・ワット数計算ツール</p>
+</header>
+
+<div class="content-section">
+    <h2>スペックが高いほど電力も大きく必要になる！</h2>
+    <p>ゲーミングPCを組んだり買ったりする上で、絶対に妥協してはいけないのが<strong>電源ユニット（PSU）</strong>です。<br>
+    PCの性能が高ければ高いほど、それを動かすために必要な電力は大きくなります。中でも一番電気を食うのが<strong>グラフィックボード（GPU）</strong>です。高性能なグラボを搭載する場合は、それに合わせて大容量の電源ユニットを用意しないと、ゲーム中に突然PCがシャットダウンしたり、最悪の場合はパーツが故障したりします。</p>
+
+    <h2>目標スペック別・目安となる必要ワット数</h2>
+    <p>まずは、大まかなスペック帯ごとにどれくらいのワット数の電源が必要になるのか、目安を解説します。</p>
+    
+    <h3>1. 超高スペックPC（4K最高画質・ゴリゴリの最新ゲーム向け）</h3>
+    <ul>
+        <li><strong>目安ワット数：1000W 〜 1200W以上</strong></li>
+        <li>RTX 4090や今後のRTX 5090など、最上位のグラボとCore i9などのハイエンドCPUを組み合わせる構成です。グラボ単体で400W以上消費することもあるため、変換効率や安定性を考慮して最低でも1000W以上の電源が推奨されます。</li>
+    </ul>
+
+    <h3>2. ミドルスペックPC（WQHD〜高フレームレート向け）</h3>
+    <ul>
+        <li><strong>目安ワット数：650W 〜 850W</strong></li>
+        <li>RTX 4070シリーズなどの中間スペック帯です。一番多くのゲーマーが選ぶ構成で、バランスが良いです。将来のパーツアップグレードも考慮して750W〜850Wあたりを選んでおくと安心です。</li>
+    </ul>
+
+    <h3>3. エントリースペックPC（とりあえずフルHDでゲームができればいい人向け）</h3>
+    <ul>
+        <li><strong>目安ワット数：500W 〜 600W</strong></li>
+        <li>RTX 4060やRTX 3060など、フルHD（1080p）環境で快適に遊べる構成です。消費電力は控えめなので、500W〜600Wあれば十分安定して動作します。</li>
+    </ul>
+
+    <hr>
+
+    <h2>【実践】推奨電源ワット数 計算ツール</h2>
+    <p>自分が組みたい構成のパーツを選択すると、大体の消費電力と、安全に使うための推奨電源ワット数が計算されます。<br>
+    ※マザーボードやファンなどの基本消費電力（約50W）は自動で加算されます。</p>
+
+    <div class="calculator-container">
+        <form id="powerForm">
+            <div class="form-group">
+                <label for="cpu">CPU</label>
+                <select id="cpu">
+                    <option value="0">選択してください</option>
+                    <optgroup label="Intel Core Ultra (最新200Sシリーズ等)">
+                        <option value="250">Core Ultra 9 285K</option>
+                        <option value="250">Core Ultra 7 265K</option>
+                        <option value="160">Core Ultra 5 245K</option>
+                    </optgroup>
+                    <optgroup label="Intel Core iシリーズ (14〜12世代)">
+                        <option value="253">Core i9-14900K / 13900K / 12900K</option>
+                        <option value="253">Core i7-14700K / 13700K</option>
+                        <option value="190">Core i7-12700K / 11700K</option>
+                        <option value="154">Core i5-14600K / 13600K / 12600K</option>
+                        <option value="150">Core i5-14400 / 13400 / 12400</option>
+                        <option value="110">Core i3-14100 / 13100 / 12100</option>
+                    </optgroup>
+                    <optgroup label="AMD Ryzen (最新〜3世代前)">
+                        <option value="230">Ryzen 9 9950X / 7950X / 5950X</option>
+                        <option value="170">Ryzen 9 9900X / 7900X / 5900X</option>
+                        <option value="142">Ryzen 7 9700X / 7700X / 5800X</option>
+                        <option value="120">Ryzen 7 7800X3D / 5800X3D</option>
+                        <option value="88">Ryzen 5 9600X / 7600X / 5600X</option>
+                        <option value="65">Ryzen 5 7600 / 5600</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="gpu">GPU (グラフィックボード)</label>
+                <select id="gpu">
+                    <option value="0">選択してください</option>
+                    <optgroup label="RTX 50シリーズ (予測値含む)">
+                        <option value="600">RTX 5090</option>
+                        <option value="400">RTX 5080</option>
+                        <option value="250">RTX 5070</option>
+                    </optgroup>
+                    <optgroup label="RTX 40シリーズ">
+                        <option value="450">RTX 4090</option>
+                        <option value="320">RTX 4080 / 4080 SUPER</option>
+                        <option value="285">RTX 4070 Ti / 4070 Ti SUPER</option>
+                        <option value="220">RTX 4070 / 4070 SUPER</option>
+                        <option value="160">RTX 4060 Ti</option>
+                        <option value="115">RTX 4060</option>
+                    </optgroup>
+                    <optgroup label="RTX 30シリーズ">
+                        <option value="350">RTX 3090 / 3080 Ti</option>
+                        <option value="320">RTX 3080</option>
+                        <option value="290">RTX 3070 Ti</option>
+                        <option value="220">RTX 3070</option>
+                        <option value="200">RTX 3060 Ti</option>
+                        <option value="170">RTX 3060</option>
+                    </optgroup>
+                    <optgroup label="RTX 20シリーズ / GTXシリーズ">
+                        <option value="250">RTX 2080 Ti</option>
+                        <option value="215">RTX 2080 / 2080 SUPER</option>
+                        <option value="175">RTX 2070 / 2070 SUPER</option>
+                        <option value="160">RTX 2060 / 2060 SUPER</option>
+                        <option value="250">GTX 1080 Ti</option>
+                        <option value="180">GTX 1080</option>
+                        <option value="120">GTX 1660 / 1660 SUPER / 1660 Ti</option>
+                        <option value="75">GTX 1650</option>
+                    </optgroup>
+                    <optgroup label="その他 / Radeon等">
+                        <option value="355">RX 7900 XTX</option>
+                        <option value="260">RX 7800 XT</option>
+                        <option value="190">RX 7600</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>メモリ (RAM)</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="ram_type" value="3" checked> DDR4</label>
+                    <label><input type="radio" name="ram_type" value="5"> DDR5</label>
+                </div>
+                <select id="ram_count" style="margin-top: 10px;">
+                    <option value="1">1枚</option>
+                    <option value="2" selected>2枚</option>
+                    <option value="3">3枚</option>
+                    <option value="4">4枚</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>ストレージ</label>
+                <div style="display:flex; gap:10px;">
+                    <div style="flex:1;">
+                        <label style="font-weight:normal;">SATA SSD (枚数)</label>
+                        <select id="sata_count">
+                            <option value="0">0枚</option>
+                            <option value="1">1枚</option>
+                            <option value="2">2枚</option>
+                            <option value="3">3枚</option>
+                            <option value="4">4枚</option>
+                        </select>
+                    </div>
+                    <div style="flex:1;">
+                        <label style="font-weight:normal;">M.2 SSD (枚数)</label>
+                        <select id="m2_count">
+                            <option value="0">0枚</option>
+                            <option value="1" selected>1枚</option>
+                            <option value="2">2枚</option>
+                            <option value="3">3枚</option>
+                            <option value="4">4枚</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn-calc" onclick="calculatePower()">計算する</button>
+        </form>
+
+        <div class="result-box">
+            <p>概算消費電力: <br><span id="total-power">0</span> W</p>
+            <p style="margin-top:20px;">推奨電源ユニット容量: <br><span id="rec-psu">0</span> W</p>
+            <small style="color:#aaa;">※推奨容量は「概算消費電力の1.5〜2倍」を目安に余裕を持たせた数値です</small>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>しょーでんのおすすめと、絶対にやってはいけないこと</h2>
+    <p>迷ったら、<strong>玄人志向</strong>の電源ユニットを買っておけば無難で間違いありません。コスパも良く、日本のユーザーからも長く愛されているメーカーです。GOLD認証のものを選べばさらに安心です。</p>
+
+    <div class="warning-box">
+        🚨 警告：ジャンク品の電源は絶対に買うな！
+    </div>
+    <p>くれぐれも、ハードオフの青箱（ジャンクコーナー）にあるような<strong>「動作未確認」のジャンク電源ユニット</strong>を買ってメインPCに組み込むようなことは絶対にやめてください。<br>
+    電源ユニットの不調や故障は、他の無事なパーツ（マザーボードやグラボなど）を道連れにして破壊することがあります。</p>
+    <p><strong>実は過去に、しょーでん自身もジャンク電源を使ったせいで電源の不調を引き起こし、大切なSSDを1個壊した苦い経験があります。</strong>数百円、数千円をケチった結果、何万円もする他のパーツを壊しては本末転倒です。<br>
+    電源ユニットだけは、必ず「新品」か「信頼できる保証付きの動作品」を購入してください！</p>
+</div>
+
+<script>
+function calculatePower() {
+    // 各パーツの値を取得
+    let cpuPower = parseInt(document.getElementById('cpu').value);
+    let gpuPower = parseInt(document.getElementById('gpu').value);
+    
+    // 未選択アラート
+    if(cpuPower === 0 || gpuPower === 0) {
+        alert("CPUとGPUを選択してください！");
+        return;
+    }
+
+    // メモリの計算 (DDR4=約3W, DDR5=約5W)
+    let ramTypeRadios = document.getElementsByName('ram_type');
+    let ramTypeVal = 3;
+    for(let i = 0; i < ramTypeRadios.length; i++){
+        if(ramTypeRadios[i].checked){
+            ramTypeVal = parseInt(ramTypeRadios[i].value);
+            break;
+        }
+    }
+    let ramCount = parseInt(document.getElementById('ram_count').value);
+    let ramPower = ramTypeVal * ramCount;
+
+    // ストレージの計算 (SATA=約5W, M.2=約8W)
+    let sataCount = parseInt(document.getElementById('sata_count').value);
+    let m2Count = parseInt(document.getElementById('m2_count').value);
+    let storagePower = (sataCount * 5) + (m2Count * 8);
+
+    // 基本システム電力 (マザーボード、ファン等の合算として約50Wとする)
+    let basePower = 50;
+
+    // 総消費電力
+    let totalPower = cpuPower + gpuPower + ramPower + storagePower + basePower;
+
+    // 推奨電源の計算 (総消費電力の1.5〜1.6倍程度を推奨とし、50W単位で切り上げ)
+    let recPower = Math.ceil((totalPower * 1.6) / 50) * 50;
+
+    // 画面に表示
+    document.getElementById('total-power').innerText = totalPower;
+    document.getElementById('rec-psu').innerText = recPower;
+}
+</script>
+
+</body>
+</html>
