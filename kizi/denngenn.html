@@ -202,6 +202,16 @@
         color: #333;
     }
 
+    /* 警告ボックスのスタイル */
+    .warning-box {
+        background-color: #fff3cd;
+        border-left: 5px solid #ffc107;
+        padding: 15px;
+        margin: 20px 0;
+        color: #856404;
+        font-weight: bold;
+    }
+
     hr {
         border: 0;
         height: 1px;
@@ -212,7 +222,7 @@
     /* === スマートフォン向けのレスポンシブデザイン === */
     @media (max-width: 768px) {
         body {
-            padding: 10px; /* 全体の余白を狭める */
+            padding: 10px;
         }
         .content-section {
             padding: 20px 15px;
@@ -225,7 +235,6 @@
             margin-top: 30px;
         }
         
-        /* 冒頭の横並びを縦並び（画像が上）に変更 */
         .intro-layout {
             flex-direction: column-reverse;
             gap: 20px;
@@ -235,30 +244,28 @@
             max-width: 100%;
         }
 
-        /* ストレージの横並びを縦並びに変更 */
         .storage-flex {
             flex-direction: column;
             gap: 15px;
         }
 
-        /* アフィリエイト商品ボックスを縦並びにして中央寄せ */
         .product-box {
             flex-direction: column;
             text-align: center;
             padding: 15px;
-            max-width: 100%; /* スマホでは横幅いっぱいに */
+            max-width: 100%; 
         }
         .product-img {
             margin-right: 0;
             margin-bottom: 15px;
-            width: 150px; /* 画像を少し大きく見せる */
+            width: 150px; 
             height: 150px;
         }
         .product-info {
             width: 100%;
         }
         .btn-rakuten {
-            display: block; /* ボタンを横幅いっぱいに近くする */
+            display: block; 
             width: 80%;
             margin: 0 auto;
         }
@@ -511,6 +518,19 @@
         </div>
     </div>
 
+    <hr>
+
+    <h2>しょーでんのおすすめと、絶対にやってはいけないこと</h2>
+    <p>迷ったら、<strong>玄人志向</strong>の電源ユニットを買っておけば無難で間違いありません。コスパも良く、日本のユーザーからも長く愛されているメーカーです。GOLD認証のものを選べばさらに安心です。</p>
+
+    <div class="warning-box">
+        🚨 警告：ジャンク品の電源は絶対に買うな！
+    </div>
+    <p>くれぐれも、ハードオフの青箱（ジャンクコーナー）にあるような<strong>「動作未確認」のジャンク電源ユニット</strong>を買ってメインPCに組み込むようなことは絶対にやめてください。<br>
+    電源ユニットの不調や故障は、他の無事なパーツ（マザーボードやグラボなど）を道連れにして破壊することがあります。</p>
+    <p><strong>実は過去に、しょーでん自身もジャンク電源を使ったせいで電源の不調を引き起こし、大切なSSDを1個壊した苦い経験があります。</strong>数百円、数千円をケチった結果、何万円もする他のパーツを壊しては本末転倒です。<br>
+    電源ユニットだけは、必ず「新品」か「信頼できる保証付きの動作品」を購入してください！</p>
+
 </div>
 
 <script>
@@ -574,7 +594,6 @@ function calculatePower() {
     const bestAffiliate = getBestAffiliate(recPower);
     const dynamicContainer = document.getElementById('dynamic-affiliate');
     
-    // JS側でのインラインスタイル（text-align: leftやmax-width等）を削除し、クラス制御に任せる
     dynamicContainer.innerHTML = `
         <p style="font-weight:bold; margin-bottom:10px; color:#1a1a24;">👇 あなたの構成にピッタリのおすすめ電源 👇</p>
         <div class="product-box" style="margin: 0 auto; border: 2px solid #ff0055;">
