@@ -7,18 +7,60 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: #ffffff; /* クッキリ見える白背景だ！ */
-            color: #333333; /* 濃いグレーで読みやすさバツグン！ */
+            background-color: #ffffff;
+            color: #333333;
             line-height: 1.8;
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
+
+        /* --- 冒頭の会話劇用スタイル --- */
+        .dialogue-container {
+            background-color: #fce4ec; /* 先生っぽい淡いピンク背景 */
+            border: 2px solid #f8bbd0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        .speaker-teacher {
+            color: #d81b60;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .speech-teacher {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #f8bbd0;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .speaker-shoden {
+            color: #e64a19;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            text-align: right;
+        }
+        .speech-shoden {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ffcc80;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* --- いつもの解説スタイル --- */
         h1 {
             color: #e64a19;
             text-align: center;
             border-bottom: 3px solid #e64a19;
             padding-bottom: 10px;
+            margin-top: 40px;
         }
         h2 {
             color: #ef6c00;
@@ -40,7 +82,7 @@
             margin-bottom: 15px;
         }
         strong {
-            color: #d32f2f; /* 強調は白背景に映える赤だ！ */
+            color: #d32f2f;
         }
         table {
             width: 100%;
@@ -71,6 +113,27 @@
     </style>
 </head>
 <body>
+
+    <div class="dialogue-container">
+        <div class="speaker-teacher">🌸 女の先生</div>
+        <div class="speech-teacher">
+            「えー、今回はマザーボードについて解説しますっ！<br>
+            マザーボードとは、PCのメイン基板となるもので……CPUがはまるCPUソケットとか、グラボが取り付けられるところがあって……<br>
+            えー、ええっとー……インテルと、ライゼン？　あれ……？」
+        </div>
+
+        <div class="speaker-teacher">🌸 女の先生</div>
+        <div class="speech-teacher">
+            「（あわあわしながら）ど、どうしよう、わかんなくなっちゃった……<br>
+            <strong>しょーでーん！！</strong>」
+        </div>
+
+        <div class="speaker-shoden">🔥 しょーでん</div>
+        <div class="speech-shoden">
+            「うおおおお！呼ばれて飛び出てしょーでんだ！！<br>
+            先生、よく頑張ったな！あとは俺に任せな！ここからはむせ返るほどマニアックな熱血マザボ解説の始まりだァーッ！」
+        </div>
+    </div>
 
     <h1>うおおおお！しょーでんの熱血マザボ解説だ！</h1>
 
