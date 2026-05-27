@@ -15,7 +15,7 @@
             margin: 0 auto;
         }
 
-        /* --- 冒頭の会話劇用スタイル（修正） --- */
+        /* --- 冒頭の会話劇用スタイル --- */
         .dialogue-container {
             background-color: #fce4ec; /* 先生っぽい淡いピンク背景 */
             border: 2px solid #f8bbd0;
@@ -24,7 +24,6 @@
             margin-bottom: 40px;
         }
 
-        /* 新規追加: 先生のセリフと画像の横並びラッパー */
         .teacher-speech-flex {
             display: flex;
             align-items: flex-start;
@@ -32,19 +31,16 @@
             margin-bottom: 20px;
         }
 
-        /* 新規追加: 画像コンテナ */
         .teacher-image-container {
-            flex: 0 0 auto; /* 画像の幅を固定 */
+            flex: 0 0 auto; 
         }
 
-        /* 新規追加: テキストコンテナ */
         .teacher-speech-container {
-            flex: 1; /* 残りのスペースを使用 */
+            flex: 1; 
         }
 
-        /* 新規追加: 画像スタイル */
         .shoden-summon-teacher-image {
-            max-width: 250px; /* ちょうどいいサイズ */
+            max-width: 250px; 
             height: auto;
             border-radius: 8px;
             border: 2px solid #f8bbd0;
@@ -98,6 +94,8 @@
         h3 {
             color: #1976d2;
             margin-top: 30px;
+            border-bottom: 2px dashed #1976d2;
+            padding-bottom: 5px;
         }
         ul {
             background-color: #f5f5f5;
@@ -109,7 +107,7 @@
             margin-bottom: 15px;
         }
         strong {
-            color: #d32f2f; /* 強調は白背景に映える赤だ！ */
+            color: #d32f2f; 
         }
         table {
             width: 100%;
@@ -136,6 +134,75 @@
             padding: 20px;
             border-radius: 10px;
             margin-top: 30px;
+        }
+
+        /* --- アフィリエイト商品用スタイル --- */
+        .product-section {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 4px solid #ef6c00;
+        }
+        .product-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .product-image {
+            width: 150px;
+            height: auto;
+            flex-shrink: 0;
+            border-radius: 8px;
+            object-fit: contain;
+            background-color: #fff;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            line-height: 1.5;
+        }
+        .rakuten-btn {
+            display: inline-block;
+            background-color: #bf0000;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .rakuten-btn:hover {
+            background-color: #990000;
+            transform: translateY(-2px);
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 600px) {
+            .teacher-speech-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+            .shoden-summon-teacher-image {
+                max-width: 100%;
+            }
+            .product-card {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -273,6 +340,68 @@
     <div class="advice-box">
         <h3>💡 ワンポイントアドバイス！</h3>
         <p>初心者が「とりあえず失敗しないマザーボード」を選びたいなら、<strong>IntelでもAMDでも「B」から始まるモデル</strong>を選んでおけ！価格と性能のバランスが一番良くて, 財布にも優しい最高の一枚に出会えるはずだぜ！</p>
+    </div>
+
+    <div class="product-section">
+        <h2>🛒 しょーでん厳選！おすすめマザーボード</h2>
+        <p>ここからは、僕が厳選した各ソケットのおすすめマザーボードを紹介していくぞ！気になったら迷わずチェックだ！</p>
+
+        <h3>🔵 LGA1700（Intel 第12〜14世代）</h3>
+        
+        <div class="product-card">
+            <img src="lga1700 b.jpg" alt="MSI B760 GAMING PLUS WIFI" class="product-image">
+            <div class="product-info">
+                <div class="product-name">MSI B760 GAMING PLUS WIFI / ATX対応マザーボード B760 GAMING PLUS WIFI</div>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4526541045981-44-65850-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank" rel="noopener noreferrer">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="lga1700 z.jpg" alt="ASUS ROG STRIX Z690-G GAMING WIFI" class="product-image">
+            <div class="product-info">
+                <div class="product-name">ASUS INTEL 第12世代CPU(LGA1700)対応 Z690 チップセット ATX マザーボード / ROG STRIX Z690-G GAMING WIFI</div>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/543b4da3.3e464ba4.543b4da4.338b43cb/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fscmarket-202212r%2F20260212rk-4711081455424%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank" rel="noopener noreferrer">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <h3>🔵 LGA1851（Intel Core Ultra）</h3>
+        
+        <div class="product-card">
+            <img src="lga1851 b.jpg" alt="ASUS LGA 1851対応 Intel B860搭載 ATXマザーボード" class="product-image">
+            <div class="product-info">
+                <div class="product-name">ASUS エイスース LGA 1851対応　Intel B860搭載　ATXマザーボード</div>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/43956911.6cd5b5f6.43956912.78fe9f9f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshoptsukumo%2F9170672017%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank" rel="noopener noreferrer">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="lga1851 z.jpg" alt="ASUS TUF GAMING Z890-PLUS WIFI" class="product-image">
+            <div class="product-info">
+                <div class="product-name">ASUS｜エイスース Intel Z890 Chipset 搭載 ATXマザーボード 「TUF GAMING Z890-PLUS WIFI」 TUFGAMINGZ890PLUSWF</div>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F0197105763937-44-72398-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank" rel="noopener noreferrer">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <h3>🔴 AM5（AMD Ryzen 7000 / 9000シリーズ）</h3>
+        
+        <div class="product-card">
+            <img src="am5 b.jpg" alt="MSI B850 GAMING PLUS WIFI6E" class="product-image">
+            <div class="product-info">
+                <div class="product-name">MSI｜エムエスアイ マザーボード(Socket AM5) B850 GAMING PLUS WIFI6E [ATX]</div>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/3c4e1c07.13e62714.3c4e1c08.3f39b48d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4711377365321%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank" rel="noopener noreferrer">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <h3>🔴 AM4（AMD Ryzen 3000世代など）</h3>
+        
+        <div class="product-card">
+            <img src="am4 b.jpg" alt="ASUS PRIME B550M-A" class="product-image">
+            <div class="product-info">
+                <div class="product-name">ASUS｜エイスース 【国内正規品】ASUS PRIME B550M-A マイクロATXマザーボード AM4 デュアルM.2、PCIe 4.0、1Gbイーサネット、USB 3.2 Gen.2 Type-A、Aura Sync RGBヘッダーサポート PRIME B550M-A</div>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F0192876755525-44-55929-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank" rel="noopener noreferrer">楽天市場で購入</a>
+            </div>
+        </div>
+
     </div>
 
 </body>
