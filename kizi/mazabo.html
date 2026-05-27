@@ -142,6 +142,20 @@
             padding-top: 20px;
             border-top: 4px solid #ef6c00;
         }
+        
+        /* 新規追加：BIOSアップデート注意書きスタイル */
+        .bios-warning {
+            background-color: #ffebee;
+            border: 2px solid #c62828;
+            color: #c62828;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.05em;
+            box-shadow: 0 2px 8px rgba(211, 47, 47, 0.2);
+        }
+
         .product-card {
             display: flex;
             align-items: center;
@@ -345,6 +359,10 @@
     <div class="product-section">
         <h2>🛒 しょーでん厳選！おすすめマザーボード</h2>
         <p>ここからは、僕が厳選した各ソケットのおすすめマザーボードを紹介していくぞ！気になったら迷わずチェックだ！</p>
+
+        <div class="bios-warning">
+            ⚠️ 【超重要】購入するマザーボードとCPUの組み合わせによっては、PCを起動するために「BIOSのアップデート」が必要な場合があるぞ！購入前に必ずメーカーサイトで、使いたいCPUに対応しているか確認してくれよな！
+        </div>
 
         <h3>🔵 LGA1700（Intel 第12〜14世代）</h3>
         
