@@ -7,15 +7,15 @@
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
+            background-color: #ffffff; /* クッキリ見える白背景だ！ */
+            color: #333333; /* 濃いグレーで読みやすさバツグン！ */
             line-height: 1.8;
             padding: 20px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        /* --- 冒頭の会話劇用スタイル --- */
+        /* --- 冒頭の会話劇用スタイル（修正） --- */
         .dialogue-container {
             background-color: #fce4ec; /* 先生っぽい淡いピンク背景 */
             border: 2px solid #f8bbd0;
@@ -23,6 +23,33 @@
             padding: 20px;
             margin-bottom: 40px;
         }
+
+        /* 新規追加: 先生のセリフと画像の横並びラッパー */
+        .teacher-speech-flex {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* 新規追加: 画像コンテナ */
+        .teacher-image-container {
+            flex: 0 0 auto; /* 画像の幅を固定 */
+        }
+
+        /* 新規追加: テキストコンテナ */
+        .teacher-speech-container {
+            flex: 1; /* 残りのスペースを使用 */
+        }
+
+        /* 新規追加: 画像スタイル */
+        .shoden-summon-teacher-image {
+            max-width: 250px; /* ちょうどいいサイズ */
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #f8bbd0;
+        }
+
         .speaker-teacher {
             color: #d81b60;
             font-weight: bold;
@@ -82,7 +109,7 @@
             margin-bottom: 15px;
         }
         strong {
-            color: #d32f2f;
+            color: #d32f2f; /* 強調は白背景に映える赤だ！ */
         }
         table {
             width: 100%;
@@ -115,23 +142,29 @@
 <body>
 
     <div class="dialogue-container">
-        <div class="speaker-teacher">🌸 女の先生</div>
-        <div class="speech-teacher">
-            「えー、今回はマザーボードについて解説しますっ！<br>
-            マザーボードとは、PCのメイン基板となるもので……CPUがはまるCPUソケットとか、グラボが取り付けられるところがあって……<br>
-            えー、ええっとー……インテルと、ライゼン？　あれ……？」
-        </div>
-
-        <div class="speaker-teacher">🌸 女の先生</div>
-        <div class="speech-teacher">
-            「（あわあわしながら）ど、どうしよう、わかんなくなっちゃった……<br>
-            <strong>しょーでーん！！</strong>」
+        <div class="teacher-speech-flex">
+            <div class="teacher-speech-container">
+                <div class="speaker-teacher">🌸 女の先生</div>
+                <div class="speech-teacher">
+                    「えー、今回はマザーボードについて解説しますっ！<br>
+                    マザーボードとは、PCのメイン基板となるもので……CPUがはまるCPUソケットとか、グラボが取り付けられるところがあって……<br>
+                    えー、ええっとー……インテルと、ライゼン？　あれ……？」
+                </div>
+                <div class="speaker-teacher">🌸 女の先生</div>
+                <div class="speech-teacher">
+                    「（あわあわしながら）ど、どうしよう、わかんなくなっちゃった……<br>
+                    <strong>しょーでーん！！</strong>」
+                </div>
+            </div>
+            <div class="teacher-image-container">
+                <img src="image_2.png" alt="慌てる女の先生" class="shoden-summon-teacher-image">
+            </div>
         </div>
 
         <div class="speaker-shoden">🔥 しょーでん</div>
         <div class="speech-shoden">
             「うおおおお！呼ばれて飛び出てしょーでんだ！！<br>
-            先生、よく頑張ったな！あとは俺に任せな！ここからはむせ返るほどマニアックな熱血マザボ解説の始まりだァーッ！」
+            先生、よく頑張ったな！あとは<strong>僕に任せな！</strong>ここからはむせ返るほどマニアックな熱血マザボ解説の始まりだァーッ！」
         </div>
     </div>
 
@@ -156,16 +189,16 @@
     <h2>3. AMDの大変革！「AM5」（Ryzen 7000 / 9000シリーズ）</h2>
     <p>AMDが長年の構造をひっくり返して、新時代に突入した最新マザーボードだ！</p>
     <ul>
-        <li><strong>🤯 コスト削減の「数珠つなぎ」作戦！</strong><br>マザボの頭脳（チップセット）の設計が変態的だ！Intelは「巨大な脳みそを1つ」置くが、AMDは「小さな脳みそを2つ繋げる」という力技に出た！これによって、安く大量のUSBポートを増やせるという天才的な設計をしているんだ！</li>
-        <li><strong>🚀 複雑すぎる「超高速パズル」</strong><br>最新モデルは「超高速なUSB4」を絶対積まないといけないルールになった。だが、これを通すための「道路」が足りず、「M.2 SSDを挿すとグラボの速度が落ちる」みたいなパズルのような排他仕様になっている！説明書を熟読しないと痛い目を見る、超玄人向けの面白さがあるぜ！</li>
+        <li><strong>🤯 コスト削減の「数珠つなぎ」作戦！</strong><br>マザボの頭脳（チップセット）の設計が変態的だ！Intelは「巨大な脳みそを1つ」置くが, AMDは「小さな脳みそを2つ繋げる」という力技に出た！これによって、安く大量のUSBポートを増やせるという天才的な設計をしているんだ！</li>
+        <li><strong>🚀 複雑すぎる「超高速パズル」</strong><br>最新モデルは「超高速なUSB4」を絶対積まないといけないルールになった。だが, これを通すための「道路」が足りず、「M.2 SSDを挿すとグラボの速度が落ちる」みたいなパズルのような排他仕様になっている！説明書を熟読しないと痛い目を見る、超玄人向けの面白さがあるぜ！</li>
     </ul>
 
     <h2>4. 伝説の超ご長寿！「AM4」（Ryzen 3000世代など）</h2>
     <p>PC自作の歴史に残る、めちゃくちゃ長く愛されたオーパーツ（伝説）だ！</p>
     <ul>
         <li><strong>📌 恐怖の「スッポン」現象</strong><br>この世代のAMDは、CPUの裏側に「剣山のようなピン」が生えていた。クーラーを外す時にCPUごと引っこ抜けてピンが曲がってしまう「スッポン」という悲劇で、世界中の自作erが涙を流したんだ！</li>
-        <li><strong>🌪️ 熱との戦いと、神マザボの誕生</strong><br>初期の高性能モデル（X570）は、新しい技術を詰め込みすぎてマザボ自体が爆熱になり、小さな「冷却ファン」が標準装備されていた！その後、熱問題を上手く解決したファンレスの「B550」というモデルが登場し、安くて高性能な「神マザボ」として歴史に名を刻んだぞ！</li>
-        <li><strong>💾 「脳みそパンパン」問題</strong><br>このマザーボードは長く使われすぎたため、対応するCPUの種類が増えすぎた！結果、マザボの「記憶容量」が限界を迎え、「古いCPUの記憶を消して、無理やり最新CPUを動かす」という狂気的なアップデートで生き延びたんだ！</li>
+        <li><strong>🌪️ 熱との戦いと、神マザボの誕生</strong><br>初期の高性能モデル（X570）は、新しい技術を詰め込みすぎてマザボ自体が爆熱になり、小さな「冷却ファン」が標準装備されていた！その後, 熱問題を上手く解決したファンレスの「B550」というモデルが登場し、安くて高性能な「神マザボ」として歴史に名を刻んだぞ！</li>
+        <li><strong>💾 「脳みそパンパン」問題</strong><br>このマザーボードは長く使われすぎたため、対応するCPUの種類が増えすぎた！結果, マザボの「記憶容量」が限界を迎え、「古いCPUの記憶を消して、無理やり最新CPUを動かす」という狂気的なアップデートで生き延びたんだ！</li>
     </ul>
 
     <hr style="border: 1px solid #eeeeee; margin: 40px 0;">
@@ -239,7 +272,7 @@
 
     <div class="advice-box">
         <h3>💡 ワンポイントアドバイス！</h3>
-        <p>初心者が「とりあえず失敗しないマザーボード」を選びたいなら、<strong>IntelでもAMDでも「B」から始まるモデル</strong>を選んでおけ！価格と性能のバランスが一番良くて、財布にも優しい最高の一枚に出会えるはずだぜ！</p>
+        <p>初心者が「とりあえず失敗しないマザーボード」を選びたいなら、<strong>IntelでもAMDでも「B」から始まるモデル</strong>を選んでおけ！価格と性能のバランスが一番良くて, 財布にも優しい最高の一枚に出会えるはずだぜ！</p>
     </div>
 
 </body>
