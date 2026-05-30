@@ -66,38 +66,96 @@
             margin-bottom: 20px;
         }
         .flex-text {
-            flex: 1; /* テキスト側の幅を広げる */
+            flex: 1;
         }
         .flex-image {
-            flex-basis: 300px; /* 画像エリアの基本幅 */
+            flex-basis: 300px;
             flex-shrink: 0;
             text-align: center;
         }
         .flex-image img {
             max-width: 100%;
             height: auto;
-            border-radius: 8px; /* 画像の角を少し丸くする */
+            border-radius: 8px;
         }
         
+        /* 商品紹介用のカードデザイン */
+        .recommendation-section {
+            margin-top: 60px;
+        }
+        .product-card {
+            display: flex;
+            gap: 20px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .product-image-container {
+            flex-shrink: 0;
+            width: 180px;
+            text-align: center;
+        }
+        .product-image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .product-info {
+            flex-grow: 1;
+        }
+        .product-info h4 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: #1a1a2e;
+        }
+        .product-info p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        /* 楽天市場ボタンのデザイン */
+        .btn-rakuten {
+            display: inline-block;
+            background-color: #bf0000;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .btn-rakuten:hover {
+            background-color: #a00000;
+        }
+
         /* スマホ向けのレイアウト調整 */
         @media (max-width: 600px) {
-            .flex-layout {
-                flex-direction: column; /* 縦並びに変更 */
+            .flex-layout, .product-card {
+                flex-direction: column;
             }
             .flex-image {
                 flex-basis: auto;
                 width: 100%;
                 max-width: 300px;
-                margin: 0 auto; /* 中央寄せ */
+                margin: 0 auto;
+            }
+            .product-image-container {
+                width: 100%;
+                max-width: 200px;
+                margin: 0 auto;
+            }
+            .btn-rakuten {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
             }
         }
 
-        .highlight {
-            background-color: #fff3cd;
-            padding: 2px 5px;
-            font-weight: bold;
-            color: #856404;
-        }
         .warning-box {
             background-color: #ffeaea;
             border: 2px solid #ff4d4d;
@@ -255,6 +313,94 @@
             <li><strong>HDDの使い道：</strong> ゲーム用ではなく、思い出の写真や動画などを大量に保存する「倉庫」として使い分けましょう。</li>
         </ul>
         <p>これらのポイントを押さえて、自分にぴったりのゲーミングPCを選んでくださいね！</p>
+    </section>
+
+    <section class="recommendation-section">
+        <h2>この記事で紹介したおすすめパーツ</h2>
+
+        <h3>メモリ（デスクトップPC用）</h3>
+        
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="DDR5 16x2desuku.jpg" alt="CORSAIR VENGEANCE DDR5">
+            </div>
+            <div class="product-info">
+                <h4>CORSAIR VENGEANCE DDR5-5200MHz 32GB (16GB×2枚)</h4>
+                <p>最新のDDR5マザーボードに対応した高品質メモリです。ヒートシンク付きで冷却性能も高く、安定したゲームプレイを支える定番モデルとして非常におすすめです。</p>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/5452064b.a303b1f9.5452064c.4b6ea888/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshreestartrading%2Fcompass1765631217%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="DDR4 16x2desuku.jpg" alt="シリコンパワー DDR4">
+            </div>
+            <div class="product-info">
+                <h4>シリコンパワー デスクトップPC用 メモリ DDR4 3200 32GB (16GBx2枚)</h4>
+                <p>コスパ最強のDDR4メモリ。32GBの大容量でありながら価格が抑えられており、DDR4対応マザーボードで予算を抑えつつ快適な環境を作りたい方に最適です。</p>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/52f83c25.5983c0de.52f83c26.3c9d5160/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsilicon-power-direct%2Fsp032gblfu320f22%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <h3>メモリ（ノートPC用）</h3>
+        
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="DDR5 32nooto.jpg" alt="Crucial DDR5 ノート用">
+            </div>
+            <div class="product-info">
+                <h4>Crucial PC5-44800 DDR5-5600 32GB ノートPC用</h4>
+                <p>ゲーミングノートPCなどの増設に最適な最新規格DDR5メモリ。安心と信頼のCrucial製で、ノートPCでのゲームや重い作業の動作をワンランク引き上げます。</p>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/54521b10.dcfc8c90.54521b11.1abc75fa/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Farchisite%2Faa2921800%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="DDR4 32nooto.jpg" alt="Crucial DDR4 ノート用">
+            </div>
+            <div class="product-info">
+                <h4>Crucial DDR4-3200 SODIMM 32GB ノートPC用</h4>
+                <p>DDR4対応ノートPCのアップグレードに最適です。メモリを32GBに増設することで、複数のアプリの同時起動や動画編集などもサクサク快適に行えるようになります。</p>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/43168cd2.eca60721.43168cd3.3321196d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fspd-shop%2Fsodimm-ct32g4sfd832a%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <h3>ストレージ（SSD / HDD）</h3>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="SATA SSD 1TB.jpg" alt="SPD SATA SSD 1TB">
+            </div>
+            <div class="product-info">
+                <h4>SPD SSD 1TB 2.5インチ SATAIII</h4>
+                <p>古いPCのHDDからの換装や、サブストレージとして非常に優秀なSATA接続のSSDです。価格が安く、手軽にゲームやアプリを入れる容量を1TB増やすことができます。</p>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/43168cd2.eca60721.43168cd3.3321196d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fspd-shop%2Fspdssd1t-q300ses3d%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="990Pro1TB.jpg" alt="Samsung 990 PRO 1TB">
+            </div>
+            <div class="product-info">
+                <h4>Samsung SSD 990 PRO 1TB (M.2/NVMe)</h4>
+                <p>圧倒的な読み書き速度を誇る、ハイエンドゲーマー御用達のM.2 SSD。ゲームのロード時間を極限まで短縮し、PC全体のレスポンスを最高クラスに引き上げます。</p>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/32f0b476.7933a518.32f0b477.6417722a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fjism%2F4560441097961-44-49580-n%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="HDD2TB.jpg" alt="Seagate 2TB HDD">
+            </div>
+            <div class="product-info">
+                <h4>Seagate BarraCuda 内蔵HDD 3.5インチ 2TB</h4>
+                <p>動画や写真、バックアップデータなどの大量保存に最適な大容量HDD。速度の速いSSDと組み合わせて「大容量データ倉庫」として使うのがベストな運用方法です。</p>
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/4311b0be.354a715c.4311b0bf.e4d18bfc/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fa-price%2F0763649113653%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+            </div>
+        </div>
+
     </section>
 
 </div>
