@@ -235,20 +235,18 @@
             margin-top: 30px;
         }
         
-        /* スマホ時の配置設定（ここを修正） */
         .intro-layout {
-            flex-direction: column; /* 解説が上、画像が下へ移動 */
+            flex-direction: column;
             gap: 20px;
         }
         .intro-image {
             margin: 0 auto;
             max-width: 100%;
         }
-        /* 画像を小さくする指定（ここを追加） */
         .intro-image img {
-            max-width: 60%; /* PCの100%から減らす。具体的な％は感覚だが、60%程度で「もう少し小さく」なる */
-            margin: 0 auto; /* 中央寄せ */
-            display: block; /* 中央寄せのために */
+            max-width: 60%;
+            margin: 0 auto;
+            display: block;
         }
 
         .storage-flex {
@@ -427,24 +425,33 @@
                     <option value="0">選択してください</option>
                     <optgroup label="RTX 50シリーズ (予測値含む)">
                         <option value="600">RTX 5090</option>
+                        <option value="500">RTX 5080 Ti (予測)</option>
                         <option value="400">RTX 5080</option>
+                        <option value="300">RTX 5070 Ti (予測)</option>
                         <option value="250">RTX 5070</option>
+                        <option value="175">RTX 5060 Ti (予測)</option>
                         <option value="150">RTX 5060</option>
-                        <option value="100">RTX 5050</option>
+                        <option value="100">RTX 5050 (予測)</option>
                     </optgroup>
                     <optgroup label="RTX 40シリーズ">
-                        <option value="450">RTX 4090 / 4090 D</option>
-                        <option value="320">RTX 4080 SUPER / 4080</option>
-                        <option value="285">RTX 4070 Ti SUPER / 4070 Ti</option>
+                        <option value="450">RTX 4090</option>
+                        <option value="425">RTX 4090 D</option>
+                        <option value="320">RTX 4080 SUPER</option>
+                        <option value="320">RTX 4080</option>
+                        <option value="285">RTX 4070 Ti SUPER</option>
+                        <option value="285">RTX 4070 Ti</option>
                         <option value="220">RTX 4070 SUPER</option>
                         <option value="200">RTX 4070</option>
-                        <option value="160">RTX 4060 Ti (8GB / 16GB)</option>
+                        <option value="165">RTX 4060 Ti (16GB)</option>
+                        <option value="160">RTX 4060 Ti (8GB)</option>
                         <option value="115">RTX 4060</option>
                     </optgroup>
                     <optgroup label="RTX 30シリーズ">
                         <option value="450">RTX 3090 Ti</option>
-                        <option value="350">RTX 3090 / 3080 Ti</option>
-                        <option value="320">RTX 3080 (10GB / 12GB)</option>
+                        <option value="350">RTX 3090</option>
+                        <option value="350">RTX 3080 Ti</option>
+                        <option value="350">RTX 3080 (12GB)</option>
+                        <option value="320">RTX 3080 (10GB)</option>
                         <option value="290">RTX 3070 Ti</option>
                         <option value="220">RTX 3070</option>
                         <option value="200">RTX 3060 Ti</option>
@@ -453,14 +460,20 @@
                         <option value="70">RTX 3050 (6GB)</option>
                     </optgroup>
                     <optgroup label="RTX 20シリーズ / GTXシリーズ">
-                        <option value="250">RTX 2080 Ti / 2080 SUPER</option>
-                        <option value="215">RTX 2080 / 2070 SUPER</option>
-                        <option value="175">RTX 2070 / 2060 SUPER</option>
+                        <option value="250">RTX 2080 Ti</option>
+                        <option value="250">RTX 2080 SUPER</option>
+                        <option value="215">RTX 2080</option>
+                        <option value="215">RTX 2070 SUPER</option>
+                        <option value="175">RTX 2070</option>
+                        <option value="175">RTX 2060 SUPER</option>
                         <option value="160">RTX 2060</option>
                         <option value="250">GTX 1080 Ti</option>
                         <option value="180">GTX 1080</option>
-                        <option value="120">GTX 1660 Ti / 1660 SUPER / 1660</option>
-                        <option value="75">GTX 1650 SUPER / 1650</option>
+                        <option value="120">GTX 1660 Ti</option>
+                        <option value="125">GTX 1660 SUPER</option>
+                        <option value="120">GTX 1660</option>
+                        <option value="100">GTX 1650 SUPER</option>
+                        <option value="75">GTX 1650</option>
                     </optgroup>
                     <optgroup label="その他 / Radeon等">
                         <option value="355">RX 7900 XTX</option>
@@ -472,7 +485,6 @@
                     </optgroup>
                 </select>
             </div>
-
             <div class="form-group">
                 <label>メモリ (RAM)</label>
                 <div class="radio-group">
@@ -601,7 +613,6 @@ function calculatePower() {
     const bestAffiliate = getBestAffiliate(recPower);
     const dynamicContainer = document.getElementById('dynamic-affiliate');
     
-    // JS側でのインラインスタイル（text-align: leftやmax-width等）を削除し、クラス制御に任せる
     dynamicContainer.innerHTML = `
         <p style="font-weight:bold; margin-bottom:10px; color:#1a1a24;">👇 あなたの構成にピッタリのおすすめ電源 👇</p>
         <div class="product-box" style="margin: 0 auto; border: 2px solid #ff0055;">
