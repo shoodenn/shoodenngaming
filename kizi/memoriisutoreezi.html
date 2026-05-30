@@ -57,6 +57,41 @@
         p {
             margin-bottom: 15px;
         }
+        
+        /* 画像とテキストを横並びにするためのスタイル */
+        .flex-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .flex-text {
+            flex: 1; /* テキスト側の幅を広げる */
+        }
+        .flex-image {
+            flex-basis: 300px; /* 画像エリアの基本幅 */
+            flex-shrink: 0;
+            text-align: center;
+        }
+        .flex-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* 画像の角を少し丸くする */
+        }
+        
+        /* スマホ向けのレイアウト調整 */
+        @media (max-width: 600px) {
+            .flex-layout {
+                flex-direction: column; /* 縦並びに変更 */
+            }
+            .flex-image {
+                flex-basis: auto;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto; /* 中央寄せ */
+            }
+        }
+
         .highlight {
             background-color: #fff3cd;
             padding: 2px 5px;
@@ -166,11 +201,19 @@
         メモリが「作業机」なら、ストレージは<strong>「引き出し」や「本棚」</strong>にあたります。電源を切ってもデータは消えません。</p>
 
         <h3>SSDとHDDの違い</h3>
-        <p>ストレージには大きく分けて「SSD」と「HDD」の2種類があります。</p>
-        <ul>
-            <li><strong>HDD（ハードディスクドライブ）：</strong> 内部で磁気ディスクを回転させてデータを読み書きします。速度は遅いですが、大容量でも価格が安いのが特徴です。</li>
-            <li><strong>SSD（ソリッドステートドライブ）：</strong> USBメモリのようにフラッシュメモリでデータを読み書きします。HDDに比べて圧倒的に読み書き速度が速く、衝撃にも強いですが、大容量になると価格が高くなります。</li>
-        </ul>
+        
+        <div class="flex-layout">
+            <div class="flex-text">
+                <p>ストレージには大きく分けて「SSD」と「HDD」の2種類があります。</p>
+                <ul>
+                    <li><strong>HDD（ハードディスクドライブ）：</strong> 内部で磁気ディスクを回転させてデータを読み書きします。速度は遅いですが、大容量でも価格が安いのが特徴です。</li>
+                    <li><strong>SSD（ソリッドステートドライブ）：</strong> USBメモリのようにフラッシュメモリでデータを読み書きします。HDDに比べて圧倒的に読み書き速度が速く、衝撃にも強いですが、大容量になると価格が高くなります。</li>
+                </ul>
+            </div>
+            <div class="flex-image">
+                <img src="ssdhddnoonna.png" alt="SSDとHDDの使い分けを解説する女の子">
+            </div>
+        </div>
 
         <div class="warning-box">
             <h4>【重要】OSやゲームは絶対に「SSD」に入れよう！</h4>
@@ -180,7 +223,7 @@
                 <li><strong>ゲームのロード時間が激減する：</strong> マップの切り替えやマッチング後のロード画面がすぐに終わります。</li>
                 <li><strong>カクつき（スタッター）を防ぐ：</strong> 最近のオープンワールドゲームなどは、プレイ中にリアルタイムでデータを読み込みます。HDDだと読み込みが追いつかず、ゲームがカクついたりテクスチャの表示が遅れたりする原因になります。</li>
             </ol>
-            <p>※動画や写真の保存など、速度を求めない大容量データの保管庫としてHDDを併用するのは賢い使い方です。</p>
+            <p>※女の子の解説にあるように、速度を求めない大容量データ（写真や動画など）の保管庫としてHDDを併用するのは賢い使い方です！</p>
         </div>
 
         <h3>SATA SSDとM.2 SSD（NVMe）の違い</h3>
