@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ゲーミングPC メモリ・ストレージ徹底解説 | しょーでんゲーミング</title>
 
+    <meta property="og:title" content="ゲーミングPCの「メモリ」と「ストレージ」を徹底解説！違いや選び方が丸わかり" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shoodenn.github.io/shoodenngaming/kizi/memoriisutoreezi.html" />
+    <meta property="og:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/memori%20ssd.png" />
+    <meta property="og:site_name" content="しょーでんゲーミング" />
+    <meta property="og:description" content="メモリ＆ストレージの徹底解説" />
 
-<meta property="og:title" content="ゲーミングPCの「メモリ」と「ストレージ」を徹底解説！違いや選び方が丸わかり" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://shoodenn.github.io/shoodenngaming/kizi/memoriisutoreezi.html" />
-<meta property="og:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/memori%20ssd.png" />
-<meta property="og:site_name" content="しょーでんゲーミング" />
-<meta property="og:description" content="メモリ＆ストレージの徹底解説" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ゲーミングPCの「メモリ」と「ストレージ」を徹底解説！違いや選び方が丸わかり" />
+    <meta name="twitter:description" content="メモリ＆ストレージの徹底解説" />
+    <meta name="twitter:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/memori%20ssd.png" />
 
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="ゲーミングPCの「メモリ」と「ストレージ」を徹底解説！違いや選び方が丸わかり" />
-<meta name="twitter:description" content="メモリ＆ストレージの徹底解説" />
-<meta name="twitter:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/memori%20ssd.png" />
-
-
-    
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
@@ -150,35 +146,76 @@
             background-color: #a00000;
         }
 
-        /* スマホ向けのレイアウト調整 */
+        /* -------------------------------------------
+           スマホ向けのレイアウト調整（ここを大幅強化）
+           ------------------------------------------- */
         @media (max-width: 600px) {
+            /* コンテナの余白を減らし、スマホ画面を広く使う */
+            .container {
+                margin: 15px 10px;
+                padding: 15px;
+            }
+            /* 見出しの文字サイズをスマホに合わせて調整 */
+            h1.article-title {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            h2 {
+                font-size: 20px;
+                padding: 8px 12px;
+                margin-top: 30px;
+            }
+            h3 {
+                font-size: 18px;
+                margin-top: 25px;
+            }
+            /* 画像とテキストを縦並びに */
             .flex-layout, .product-card {
                 flex-direction: column;
             }
+            /* ★女の子の画像をスマホでは少し小さめに表示（max-widthを160pxに制限） */
             .flex-image {
                 flex-basis: auto;
                 width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
+                max-width: 160px;
+                margin: 10px auto 20px auto;
             }
+            /* 商品画像もスマホでは少し小さめに */
             .product-image-container {
                 width: 100%;
-                max-width: 200px;
+                max-width: 150px;
                 margin: 0 auto;
             }
+            /* 楽天市場ボタンを画面幅いっぱいに広げて押しやすく */
             .btn-rakuten {
                 display: block;
                 width: 100%;
                 box-sizing: border-box;
             }
+            /* スマホだとテーブルが窮屈になるので文字と余白を小さく */
+            table th, table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+            /* 枠付きボックスの余白を調整 */
+            .warning-box {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            .summary-box {
+                padding: 15px;
+                margin-top: 30px;
+            }
         }
+        /* ------------------------------------------- */
 
         .warning-box {
             background-color: #ffeaea;
             border: 2px solid #ff4d4d;
-            padding: 15px;
             border-radius: 5px;
             margin: 20px 0;
+            /* padding は基本30px等からスマホ時は調整されます */
+            padding: 20px; 
         }
         .warning-box h4 {
             margin-top: 0;
@@ -187,9 +224,9 @@
         .summary-box {
             background-color: #e6f7ff;
             border: 2px solid #1890ff;
-            padding: 20px;
             border-radius: 5px;
             margin-top: 40px;
+            padding: 20px;
         }
         .summary-box h2 {
             margin-top: 0;
