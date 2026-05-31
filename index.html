@@ -160,7 +160,7 @@
             color: #666;
         }
         
-        /* バナーエリアのデザイン（追加部分） */
+        /* バナーエリアのデザイン */
         .banner-area {
             text-align: center;
             margin: 1.5rem 0;
@@ -178,6 +178,34 @@
             color: #ccc;
             margin-top: 3rem;
             font-size: 0.9rem;
+        }
+
+        /* フッターのボトムエリア（端っこにリンクを配置） */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 1rem auto 0;
+            padding-top: 1rem;
+            border-top: 1px solid #333;
+        }
+        .footer-bottom p {
+            margin: 0;
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+        }
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #00d2ff;
+            text-decoration: underline;
         }
 
         /* スマホ向けレスポンシブ対応 */
@@ -201,6 +229,14 @@
             .link-card img {
                 width: 100%;
                 margin: 0 0 1rem 0;
+            }
+            /* スマホ時のフッターリンクレイアウト */
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .footer-links {
+                justify-content: center;
             }
         }
     </style>
@@ -246,9 +282,7 @@
                 <p>このようにいろいろな失敗を僕自身経験して、そのうちに知識がついてきました。<br>
                 そんな僕が、読者の皆さんが同じような失敗をせず、遠回りせずに自分にピッタリなゲーミングPCと出会えたらうれしいなと思って、この「しょーでんゲーミング」というブログを運営することにしました。</p>
 
-                <p style="font-weight: bold; color: #e74c3c; margin-top: 1.5rem;">
-                現在作りかけですが、これから「しょーでんゲーミング」を拡大していく予定です！
-                </p>
+                
             </div>
             <div class="intro-image">
                 <img src="onnnanoaisatu.png" alt="挨拶する女の子の画像">
@@ -348,7 +382,6 @@
             </div>
         </a>
 
-        <!-- ここから追加部分 -->
         <h2>おすすめのPC専門店</h2>
         <p>PCパーツやゲーミングPC本体などが盛りだくさんです</p>
 
@@ -363,13 +396,19 @@
             <br>
             <script language="javascript" src="//ad.jp.ap.valuecommerce.com/servlet/jsbanner?sid=3767667&pid=892623266"></script><noscript><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3767667&pid=892623266" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3767667&pid=892623266" border="0"></a></noscript>
         </div>
-        <!-- 追加部分ここまで -->
 
     </div>
 
     <footer>
-        <p>しょーでんゲーミングは現在作りかけです。これからまだまだ拡大する予定です！</p>
-        <p>&copy; 2026 しょーでんゲーミング All Rights Reserved.</p>
+       
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 しょーでんゲーミング All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="https://shoodenn.github.io/shoodenngaming/puraibasiiporisii.html">プライバシーポリシー</a>
+                <a href="https://shoodenn.github.io/shoodenngaming/toiawase.html">お問い合わせ</a>
+            </div>
+        </div>
     </footer>
 
 </body>
