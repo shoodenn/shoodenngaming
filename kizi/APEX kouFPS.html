@@ -58,6 +58,28 @@
             border-left: 5px solid #e53131;
             margin: 35px 0 20px 0;
         }
+        /* 最初のH2だけ上部マージンを減らす */
+        .top-content h2 {
+            margin-top: 20px;
+        }
+
+        /* 導入文・用語解説 ＆ キャラクターのレイアウト */
+        .intro-section {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+        .top-content {
+            flex: 1;
+        }
+        .character-area {
+            flex: 0 0 220px; /* PCでのちょうどいいサイズ */
+        }
+        .character-area img {
+            width: 100%;
+            height: auto;
+        }
 
         /* 専門用語解説セクション */
         .glossary-card {
@@ -65,7 +87,6 @@
             border: 1px solid #e2e8f0;
             border-radius: 6px;
             padding: 20px;
-            margin-bottom: 30px;
         }
         .glossary-item {
             margin-bottom: 15px;
@@ -203,6 +224,22 @@
             h2 {
                 font-size: 17px;
             }
+            
+            /* スマホ時のキャラクターレイアウト */
+            .intro-section {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .character-area {
+                flex: 0 0 auto;
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+            .character-area img {
+                max-width: 140px; /* スマホで見たら下にちょっと小さく表示 */
+            }
+
             .product-layout {
                 flex-direction: column;
                 align-items: center;
@@ -234,29 +271,37 @@
 
     <h1>APEXにおすすめのゲーミングPC<br>【200FPS以上出したい方必見！】</h1>
 
-    <p>APEX Legendsを快適に、かつ高いFPSで安定してプレイしたいと考えている方に向けて、今本当におすすめできるゲーミングPCを2台厳選しました！競技シーンのような滑らかな映像で勝ちにいきたい方はぜひ参考にしてください。</p>
+    <div class="intro-section">
+        <div class="top-content">
+            <p>APEX Legendsを快適に、かつ高いFPSで安定してプレイしたいと考えている方に向けて、今本当におすすめできるゲーミングPCを2台厳選しました！競技シーンのような滑らかな映像で勝ちにいきたい方はぜひ参考にしてください。</p>
 
-    <h2>まずは知っておきたい！専門用語をざっくり解説</h2>
-    <div class="glossary-card">
-        <div class="glossary-item">
-            <span class="glossary-term">■ FPS（Frames Per Second）</span>
-            <p class="glossary-desc">1秒間に画面が何回書き換わるかを示す数値。値が高いほどキャラの動きがヌルヌルと滑らかに見え、敵にエイムを合わせやすくなります。200FPS以上出せると非常に有利です。</p>
+            <h2>まずは知っておきたい！専門用語をざっくり解説</h2>
+            <div class="glossary-card">
+                <div class="glossary-item">
+                    <span class="glossary-term">■ FPS（Frames Per Second）</span>
+                    <p class="glossary-desc">1秒間に画面が何回書き換わるかを示す数値。値が高いほどキャラの動きがヌルヌルと滑らかに見え、敵にエイムを合わせやすくなります。200FPS以上出せると非常に有利です。</p>
+                </div>
+                <div class="glossary-item">
+                    <span class="glossary-term">■ フルHD（1080p）</span>
+                    <p class="glossary-desc">現在もっとも一般的な画面の解像度（画質）。PCへの負荷が比較的低いため、画質を維持しつつ高いFPSを最優先で出したいときに向いています。</p>
+                </div>
+                <div class="glossary-item">
+                    <span class="glossary-term">■ 4K</span>
+                    <p class="glossary-desc">フルHDの4倍の画素数を持つ、圧倒的に高精細で美しい映像解像度。ゲームの世界への没入感は凄まじいですが、PCには最上級の処理性能が求められます。</p>
+                </div>
+                <div class="glossary-item">
+                    <span class="glossary-term">■ メモリ（RAM）</span>
+                    <p class="glossary-desc">PCが一時的にデータを処理する作業机のようなスペース。16GBでもゲームは動きますが、32GBあるとゲームをしながらの配信や動画編集が圧倒的に快適になります。</p>
+                </div>
+                <div class="glossary-item">
+                    <span class="glossary-term">■ オーバークロック対応CPU</span>
+                    <p class="glossary-desc">PCの頭脳であるCPUの限界性能をさらに引き上げることができるパーツのこと。処理能力を高めて、FPSを一挙に向上させることが可能です。</p>
+                </div>
+            </div>
         </div>
-        <div class="glossary-item">
-            <span class="glossary-term">■ フルHD（1080p）</span>
-            <p class="glossary-desc">現在もっとも一般的な画面の解像度（画質）。PCへの負荷が比較的低いため、画質を維持しつつ高いFPSを最優先で出したいときに向いています。</p>
-        </div>
-        <div class="glossary-item">
-            <span class="glossary-term">■ 4K</span>
-            <p class="glossary-desc">フルHDの4倍の画素数を持つ、圧倒的に高精細で美しい映像解像度。ゲームの世界への没入感は凄まじいですが、PCには最上級の処理性能が求められます。</p>
-        </div>
-        <div class="glossary-item">
-            <span class="glossary-term">■ メモリ（RAM）</span>
-            <p class="glossary-desc">PCが一時的にデータを処理する作業机のようなスペース。16GBでもゲームは動きますが、32GBあるとゲームをしながらの配信や動画編集が圧倒的に快適になります。</p>
-        </div>
-        <div class="glossary-item">
-            <span class="glossary-term">■ オーバークロック対応CPU</span>
-            <p class="glossary-desc">PCの頭脳であるCPUの限界性能をさらに引き上げることができるパーツのこと。処理能力を高めて、FPSを一挙に向上させることが可能です。</p>
+
+        <div class="character-area">
+            <img src="APEXgareeria.png" alt="キャラクター画像">
         </div>
     </div>
 
