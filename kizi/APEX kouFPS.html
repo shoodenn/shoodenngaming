@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEXにおすすめのゲーミングPC！200FPS以上出したい方必見 | しょーでんゲーミング</title>
+    <style>
+        /* 基本スタイルのリセットと共通設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f4f6f9;
+        }
+
+        /* サイトヘッダー（しょーでんゲーミング） */
+        .site-header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+        }
+
+        /* 記事ヘッダー */
+        h1 {
+            font-size: 26px;
+            color: #111;
+            border-bottom: 3px solid #e53131;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 20px;
+            color: #222;
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-left: 5px solid #e53131;
+            margin: 35px 0 20px 0;
+        }
+
+        /* 専門用語解説セクション */
+        .glossary-card {
+            background-color: #f9fbfd;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .glossary-item {
+            margin-bottom: 15px;
+        }
+        .glossary-item:last-child {
+            margin-bottom: 0;
+        }
+        .glossary-term {
+            font-weight: bold;
+            color: #e53131;
+            font-size: 16px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .glossary-desc {
+            font-size: 14px;
+            color: #555;
+            padding-left: 10px;
+        }
+
+        /* おすすめモデルセクション */
+        .product-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 35px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .product-layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .product-image {
+            flex: 0 0 200px;
+            max-width: 200px;
+        }
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid #eee;
+        }
+        .product-body {
+            flex: 1;
+        }
+        .product-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        .product-description {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #d9534f;
+            margin-bottom: 10px;
+        }
+
+        /* 楽天市場ボタン */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 15px;
+        }
+        .btn-rakuten {
+            display: inline-block;
+            background-color: #bf0000;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 12px 35px;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(191, 0, 0, 0.2);
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .btn-rakuten:hover {
+            background-color: #990000;
+            transform: translateY(-1px);
+        }
+
+        /* まとめセクション */
+        .summary-box {
+            background-color: #fff9f9;
+            border: 2px solid #fcdede;
+            border-radius: 6px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+        .summary-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+        .summary-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        .summary-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #e53131;
+            font-weight: bold;
+        }
+        .highlight-text {
+            color: #e53131;
+            font-weight: bold;
+        }
+
+        /* レスポンシブ対応（スマホ表示） */
+        @media (max-width: 600px) {
+            .site-header {
+                font-size: 20px;
+                padding: 12px 15px;
+            }
+            .container {
+                margin: 0 15px 30px 15px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            h2 {
+                font-size: 17px;
+            }
+            .product-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-image {
+                flex: 0 0 auto;
+                max-width: 100%;
+                width: 160px;
+                margin-bottom: 15px;
+            }
+            .product-title {
+                font-size: 16px;
+                text-align: center;
+            }
+            .btn-rakuten {
+                width: 100%;
+                padding: 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    しょーでんゲーミング
+</header>
+
+<div class="container">
+
+    <h1>APEXにおすすめのゲーミングPC<br>【200FPS以上出したい方必見！】</h1>
+
+    <p>APEX Legendsを快適に、かつ高いFPSで安定してプレイしたいと考えている方に向けて、今本当におすすめできるゲーミングPCを2台厳選しました！競技シーンのような滑らかな映像で勝ちにいきたい方はぜひ参考にしてください。</p>
+
+    <h2>まずは知っておきたい！専門用語をざっくり解説</h2>
+    <div class="glossary-card">
+        <div class="glossary-item">
+            <span class="glossary-term">■ FPS（Frames Per Second）</span>
+            <p class="glossary-desc">1秒間に画面が何回書き換わるかを示す数値。値が高いほどキャラの動きがヌルヌルと滑らかに見え、敵にエイムを合わせやすくなります。200FPS以上出せると非常に有利です。</p>
+        </div>
+        <div class="glossary-item">
+            <span class="glossary-term">■ フルHD（1080p）</span>
+            <p class="glossary-desc">現在もっとも一般的な画面の解像度（画質）。PCへの負荷が比較的低いため、画質を維持しつつ高いFPSを最優先で出したいときに向いています。</p>
+        </div>
+        <div class="glossary-item">
+            <span class="glossary-term">■ 4K</span>
+            <p class="glossary-desc">フルHDの4倍の画素数を持つ、圧倒的に高精細で美しい映像解像度。ゲームの世界への没入感は凄まじいですが、PCには最上級の処理性能が求められます。</p>
+        </div>
+        <div class="glossary-item">
+            <span class="glossary-term">■ メモリ（RAM）</span>
+            <p class="glossary-desc">PCが一時的にデータを処理する作業机のようなスペース。16GBでもゲームは動きますが、32GBあるとゲームをしながらの配信や動画編集が圧倒的に快適になります。</p>
+        </div>
+        <div class="glossary-item">
+            <span class="glossary-term">■ オーバークロック対応CPU</span>
+            <p class="glossary-desc">PCの頭脳であるCPUの限界性能をさらに引き上げることができるパーツのこと。処理能力を高めて、FPSを一挙に向上させることが可能です。</p>
+        </div>
+    </div>
+
+    <h2>APEXにおすすめのゲーミングPC 2選</h2>
+
+    <div class="product-card">
+        <div class="product-layout">
+            <div class="product-image">
+                <img src="APEXosusume1.png" alt="APEXおすすめゲーミングPC モデル1">
+            </div>
+            <div class="product-body">
+                <div class="product-title">高FPS入門に最適！フルHD 230FPS安定スタンダードモデル</div>
+                <div class="product-price">価格: 291,180円（税込）</div>
+                <div class="product-description">
+                    フルHD環境において、最高設定でも約230FPSを叩き出せる実力派のゲーミングPCです。CPUの世代は少し古いかもしれませんが、普通にAPEXをプレイする分には十分すぎるほど高いFPSを維持できます。「配信や高度な動画編集、4K画質にはこだわらないけれど、とにかく高いFPS環境でライバルに差をつけたい！」という方に非常におすすめの1台です。
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F19889%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="product-layout">
+            <div class="product-image">
+                <img src="APEXosusume2.png" alt="APEXおすすめゲーミングPC モデル2">
+            </div>
+            <div class="product-body">
+                <div class="product-title">最強スペック！Ryzen 7 9800X3D × RTX 5080 究極ハイエンドモデル</div>
+                <div class="product-price">価格: 681,380円（税込）</div>
+                <div class="product-description">
+                    フルHD環境で300FPS上限に張り付くのはもちろん、なんと4K解像度でも最高設定で約250FPSを出せてしまう異次元のモンスターマシンです。圧倒的なグラフィック性能を誇る最新の「RTX 5080」と、ゲーミング性能最強と言われるオーバークロック対応CPU「Ryzen 7 9800X3D」を贅沢に搭載。さらに大容量32GBメモリを標準装備しているため、超高画質な配信や本格的な動画編集もサクサクこなせます。
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F19923%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener">楽天市場で購入</a>
+        </div>
+    </div>
+
+    <h2>まとめ：あなたにピッタリなのはどっち？</h2>
+    <div class="summary-box">
+        <p style="margin-bottom: 15px; font-weight: bold;">どちらを選ぶべきかの基準は非常にシンプルです！</p>
+        
+        <ul class="summary-list">
+            <li><strong>4Kの美麗画質</strong>でゲームをプレイしたい</li>
+            <li><strong>配信をしながら</strong>でも、絶対に高いFPSをキープしたい</li>
+            <li>重たい<strong>4K動画の編集</strong>も快適にこなしたい</li>
+        </ul>
+
+        <p style="margin-bottom: 15px;">もし上記の条件に、<span class="highlight-text">ひとつでも「YES」と当てはまる項目があるなら</span>、間違いなく<span class="highlight-text">2つ目の最強ハイエンドモデル</span>を強くおすすめします！投資する価値のある圧倒的な体験が待っています。</p>
+        
+        <p>逆に、「4Kや配信にはこだわらない」「フルHD環境でしっかり高いFPS（200FPS以上）が出て、快適にランクマッチを楽しめれば満足！」という方であれば、コストパフォーマンスに優れた<span class="highlight-text">1つ目のスタンダードモデルで全く問題ありません。</span></p>
+    </div>
+
+</div>
+
+</body>
+</html>
