@@ -65,6 +65,29 @@
         li {
             margin-bottom: 0.5em;
         }
+        
+        /* 導入文レイアウト用CSS */
+        .intro-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .intro-text {
+            flex: 1;
+        }
+        .intro-img-box {
+            width: 250px;
+            flex-shrink: 0;
+        }
+        .intro-img-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
         .product-box {
             border: 2px solid #e2e8f0;
             border-radius: 8px;
@@ -129,7 +152,17 @@
             padding: 2px 4px;
             border-radius: 2px;
         }
+        
+        /* スマホ用レスポンシブ対応 */
         @media (max-width: 600px) {
+            .intro-container {
+                flex-direction: column;
+            }
+            .intro-img-box {
+                width: 65%; /* スマホでは少し小さめに */
+                max-width: 200px;
+                margin: 10px auto 0; /* 中央寄せで下に配置 */
+            }
             .product-flex {
                 flex-direction: column;
             }
@@ -151,9 +184,16 @@
 <div class="container">
     <h1>Unity・Blender・FPSゲーム・モンハンライズも快適！おすすめゲーミングPCの選び方と失敗しないスペック解説</h1>
 
-    <p>「新しくゲーミングPCが欲しいけれど、どれを選べばいいのかさっぱりわからない…」とお悩みではありませんか？</p>
-    <p>特に、イラスト制作だけでなく、ApexやValorantなどの<strong>FPSゲーム</strong>、話題の<strong>パルワールド</strong>や<strong>VRChat</strong>、そして<strong>モンスターハンターライズ</strong>、さらには<strong>Blender（3Dモデリング）</strong>や<strong>Unity（ゲーム開発）</strong>まで幅広く楽しみたいとなると、どの程度のスペックが必要なのか迷ってしまいますよね。</p>
-    <p>知識がないまま選んでしまうと、いざ作業やゲームを始めたときに画面がカクついたり、頻繁にフリーズしたりして後悔することになりかねません。そこで今回は、これらの用途を「フルHD環境でストレスなく快適にこなせる」間違いのないおすすめのゲーミングPCと、パーツ選びのポイントを分かりやすく解説します！</p>
+    <div class="intro-container">
+        <div class="intro-text">
+            <p>「新しくゲーミングPCが欲しいけれど、どれを選べばいいのかさっぱりわからない…」とお悩みではありませんか？</p>
+            <p>特に、イラスト制作だけでなく、ApexやValorantなどの<strong>FPSゲーム</strong>、話題の<strong>パルワールド</strong>や<strong>VRChat</strong>、そして<strong>モンスターハンターライズ</strong>、さらには<strong>Blender（3Dモデリング）</strong>や<strong>Unity（ゲーム開発）</strong>まで幅広く楽しみたいとなると、どの程度のスペックが必要なのか迷ってしまいますよね。</p>
+            <p>知識がないまま選んでしまうと、いざ作業やゲームを始めたときに画面がカクついたり、頻繁にフリーズしたりして後悔することになりかねません。そこで今回は、これらの用途を「フルHD環境でストレスなく快適にこなせる」間違いのないおすすめのゲーミングPCと、パーツ選びのポイントを分かりやすく解説します！</p>
+        </div>
+        <div class="intro-img-box">
+            <img src="gareriadokkoisyo.png" alt="PC選びに悩む様子">
+        </div>
+    </div>
 
     <h2>ゲーミングPC選びで知っておきたい専門用語とスペック解説</h2>
     <p>まずは、PCの性能を決める重要な3つのパーツ（CPU・グラフィックボード・メモリ）について解説します。ここを押さえておけば、PC選びの失敗を防ぐことができます。</p>
