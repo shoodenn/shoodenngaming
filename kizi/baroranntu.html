@@ -14,7 +14,7 @@
             background-color: #fff;
         }
 
-        /* ヘッダーの設定（追加部分） */
+        /* ヘッダーの設定 */
         header {
             background-color: #2c3e50; /* サイトっぽいダークカラー */
             color: #ffffff;
@@ -42,12 +42,33 @@
             border-left: 5px solid #e50012;
             padding-left: 10px;
             margin-top: 30px;
+            margin-bottom: 10px;
         }
+        
+        /* 導入文と専門用語の横並び設定 (PC) */
+        .intro-layout {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        .intro-image {
+            flex: 0 0 180px; /* PCでは画像エリアを狭く、縦長を維持 */
+            text-align: center;
+        }
+        .intro-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .intro-text {
+            flex: 1 1 auto;
+        }
+
         .term-box {
             background-color: #f8f9fa;
             padding: 20px;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-top: 20px;
         }
         .term-box ul {
             margin: 0;
@@ -56,6 +77,21 @@
         .term-box li {
             margin-bottom: 10px;
         }
+        
+        /* 価格のスタイル */
+        .price-box {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .price-amount {
+            font-size: 1.5em;
+            color: #e50012; /* 赤色で強調 */
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
         .product-section {
             display: flex;
             flex-wrap: wrap;
@@ -123,6 +159,19 @@
 
         /* スマホ向けのレイアウト調整 */
         @media (max-width: 768px) {
+            .intro-layout {
+                flex-direction: column;
+            }
+            .intro-image {
+                flex: 1 1 100%;
+                order: 1; /* スマホではテキストを先、画像を後に */
+                margin-top: 20px;
+            }
+            .intro-image img {
+                width: 60%; /* スマホでは少し小さく表示 */
+                margin: 0 auto;
+            }
+            
             .product-section {
                 flex-direction: column;
             }
@@ -139,21 +188,31 @@
     </header>
 
     <div class="container">
-        <h2>VALORANTをフルHD・200FPS以上で安定してプレイしたい人必見！</h2>
-        <p>「VALORANTで勝ちたい！でもゲーミングPCの選び方がわからない…」そんなお悩みはありませんか？<br>
-        コンマ1秒を争うタクティカルFPSにおいて、滑らかな映像は勝敗を大きく分ける重要な要素です。この記事では、初心者の方にもわかりやすく専門用語を解説しながら、フルHD・200FPS以上で安定してプレイできるおすすめのゲーミングPCをご紹介します！</p>
+        
+        <div class="intro-layout">
+            
+            <div class="intro-image">
+                <img src="gareriadaizi.png" alt="しょーでんゲーミング">
+            </div>
+            
+            <div class="intro-text">
+                <h2>VALORANTをフルHD・200FPS以上で安定してプレイしたい人必見！</h2>
+                <p>「VALORANTで勝ちたい！でもゲーミングPCの選び方がわからない…」そんなお悩みはありませんか？<br>
+                コンマ1秒を争うタクティカルFPSにおいて、滑らかな映像は勝敗を大きく分ける重要な要素です。この記事では、初心者の方にもわかりやすく専門用語を解説しながら、フルHD・200FPS以上で安定してプレイできるおすすめのゲーミングPCをご紹介します！</p>
 
-        <div class="term-box">
-            <h3 style="margin-top: 0; border: none; padding: 0;">これだけは知っておきたい！初心者向け・基本用語解説</h3>
-            <ul>
-                <li><strong>FPS（フレームレート）：</strong>1秒間に画面が何回書き換わるかを示す数値です。この数値が高いほど映像が滑らかに動き、敵を視認しやすくなります。VALORANTで勝ちたいなら200FPS以上が理想です。</li>
-                <li><strong>フルHD（FHD / 1080p）：</strong>画面の解像度（きめ細やかさ）のこと。現在最も標準的な画質で、PCへの負担を抑えつつ綺麗な映像を楽しめるため、FPSゲームに最適です。</li>
-                <li><strong>CPU：</strong>パソコンの「脳」にあたるパーツ。ゲーム中の複雑な計算を行います。</li>
-                <li><strong>GPU（グラフィックボード/グラボ）：</strong>映像をディスプレイに出力するためのパーツ。ゲームの快適さ・FPSの高さはここでほぼ決まります。</li>
-            </ul>
-        </div>
-
-        <h3>おすすめゲーミングPC：GALLERIA XGR7M-R56-GD</h3>
+                <div class="term-box">
+                    <h3 style="margin-top: 0; border: none; padding: 0;">これだけは知っておきたい！初心者向け・基本用語解説</h3>
+                    <ul>
+                        <li><strong>FPS（フレームレート）：</strong>1秒間に画面が何回書き換わるかを示す数値です。この数値が高いほど映像が滑らかに動き、敵を視認しやすくなります。VALORANTで勝ちたいなら200FPS以上が理想です。</li>
+                        <li><strong>フルHD（FHD / 1080p）：</strong>画面の解像度（きめ細やかさ）のこと。現在最も標準的な画質で、PCへの負担を抑えつつ綺麗な映像を楽しめるため、FPSゲームに最適です。</li>
+                        <li><strong>CPU：</strong>パソコンの「脳」にあたるパーツ。ゲーム中の複雑な計算を行います。</li>
+                        <li><strong>GPU（グラフィックボード/グラボ）：</strong>映像をディスプレイに出力するためのパーツ。ゲームの快適さ・FPSの高さはここでほぼ決まります。</li>
+                    </ul>
+                </div>
+            </div>
+        </div> <h3>おすすめゲーミングPC：GALLERIA XGR7M-R56-GD</h3>
+        
+        <p class="price-box">価格：<span class="price-amount">256,280円</span>（税込）</p>
 
         <div class="product-section">
             <div class="product-image">
@@ -165,7 +224,7 @@
                 <p>これを買えば快適にプレイできることは間違いありません。さらに、4K解像度の最高設定でも200FPS以上が出るほどの余裕があります。</p>
                 <p class="note">※ただ、他の用途（重いゲームや動画編集など）にも使うなら、もうちょっと余裕を持たせたスペックのものを選ぶのもおすすめです。</p>
                 
-                <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F19376%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener noreferrer">
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F19376%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImBBtnIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="btn-rakuten" target="_blank" rel="noopener noreferrer">
                     楽天市場で購入
                 </a>
             </div>
@@ -197,6 +256,5 @@
     </span>
   </a>
 </p></p>
-        </div>
     </div> </body>
 </html>
