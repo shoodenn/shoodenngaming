@@ -6,20 +6,17 @@
     <title>2026年ゲーミングPC これを買えば間違いない 用途別おすすめスペックとモデル紹介 | しょーでんゲーミング</title>
 
     <meta property="og:title" content="おすすめゲーミングPC3選" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://shoodenn.github.io/shoodenngaming/kizi/osusumesupekku.html" />
-<meta property="og:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/osusumemoderuaikyatti.png" />
-<meta property="og:site_name" content="おすすめゲーミングPC3選" />
-<meta property="og:description" content="ゲーミングPC特化ブログ" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://shoodenn.github.io/shoodenngaming/kizi/osusumesupekku.html" />
+    <meta property="og:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/osusumemoderuaikyatti.png" />
+    <meta property="og:site_name" content="おすすめゲーミングPC3選" />
+    <meta property="og:description" content="ゲーミングPC特化ブログ" />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="おすすめゲーミングPC3選" />
-<meta name="twitter:description" content="ゲーミングPC特化ブログ" />
-<meta name="twitter:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/osusumemoderuaikyatti.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="おすすめゲーミングPC3選" />
+    <meta name="twitter:description" content="ゲーミングPC特化ブログ" />
+    <meta name="twitter:image" content="https://shoodenn.github.io/shoodenngaming/aikyatti/osusumemoderuaikyatti.png" />
 
-
-
-    
     <style>
         /* 全体の色設定 */
         :root {
@@ -79,6 +76,7 @@
             padding: 5px 15px;
             background-color: var(--sub-blue);
             margin-bottom: 25px;
+            margin-top: 50px;
         }
 
         h3 {
@@ -89,6 +87,15 @@
             margin-top: 30px;
         }
 
+        h4 {
+            font-size: 1.1rem;
+            color: #444;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            border-left: 4px solid var(--accent-orange);
+        }
+
         .point-box {
             background-color: #fff9f0;
             border: 2px solid #ffe0b3;
@@ -97,45 +104,113 @@
             margin: 20px 0;
         }
 
+        .alert-box {
+            background-color: #fdf2f2;
+            border: 2px solid #d93025;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 0 0 40px 0;
+        }
+
+        .alert-box h3 {
+            color: #d93025;
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc {
+            background-color: #f1f8ff;
+            border: 1px solid #cce5ff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            border: none;
+            text-align: center;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: var(--main-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .term-box {
+            background-color: #eefbf5;
+            border: 1px solid #bce8d1;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .term-box dt {
+            font-weight: bold;
+            color: #155724;
+            margin-top: 10px;
+        }
+
+        .term-box dd {
+            margin-left: 0;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
         .warning-text {
             color: #d93025;
             font-weight: bold;
             text-decoration: underline;
         }
 
-        .spec-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+        .spec-list {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 5px;
+            border-left: 4px solid var(--main-blue);
+            margin-bottom: 20px;
+            font-family: monospace;
+            font-size: 1.05rem;
+            list-style-type: none;
         }
 
-        .spec-table th {
-            width: 30%;
-            background-color: #f2f2f2;
-            border: 1px solid var(--border-gray);
-            padding: 12px;
-            text-align: left;
-        }
-
-        .spec-table td {
-            border: 1px solid var(--border-gray);
-            padding: 12px;
+        .spec-list li {
+            margin-bottom: 5px;
         }
 
         /* 商品カード用スタイル */
         .product-card {
             display: flex;
             border: 1px solid var(--border-gray);
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             background: #fff;
-            gap: 20px;
-            align-items: center;
+            gap: 30px;
+            align-items: flex-start;
         }
 
         .product-image {
-            flex: 0 0 300px;
+            flex: 0 0 350px;
+            text-align: center;
         }
 
         .product-image img {
@@ -144,30 +219,41 @@
             border-radius: 4px;
         }
 
+        .product-price {
+            font-size: 1.5rem;
+            color: var(--rakuten-red);
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
         .product-info {
             flex: 1;
         }
 
         .product-info h3 {
             margin-top: 0;
+            font-size: 1.4rem;
         }
 
         /* 楽天市場ボタン */
         .rakuten-btn {
-            display: inline-block;
+            display: block;
             background-color: var(--rakuten-red);
             color: white !important;
             text-align: center;
-            padding: 12px 24px;
+            padding: 16px 24px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 4px;
-            margin-top: 15px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            margin-top: 25px;
             transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(191, 0, 0, 0.2);
         }
 
         .rakuten-btn:hover {
             background-color: #a00000;
+            transform: translateY(-2px);
         }
 
         .link-banner {
@@ -187,23 +273,7 @@
             opacity: 0.8;
         }
 
-        .important-note {
-            background-color: #fdf2f2;
-            border: 1px solid #f5c6cb;
-            color: #721c24;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* アドバイスエリア用のスタイルを追加 */
+        /* アドバイスエリア用のスタイル */
         .advice-container {
             display: flex;
             gap: 20px;
@@ -225,21 +295,22 @@
             border-radius: 8px;
         }
 
-        /* レスポンシブ対応：スマホでは画像を上に */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* レスポンシブ対応 */
         @media screen and (max-width: 768px) {
             .product-card {
                 flex-direction: column;
-                text-align: center;
             }
             .product-image {
                 flex: 0 0 auto;
                 width: 100%;
             }
-            .product-info ul {
-                text-align: left;
-                display: inline-block;
-            }
-            /* アドバイスエリアのスマホ対応 */
             .advice-container {
                 flex-direction: column;
             }
@@ -247,9 +318,6 @@
                 flex: 0 0 auto;
                 width: 100%;
                 margin-top: 20px;
-            }
-            .advice-image img {
-                max-width: 250px;
             }
         }
     </style>
@@ -263,7 +331,50 @@
 
 <div class="container">
 
-    <section>
+    <div class="alert-box">
+        <h3>⚠️ 2026年現在のゲーミングPC購入事情</h3>
+        <p>まず最初にお伝えしなければならない厳しい現実があります。<strong>2026年現在、予算25万円以下で「最新かつ高性能な新品のゲーミングPC」を手に入れるのは非常に困難</strong>になっています。</p>
+        <p>もしどうしても25万円以下に予算を抑えたい場合は、中古パソコンや数世代前の型落ちモデルを狙うことになります。しかし、中古や型落ち品は故障リスクや今後のゲームの要求スペックに追いつけなくなる寿命の短さを考えると、初心者にはあまりおすすめできません。</p>
+        <p>そこで本記事では、価格以上の圧倒的なパフォーマンスと手厚いサポートで絶対に後悔しない、<strong>BTOパソコンの王道「ドスパラのGALLERIA（ガレリア）」に絞って、本当におすすめできる新品モデルだけを厳選してご紹介</strong>します。</p>
+    </div>
+
+    <div class="toc">
+        <h3>目次</h3>
+        <ul>
+            <li><a href="#point">ゲーミングPCの選び方：見るべきポイント</a></li>
+            <li><a href="#compromise">妥協しても後悔が薄い部分・妥協できない部分</a></li>
+            <li><a href="#desktop">具体的おすすめモデル3選とスペック解説 比較</a></li>
+            <li><a href="#matching">あなたにぴったりなのはどれ？ 3つのモデルの選び方</a></li>
+            <li><a href="#notebook">しょーでんおすすめノートPC 2選</a></li>
+            <li><a href="#summary">まとめ</a></li>
+        </ul>
+    </div>
+
+    <div class="term-box">
+        <h3>💡 これだけは知っておきたい！超・簡単PC用語解説</h3>
+        <p>初心者の方でもこの記事がスラスラ読めるように、よく出てくる言葉を簡単に解説します。</p>
+        <dl>
+            <dt>CPU (シーピーユー)</dt>
+            <dd>パソコンの<strong>「頭脳」</strong>。ここが良いと、ゲームやあらゆる処理全体のスピードが速くなります。（例：Core Ultraなど）</dd>
+            
+            <dt>GPU / グラボ (グラフィックボード)</dt>
+            <dd>映像を描く<strong>「絵描き職人」</strong>。ゲーミングPCで一番重要なパーツ！これが良いほど、映像が綺麗で滑らかになります。（例：RTX 5060など）</dd>
+            
+            <dt>メモリ / VRAM (ビデオメモリ)</dt>
+            <dd>パソコンの<strong>「作業机」</strong>。机が広い（数字が大きい）ほど、同時に複数のソフトを開いたり、重いゲームを余裕で動かせます。グラボ専用の作業机が「VRAM」です。</dd>
+            
+            <dt>SSD / ストレージ</dt>
+            <dd>データをしまう<strong>「引き出し」</strong>。ゲーム本体や動画を保存する場所です。SSDだとゲームのロード時間が劇的に短くなります。</dd>
+            
+            <dt>fps / フレームレート</dt>
+            <dd>1秒間に画面が切り替わる<strong>「パラパラ漫画の枚数」</strong>。60fpsなら1秒間に60枚。144fpsなど数字が大きいほど、ヌルヌル滑らかに動いて敵を狙いやすくなります。</dd>
+
+            <dt>BTO (ビートゥーオー)</dt>
+            <dd>Build To Orderの略。お店がパーツを組み立てて売ってくれるパソコンのこと。購入時に「メモリを増やして！」と自分好みにカスタマイズできるのが最大の魅力です。</dd>
+        </dl>
+    </div>
+
+    <section id="point">
         <h2>ゲーミングPCの選び方：見るべきポイント</h2>
         <p>ゲーミングPCを選ぶ際に必ずチェックすべきは、<strong>CPU・GPU・メモリ・SSD容量</strong>です。また、高スペックを狙うなら<strong>消費電力</strong>も確認しましょう。</p>
         
@@ -279,7 +390,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="compromise">
         <h2>妥協しても後悔が薄い部分・妥協できない部分</h2>
         
         <div class="advice-container">
@@ -302,79 +413,190 @@
         ゲーミングPCの知識をさらに深めたい方はこちら
     </a>
 
-    <section>
-        <h2>用途別おすすめスペック 3つのパターン</h2>
-
-        <h3>1. フルHD/60FPSで快適にプレイしたい</h3>
-        <p>とにかくゲームができればいい、4K編集などは予定していない方向けのバランス重視構成です。</p>
-        <table class="spec-table">
-            <tr><th>CPU</th><td>Intel Core i7-14700 または同等</td></tr>
-            <tr><th>GPU</th><td>RTX 5060Ti</td></tr>
-            <tr><th>メモリ</th><td>DDR4 または DDR5 32GB</td></tr>
-            <tr><th>SSD</th><td>1TB</td></tr>
-        </table>
-        <p>RTX 5060Tiなら、大抵のゲームをフルHD環境でヌルヌルと快適に楽しめます。</p>
-
-        <h3>2. ライブ配信や4Kプレイを目指したい</h3>
-        <p>ゲームをしながらOBSやブラウザを動かしたいストリーマー向け構成です。</p>
-        <table class="spec-table">
-            <tr><th>CPU</th><td>Intel Core i7-14700K または同等</td></tr>
-            <tr><th>GPU</th><td>RTX 5080</td></tr>
-            <tr><th>メモリ</th><td>DDR5 32GB以上</td></tr>
-            <tr><th>SSD</th><td>M.2 SSD 2TB</td></tr>
-        </table>
-        <p>「K付き」モデルはオーバークロック対応で高いパフォーマンスを発揮します。M.2 SSDはSATA接続よりも圧倒的に速く、配信中の高負荷状態でも安定します。</p>
-
-        <h3>3. 一切の妥協を許さないガチ勢向け</h3>
-        <p>2026年現時点で考えうる最高峰のスペックです。</p>
-        <table class="spec-table">
-            <tr><th>CPU</th><td>Core i9-14900K</td></tr>
-            <tr><th>GPU</th><td>RTX 5090</td></tr>
-            <tr><th>メモリ</th><td>DDR5 64GB以上</td></tr>
-            <tr><th>SSD</th><td>M.2 SSD 4TB</td></tr>
-        </table>
-    </section>
-
-    <section>
-        <h2>具体的デスクトップおすすめ3選 モデル紹介</h2>
+    <section id="desktop">
+        <h2>具体的おすすめモデル3選とスペック解説 比較</h2>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="osusume1.jpg" alt="GALLERIA XPC7M-R56T8G-GD">
+                <img src="osusume1.png" alt="GALLERIA XGC5M-R56-GD">
             </div>
             <div class="product-info">
-                <h3>GALLERIA XPC7M-R56T8G-GD</h3>
-                <p><strong>解説：</strong>用途別おすすめの１で紹介したスペックはしっかり満たしています。必要になったらメモリを32GBに増設して使うとさらに強いですよ！</p>
-                <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F20082%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                <h3>1. GALLERIA XGC5M-R56-GD</h3>
+                <div class="product-price">約28万円</div>
+                <ul class="spec-list">
+                    <li>CPU：Core Ultra 5 225F</li>
+                    <li>GPU：RTX 5060 8GB</li>
+                    <li>メモリ：16GB</li>
+                    <li>SSD：500GB</li>
+                    <li>電源：650W</li>
+                </ul>
+                
+                <p>「最新のゲームを快適に遊びたいけれど、予算はなるべく抑えたい」<br>
+                「フルHDモニターでガッツリ遊べるゲーミングPCが欲しい」</p>
+                <p>そんな方に今一番おすすめしたいのが、大人気BTOパソコンブランド「GALLERIA（ガレリア）」のCore Ultra 5 225FとRTX 5060を搭載したモデルです。<br>
+                今回は、このスペックがどれほど優秀なのか、実際のゲームプレイでどれくらい快適に動くのかを分かりやすく解説していきます！</p>
+                <p>最新のIntel製CPU「Core Ultra 5 225F」と、フルHDゲーミングに特化した「RTX 5060」の組み合わせは、まさに「フルHDゲーミングの黄金タッグ」。どちらかの性能が足を引っ張るボトルネックも起きにくく、非常にバランスの取れた一台に仕上がっています。</p>
+
+                <h4>🎮 実際どれくらい快適？ジャンル別プレイフィール</h4>
+                <p><strong>① 競技FPS/TPS（Apex Legends、VALORANTなど）</strong><br>
+                ➡ 144fps〜240fps以上で非常に快適！<br>
+                動きの激しいシューティングゲームにおいて、このPCは真価を発揮します。設定を少し調整すれば240fpsに張り付くことも容易で、144Hzや240Hzの高リフレッシュレートモニターの性能をフルに活かしきれます。一瞬の判断が勝敗を分けるゲームで、機材のせいで負けることはまずなくなります。</p>
+
+                <p><strong>② 重量級・最新アクション（モンスターハンターシリーズ、サイバーパンク2077など）</strong><br>
+                ➡ 高画質設定でも60fps〜100fpsで快適プレイ！<br>
+                美麗なグラフィックで大自然や巨大なモンスターを描写する重めの最新アクションゲームでも、フルHDであれば全く問題なく動作します。RTX 50シリーズの強みである最新のDLSS（AIによるフレームレート向上技術）を活用することで、画質を落とさずにヌルヌルとした滑らかな映像で没入感の高いゲーム体験が可能です。</p>
+
+                <h4>⚠️ 唯一の注意点：ストレージ容量は「カスタマイズ推奨」</h4>
+                <p>ここまでベタ褒めしてきましたが、購入前に1点だけ注意してほしいポイントがあります。それは「500GBのストレージ（SSD）容量」です。<br>
+                最近のゲームは非常に大容量化しています。OS（Windows）のシステム領域も考慮すると、100GBクラスの大型ゲームを3本ほどインストールしただけで、あっという間に容量がパンパンになってしまいます。</p>
+
+                <p><strong>【おすすめの解決策】</strong><br>
+                購入時のカスタマイズ（BTO）で、ストレージを1TB以上にアップグレードしておくことを強くおすすめします。<br>
+                または、PCの扱いに少し慣れてきたら、ロード時間を極限まで短縮できる「Samsung 990 Pro」などの超高速なハイエンドM.2 SSDを後からご自身で増設するのも、PCゲームならではの楽しみ方として非常におすすめです。</p>
+
+                <h4>📝 まとめ：フルHD環境で迷ったらコレを買えば間違いなし！</h4>
+                <p>Core Ultra 5 225F × RTX 5060搭載のGALLERIAは、以下のような人にドンピシャで刺さるゲーミングPCです。</p>
+                <ul>
+                    <li>フルHD（1920×1080）モニターで遊ぶ予定の人</li>
+                    <li>FPSゲームで144fps以上の滑らかな映像を体感したい人</li>
+                    <li>最新の重いゲームも、画質を妥協せずに遊びたい人</li>
+                    <li>価格と性能のバランス（コスパ）を最重視する人</li>
+                </ul>
+                <p>ゲーミングPC選びで迷っている方は、ぜひこの構成のGALLERIAをチェックしてみてください。あなたのゲームライフをワンランク上に引き上げてくれる、最高の相棒になってくれるはずです！</p>
+
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F19965%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="osusume2.jpg" alt="GALLERIA XDR7A-R58-GD">
+                <img src="osusume2.png" alt="GALLERIA XPC7M-R57-GD">
             </div>
             <div class="product-info">
-                <h3>GALLERIA XDR7A-R58-GD</h3>
-                <p><strong>解説：</strong>最新のRTX 5080搭載モデル。高画質設定でも非常に快適で、ゲーム実況などのライブ配信も余裕でこなせるパワーを持っています。</p>
-                <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F19923%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
+                <h3>2. GALLERIA XPC7M-R57-GD</h3>
+                <div class="product-price">約35万円</div>
+                <ul class="spec-list">
+                    <li>CPU：Core Ultra 7 265F</li>
+                    <li>GPU：RTX 5070 12GB</li>
+                    <li>メモリ：16GB</li>
+                    <li>SSD：500GB</li>
+                    <li>電源：750W</li>
+                </ul>
+                
+                <p>「フルHDではもう物足りない。もっと高解像度で、圧倒的な映像美を楽しみたい」<br>
+                「ゲームだけでなく、動画編集やAI生成など、クリエイティブな作業も本格的に始めたい」</p>
+                <p>そんな、ワンランク上のPCライフを求めている方にドンピシャなのが、今回ご紹介する「Core Ultra 7 265F × RTX 5070」を搭載したGALLERIA（ガレリア）です。</p>
+                <p>このスペックがどれほどのポテンシャルを秘めているのか、そして購入時に絶対に気をつけるべき「2つのカスタマイズポイント」について、徹底的に解説していきます！<br>
+                結論から言うと、「エンジンの性能（CPU・GPU）は超一流だが、足回り（メモリ・ストレージ）に少し不安が残る」構成です。後述するカスタマイズさえ行えば、数年間はメイン機として最前線で戦える最強クラスのPCに化けます。</p>
+
+                <h4>🎮 圧倒的パフォーマンス！どんなことができる？</h4>
+                <p><strong>① WQHD（2560×1440）解像度での極上ゲーミング</strong><br>
+                フルHDの約1.8倍の解像度を持つWQHDモニターと組み合わせることで、真価を発揮します。<br>
+                最新のモンハンなどの重量級アクションゲームでも、高画質設定で滑らかに動作。イャンクックが「いなーいよ いなーいよ」と言いながら回転攻撃をしてくるような激しいモーションも、高いフレームレートのおかげでクッキリと見切ることができ、狩りの快適さが劇的に向上します。</p>
+
+                <p><strong>② 12GBのVRAMが活きる！高精細な「AI動画生成」やクリエイティブ用途</strong><br>
+                RTX 5070の大きな強みが、12GB搭載されているVRAM（ビデオメモリ）です。<br>
+                最近流行りのAI動画生成において、このVRAM容量は非常に重要です。例えば、「カメラの視点を完全に固定した1カットの長回し」や「特定のアクションを繰り返すアニメ調のショート動画」など、プロンプトに忠実で高度な処理が求められる生成作業も、このスペックならサクサクこなせます。</p>
+
+                <h4>⚠️ 購入前に絶対読んで！「2つの必須カスタマイズ」</h4>
+                <p>CPUとGPUが非常に強力な分、標準構成のままでは他のパーツがボトルネックになってしまいます。購入時のBTOカスタマイズで、以下の2点は必ず変更することを強くおすすめします。</p>
+
+                <p><strong>❌ 注意点1：メモリ16GBは「もったいない」</strong><br>
+                ➡【推奨】32GBへアップグレード！<br>
+                フルHDでゲームをするだけなら16GBでも足りますが、WQHDでの高画質ゲーミングや、ブラウザを開きながらの配信、そして先述したAI動画生成などを行う場合、16GBではすぐに上限に達してしまい、せっかくのCore Ultra 7の処理能力を活かしきれません。迷わず32GBに変更しましょう。</p>
+
+                <p><strong>❌ 注意点2：ハイエンド機にストレージ500GBは「少なすぎる」</strong><br>
+                ➡【推奨】1TB〜2TBの超高速SSDへ換装！<br>
+                このクラスのPCで遊ぶ大作ゲームは、1本で100GB〜150GBを消費するものばかりです。500GBではOSを入れたらあっという間に限界が来ます。<br>
+                カスタマイズで容量を増やすのは必須ですが、さらにロード時間を極限まで短縮して究極の環境を作りたいなら、後から「Samsung 990 Pro」などの最上位クラスのM.2 NVMe SSDをご自身で増設・換装するのも最高の選択肢です。このクラスのPCに相応しい、妥協のない読み込み速度を体感できます。</p>
+
+                <h4>📝 まとめ：足回りを整えれば「最高の相棒」になる！</h4>
+                <p>Core Ultra 7 265F × RTX 5070搭載のGALLERIAは、メモリとストレージさえしっかり補強してあげれば、ゲームから高度なクリエイティブ作業まで何でもこなせる無敵の万能機になります。<br>
+                「せっかく買うなら、妥協せずに長期間ハイスペックを維持できるPCが欲しい」と考えている方は、ぜひ今回のカスタマイズポイントを参考に、最高の1台を手に入れてください！</p>
+
+                <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F19974%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
             </div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="osusume3.jpg" alt="GALLERIA XMC9A-R59-GD">
+                <img src="osusume3.png" alt="GALLERIA XMC9A-R59-GD">
             </div>
             <div class="product-info">
-                <h3>GALLERIA XMC9A-R59-GD</h3>
-                <p><strong>解説：</strong>とにかく高スペックを追い求める方に。RTX 5090を搭載した妥協のない一台で、2026年最強クラスの環境を構築できます。</p>
+                <h3>3. GALLERIA XMC9A-R59-GD</h3>
+                <div class="product-price">約100万円</div>
+                <ul class="spec-list">
+                    <li>CPU：Core Ultra 9 285K</li>
+                    <li>GPU：RTX 5090 32GB</li>
+                    <li>メモリ：32GB</li>
+                    <li>SSD：2TB</li>
+                    <li>電源：1200W</li>
+                </ul>
+                
+                <p>「予算に糸目はつけない。今手に入る最強のスペックで、すべての処理を力でねじ伏せたい」<br>
+                「4Kの最高画質ゲーミングから、最先端のローカルAI動画生成まで、一切のストレスなく極めたい」</p>
+                <p>そんな、PCに対する「究極のロマン」を追い求める方へ。<br>
+                今回ご紹介するのは、現行最高峰のCPU「Core Ultra 9 285K」と、もはや伝説級のモンスターGPU「RTX 5090 (VRAM 32GB)」を搭載した、GALLERIA（ガレリア）のフラッグシップモデルです。</p>
+                <p>このPCの前では、どんな重いゲームも、どんなに複雑なクリエイティブ作業も、ただの「軽い作業」へと変わります。その異次元のポテンシャルを徹底解説します！<br>
+                CPU、GPU、電源に至るまで、すべてのパーツが「最上級」で構成されています。特に注目すべきは、やはりRTX 5090と、それに搭載された32GBという規格外のVRAM（ビデオメモリ）です。</p>
+
+                <h4>🚀 このモンスターPCでできる「異次元の体験」</h4>
+                <p>このスペックを買うということは、単にゲームを遊ぶだけではなく「時間と快適さ」を買うことと同義です。</p>
+                <p><strong>① 4K〜8K解像度での「完全な」ゲーム体験</strong><br>
+                フルHDやWQHDは言うに及ばず、4K解像度＋レイトレーシング（光のリアルな反射表現）を最高設定にしても、全くビクともしません。<br>
+                重いことで有名な最新のオープンワールドRPGや、一瞬の処理落ちが命取りになる重量級アクションゲームでも、100fps〜144fps以上の極めて滑らかな映像を4K画質で維持し続けます。もはや「設定を下げる」という概念すら忘れてしまうでしょう。</p>
+
+                <p><strong>② VRAM 32GBが唸る！高度で複雑な「ローカルAI動画生成」</strong><br>
+                このPCの真価が最も発揮されるのが、最新のAI生成分野です。<br>
+                例えば、「一切のカメラワーク（ズームやパン）を排除し、カットを割らずに固定カメラの視点を維持し続ける」ことや、「見えない位置にある自動ドアが開く音だけが聞こえ、レジの女の店員がびっくりしないでふつうに『いらっしゃいませー』と自然に言う」といった、プロンプトの厳密な指定と高度な一貫性が求められる高品質なアニメ調AI動画生成。こういった複雑で高負荷な処理を連続で行っても、32GBの広大なVRAMがあればエラーで落ちることはまずありません。クラウドに頼らず、自宅のPCでプロレベルの生成環境を構築できます。</p>
+
+                <h4>👑 さらなる高みを目指すための「神々の遊び（カスタマイズ）」</h4>
+                <p>標準構成ですでに最強ですが、このクラスのPCを選ぶ妥協なきユーザーに向けて、さらに完璧な環境を構築するためのアドバイスをお伝えします。</p>
+                
+                <p><strong>・ストレージの「速度」への飽くなき探求</strong><br>
+                2TBの容量があれば当面は安心ですが、このクラスのPCを組むなら、ストレージの『速度』にも徹底的にこだわりたいところ。BTOのオプションや後からの換装で、「Samsung 990 Pro」のような最高峰の読み書き速度を誇るハイエンドM.2 SSDを選択すれば、巨大な動画ファイルやAIモデルの読み込み時間すら一瞬になり、真のストレスフリー環境が完成します。</p>
+
+                <p><strong>・メモリを「64GB」へ引き上げる</strong><br>
+                32GBでも十分にハイスペックですが、もしあなたが先述したような高度なAI生成や、4K動画のゴリゴリな編集、さらにはゲーム実況配信などを「同時並行」で行うようなヘビーユーザーであれば、メモリを64GBにカスタマイズしておくことで、まさに完全無欠の要塞となります。</p>
+
+                <h4>📝 まとめ：最高峰の環境を手にする喜び</h4>
+                <p>Core Ultra 9 285K × RTX 5090搭載のGALLERIAは、間違いなく現在考えうる「最高のゲーミング＆クリエイターPC」です。<br>
+                価格は決して安くありませんが、それに見合う、いやそれ以上の「圧倒的なパフォーマンスと、今後数年間は買い替えを一切意識させない絶対的な安心感」をもたらしてくれます。最高峰の環境で、誰も見たことのない世界へ飛び込みたい方は、迷わずこのモンスターを迎え入れてください！</p>
+
                 <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F20105%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
             </div>
         </div>
     </section>
 
-    <section>
+    <section id="matching">
+        <h2>あなたにぴったりなのはどれ？ 3つのモデルの選び方</h2>
+        <p>「3つとも凄そうだけど、結局自分はどれを買えばいいの？」と迷ってしまった方へ。目的と予算に合わせた選び方のガイドラインを作りました。</p>
+
+        <ul>
+            <li>
+                <strong>▶ 迷ったらこれ！「GALLERIA XGC5M-R56-GD (約28万円)」</strong><br>
+                【対象者】初めてゲーミングPCを買う人、フルHDモニターで遊ぶ人<br>
+                【特徴】予算を30万円以内に抑えつつ、ApexやValorantなどで「勝つための滑らかさ」をしっかり確保したい人に最適です。最もコストパフォーマンスに優れた、失敗しない王道の選択です。
+            </li>
+            <br>
+            <li>
+                <strong>▶ 映像美も配信も！「GALLERIA XPC7M-R57-GD (約35万円)」</strong><br>
+                【対象者】ワンランク上の画質（WQHD）で遊びたい人、ゲーム配信や軽いAI・動画編集もやりたい人<br>
+                【特徴】フルHDでは画質に満足できない方や、12GBのVRAMを活かしてクリエイティブな活動の第一歩を踏み出したい方に。※ただし、メモリ32GBへのカスタマイズは忘れずに！
+            </li>
+            <br>
+            <li>
+                <strong>▶ 妥協を許さない王様「GALLERIA XMC9A-R59-GD (約100万円)」</strong><br>
+                【対象者】予算無制限、4K最高画質で遊びたい人、プロレベルのAI生成や重い動画編集をサクサクこなしたい人<br>
+                【特徴】現状考えうるほぼ最強のスペックです。ゲームの設定を落とすストレスや、AI生成時のVRAM不足によるエラーから完全に解放されたい「ガチ勢」のための究極の一台です。
+            </li>
+        </ul>
+    </section>
+
+    <section id="notebook">
         <h2>しょーでんおすすめノートPC 2選</h2>
-        <p>ノートPCなら、しょーでんは<strong>ガレリア一択</strong>をおすすめします。拡張性が高く、長く使えるからです。</p>
+        <p>「部屋にデスクトップを置くスペースがない」「リビングや出先でもゲームをしたい」という方には、ノートPCという選択肢になります。<br>
+        ノートPCを買うなら、しょーでんは<strong>「ガレリア一択」</strong>を強くおすすめします。その最大の理由は<strong>「メモリとSSDの拡張性が高く、サポート体制が国内トップクラスだから」</strong>です。</p>
 
         <div class="product-card">
             <div class="product-image">
@@ -382,13 +604,16 @@
             </div>
             <div class="product-info">
                 <h3>GALLERIA RL7C-R56-5N</h3>
-                <ul>
+                <ul class="spec-list">
                     <li>CPU: Core i7-14650HX</li>
                     <li>GPU: RTX 5060 8GB (Laptop)</li>
                     <li>メモリ: DDR5 16GB (増設可)</li>
                     <li>SSD: 500GB M.2 (増設可)</li>
                 </ul>
-                <p><strong>解説：</strong>スペックのバランスが良く、大きなボトルネックがありません。メモリとSSDを増設して使うのが最高に快適でおすすめです。</p>
+                <p><strong>【どんな人におすすめ？】</strong><br>
+                ノートPCをメイン機として、家でも外でも本格的にゲームを遊びたい人向けです。CPUとGPUのバランスが非常に良く、デスクトップ版のRTX 5060に近いパフォーマンスを発揮します。</p>
+                <p><strong>解説：</strong><br>
+                ノートPCでありながら大きなボトルネックがなく、最新ゲームも設定次第で快適に動作します。最大の特徴は、ガレリアのノートならではの「拡張性の高さ」。後からメモリを32GBにしたり、SSDを追加・換装して使うことができ、長く最前線で活躍してくれる頼もしい相棒になります。</p>
                 <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F20779%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
             </div>
         </div>
@@ -399,31 +624,45 @@
             </div>
             <div class="product-info">
                 <h3>GALLERIA RL7C-R35-5N</h3>
-                <ul>
+                <ul class="spec-list">
                     <li>CPU: Core i7-13620H</li>
                     <li>GPU: RTX 3050 6GB (Laptop)</li>
                     <li>メモリ: DDR5 16GB</li>
                     <li>SSD: 500GB M.2</li>
                 </ul>
-                <p><strong>解説：</strong>手頃な価格でPCゲームを始めたい方向け。GPUが少し弱めなので重すぎるゲームは注意が必要ですが、それ以外ならサクサク動作します。</p>
+                <p><strong>【どんな人におすすめ？】</strong><br>
+                ブラウザゲームや軽いインディーゲーム、マインクラフトなどを中心に遊びたい人や、とにかく初期費用を抑えてPCゲームの世界に触れてみたい入門者向けです。</p>
+                <p><strong>解説：</strong><br>
+                手頃な価格設定が魅力ですが、GPUが「RTX 3050」と少し弱めな点には注意が必要です。最新の重い3Dアクションゲームなどを高画質で遊ぶのには力不足を感じる場面が出てきます。あくまで「軽めのゲーム専用」または「仕事や学校の作業用 兼 軽いゲーム機」と割り切って使う方に適しています。</p>
                 <a href="https://hb.afl.rakuten.co.jp/ichiba/43115f6a.1b1aa736.43115f6b.3e269cd1/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdospara-r%2F15968%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjQwMHg0MDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" class="rakuten-btn" target="_blank">楽天市場で購入</a>
             </div>
         </div>
 
-        <div class="important-note">
-            <strong>※ノートPC最大の注意点</strong><br>
-            「超高性能」を追求し、一切の妥協をしたくないガチ勢の方は、必ずデスクトップを選んでください。
+        <div class="alert-box" style="border-color: #f5c6cb; margin-top: 20px;">
+            <h3>※ノートPC最大の注意点</h3>
+            <p>ノートPCはどれだけ高額なモデルを買っても、排熱と電力の構造上、同じグレードの「デスクトップPC」には絶対に勝てません。<br>
+            「4K画質で遊びたい」「本格的なAI動画生成をやりたい」「一切の妥協をしたくない」というガチ勢の方は、後からパーツ交換ができないノートPCではなく、<strong>必ずデスクトップを選んでください。</strong></p>
         </div>
     </section>
 
-    <section>
-        <h2>まとめ</h2>
-        <p>用途によって必要な性能は変わります。自分のやりたいことに合わせてスペックを選びましょう。</p>
+    <section id="summary">
+        <h2>まとめ：自分のスタイルに合わせて最高の相棒を選ぼう</h2>
+        <p>ここまで読んでいただきありがとうございます！ゲーミングPCは決して安い買い物ではありませんが、用途に合わせて正しく選べば、毎日のゲーム体験や作業の快適さを劇的に変えてくれる魔法の箱です。</p>
+        
+        <p>最後に、本記事の重要ポイントをおさらいします。</p>
         <ul>
-            <li><strong>ポイント1：</strong> CPUとGPUのバランスを見て、ボトルネックになりにくい構成を選ぶ。</li>
-            <li><strong>ポイント2：</strong> ノートならCPU・GPU性能は妥協せず、メモリ・SSDを増設可能なものを選ぶ。</li>
+            <li><strong>2026年の現実：</strong> 25万円以下で新品ハイスペック機は厳しい。品質とサポートに優れたドスパラの「GALLERIA」を選ぶのが最も安心。</li>
+            <li><strong>カスタマイズの極意：</strong> デスクトップは後から換装しやすいが、注文時点で「メモリ」と「SSD容量」だけは少し盛っておくのが長く使うコツ。</li>
+            <li><strong>ノートPCの限界を知る：</strong> 持ち運べるメリットは大きいが、超高性能を求める作業（4Kゲームや重いAI処理）には向かないため、用途の見極めが肝心。</li>
         </ul>
-        <p>自分のスタイルに合った最高の相棒を見つけてください！</p>
+
+        <p><strong>【最終結論】</strong><br>
+        ◆ コスパと安定感を求める大多数のゲーマーは ➡ <strong>「1. GALLERIA XGC5M-R56-GD」</strong><br>
+        ◆ 高画質やクリエイティブ用途も見据えるなら ➡ <strong>「2. GALLERIA XPC7M-R57-GD (※メモリ32GB化)」</strong><br>
+        ◆ 全ての処理をねじ伏せる究極のロマンを求めるなら ➡ <strong>「3. GALLERIA XMC9A-R59-GD」</strong><br>
+        ◆ 持ち運び重視でしっかり遊びたいなら ➡ ノートPCの<strong>「GALLERIA RL7C-R56-5N」</strong></p>
+
+        <p>ご自身のプレイしたいゲーム、やってみたい作業、そして予算と相談しながら、あなたにとって最高の相棒となるゲーミングPCを見つけてください！</p>
     </section>
 
 </div>
@@ -437,7 +676,7 @@
      style="display: inline-block; padding: 16px 32px; background-color: #333333; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: opacity 0.3s;" 
      onmouseover="this.style.opacity='0.7'" 
      onmouseout="this.style.opacity='1'">
-    しょーでんゲーミング　ホームに戻る
+    しょーでんゲーミング ホームに戻る
   </a>
 </div>
     
