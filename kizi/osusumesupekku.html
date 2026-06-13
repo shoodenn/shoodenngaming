@@ -365,8 +365,19 @@
 
         /* レスポンシブ対応 */
         @media screen and (max-width: 768px) {
+            header h1 {
+                /* スマホで2行に収めるためのサイズ調整 */
+                font-size: 1.15rem; 
+            }
+            .container {
+                /* スマホ画面の横端っこまで文字が広がるように余白を小さく */
+                padding: 20px 10px;
+                margin: 20px auto;
+            }
             .product-card {
                 flex-direction: column;
+                /* スマホではカード内の余白も少し狭くする */
+                padding: 20px 15px; 
             }
             .product-image {
                 flex: 0 0 auto;
@@ -419,10 +430,27 @@
 
     <div class="toc">
         <h3>目次</h3>
+        <p style="text-align: center; font-size: 0.9rem; color: #555; margin-top: -10px; margin-bottom: 20px;">※クリックして好きな場所から読めます</p>
         <ul>
             <li><a href="#point">ゲーミングPCの選び方：見るべきポイント</a></li>
             <li><a href="#compromise">妥協しても後悔が薄い部分・妥協できない部分</a></li>
-            <li><a href="#desktop">具体的おすすめモデル3選とスペック解説 比較</a></li>
+            <li>
+                <a href="#desktop">具体的おすすめモデル3選とスペック解説 比較</a>
+                <ul style="margin-top: 10px; margin-bottom: 15px; padding-left: 15px;">
+                    <li style="margin-bottom: 15px;">
+                        <a href="#pc-xgc5m">・GALLERIA XGC5M-R56-GD</a><br>
+                        <span style="font-size: 0.85em; color: #666; font-weight: normal;"> コスパ最強！迷ったらコレの王道フルHDモデル</span>
+                    </li>
+                    <li style="margin-bottom: 15px;">
+                        <a href="#pc-xpc7m">・GALLERIA XPC7M-R57-GD</a><br>
+                        <span style="font-size: 0.85em; color: #666; font-weight: normal;"> WQHD・クリエイティブもこなす万能機</span>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <a href="#pc-xmc9a">・GALLERIA XMC9A-R59-GD</a><br>
+                        <span style="font-size: 0.85em; color: #666; font-weight: normal;"> 4K・AI生成も余裕の究極モンスター</span>
+                    </li>
+                </ul>
+            </li>
             <li><a href="#matching">あなたにぴったりなのはどれ？ 3つのモデルの選び方</a></li>
             <li><a href="#notebook">しょーでんおすすめノートPC 2選</a></li>
             <li><a href="#peripherals">ゲーミングPCを買うのが初めての方へ！おすすめ周辺機器</a></li>
